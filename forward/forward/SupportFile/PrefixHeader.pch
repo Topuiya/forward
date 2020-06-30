@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  CyberGame
+//
+//  Created by apple on 2020/6/3.
+//  Copyright © 2020 zzh. All rights reserved.
+//
+
+#import "UIColor+Hex.h"
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
+
+#define RGBA(r,g,b,a)   [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+#define RGB(R, G, B)    [UIColor colorWithRed:((R) / 255.0f) green:((G) / 255.0f) blue:((B) / 255.0f) alpha:1.0f]
+
+#define WEAKSELF typeof(self) __weak weakSelf = self;
+
+//判断空字符串
+#define  IsEmptyStr(string) ([string isKindOfClass:[NSNull class]] || string == nil || string == NULL || [string isEqualToString:@""] || [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0)
+
+#define TimeForMatterStr @"yyyy-MM-dd HH:mm:ss"
+
+#import "MacroHeader.h"
+#import <HBDNavigationBar/UIViewController+HBD.h>
+#import <HBDNavigationBar/HBDNavigationController.h>
+#import "UIColor+Hex.h"
+
+#define DJLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#endif /* PrefixHeader_pch */

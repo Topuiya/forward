@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuotesHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeR-E2-fVU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称/编码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-3y-5Xe">
+                            <rect key="frame" x="31" y="28" width="62" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.48363703489999998" green="0.48361790180000003" blue="0.48363083600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km1-nn-1J1">
+                            <rect key="frame" x="185.5" y="28" width="43" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.48363703489999998" green="0.48361790180000003" blue="0.48363083600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="涨幅跌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Two-k1-MJ3">
+                            <rect key="frame" x="330.5" y="28" width="43" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.48363703489999998" green="0.48361790180000003" blue="0.48363083600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94560664890000001" green="0.94557112460000003" blue="0.94559520480000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="Two-k1-MJ3" firstAttribute="centerY" secondItem="TeR-E2-fVU" secondAttribute="centerY" id="20h-el-XmK"/>
+                        <constraint firstItem="km1-nn-1J1" firstAttribute="centerX" secondItem="TeR-E2-fVU" secondAttribute="centerX" id="FyA-iZ-Fsx"/>
+                        <constraint firstItem="Two-k1-MJ3" firstAttribute="centerX" secondItem="TeR-E2-fVU" secondAttribute="centerX" multiplier="1.7" id="ML7-OC-Dmv"/>
+                        <constraint firstItem="hw6-3y-5Xe" firstAttribute="centerY" secondItem="TeR-E2-fVU" secondAttribute="centerY" id="cm0-vF-BQu"/>
+                        <constraint firstItem="km1-nn-1J1" firstAttribute="centerY" secondItem="TeR-E2-fVU" secondAttribute="centerY" id="hNX-bT-4gt"/>
+                        <constraint firstItem="hw6-3y-5Xe" firstAttribute="centerX" secondItem="TeR-E2-fVU" secondAttribute="centerX" multiplier="0.3" id="u93-EW-YNM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TeR-E2-fVU" secondAttribute="bottom" id="WJN-Xa-cQ8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TeR-E2-fVU" secondAttribute="trailing" id="cei-f1-9QI"/>
+                <constraint firstItem="TeR-E2-fVU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rr9-V8-eIS"/>
+                <constraint firstItem="TeR-E2-fVU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sbu-E7-gvA"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-130.91517857142856"/>
+        </view>
+    </objects>
+</document>

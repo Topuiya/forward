@@ -8,6 +8,15 @@
 
 #import "AppDelegate.h"
 
+#import "HomeVC.h"
+#import "QuotesVC.h"
+#import "PublishVC.h"
+#import "NewsVC.h"
+#import "MineVC.h"
+
+#import "BaseTabBarController.h"
+#import <IQKeyboardManager.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,26 +25,31 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 设置主窗口,并设置根控制器
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    HBDNavigationController *homeNav = [[HBDNavigationController alloc] initWithRootViewController:[HomeVC new]];
+    HBDNavigationController *quotesNav = [[HBDNavigationController alloc] initWithRootViewController:[QuotesVC new]];
+    HBDNavigationController *publishNav = [[HBDNavigationController alloc] initWithRootViewController:[PublishVC new]];
+    HBDNavigationController *newsNav = [[HBDNavigationController alloc] initWithRootViewController:[NewsVC new]];
+    HBDNavigationController *mineNav = [[HBDNavigationController alloc] initWithRootViewController:[MineVC new]];
+    
+    //开启AxcAE_TabBar
+    BaseTabBarController *tabBarVC = [BaseTabBarController new];
+    tabBarVC.viewControllers = @[homeNav,quotesNav,publishNav,newsNav,mineNav];
+    self.window.rootViewController = tabBarVC;
+    
+    [self.window makeKeyAndVisible];
+    
+    //默认开启IQKeyboard键盘
+    [IQKeyboardManager sharedManager];
+    //点击背景收回键盘
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
     return YES;
 }
 
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
 
 
 @end
