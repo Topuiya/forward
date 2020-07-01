@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5v-Go-n5d">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaY-q2-ezu">
+                            <rect key="frame" x="17.5" y="40.5" width="379" height="30"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jU-qp-fws">
+                                    <rect key="frame" x="30" y="0.0" width="349" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPU-Tg-BHv">
+                                    <rect key="frame" x="8" y="4" width="22" height="22"/>
+                                    <state key="normal" image="souhuo"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="9jU-qp-fws" firstAttribute="top" secondItem="HaY-q2-ezu" secondAttribute="top" id="Czd-jA-NNg"/>
+                                <constraint firstItem="QPU-Tg-BHv" firstAttribute="centerY" secondItem="HaY-q2-ezu" secondAttribute="centerY" id="ORL-8H-5RZ"/>
+                                <constraint firstAttribute="bottom" secondItem="9jU-qp-fws" secondAttribute="bottom" id="Z6C-sW-MUx"/>
+                                <constraint firstAttribute="height" constant="30" id="ZvZ-hc-g1z"/>
+                                <constraint firstAttribute="trailing" secondItem="9jU-qp-fws" secondAttribute="trailing" id="aee-dp-S2l"/>
+                                <constraint firstItem="QPU-Tg-BHv" firstAttribute="centerX" secondItem="HaY-q2-ezu" secondAttribute="centerX" multiplier="0.1" id="b6S-V3-Lm0"/>
+                                <constraint firstItem="9jU-qp-fws" firstAttribute="leading" secondItem="QPU-Tg-BHv" secondAttribute="trailing" id="jjh-nN-5Xp"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94560664890000001" green="0.94557112460000003" blue="0.94559520480000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="HaY-q2-ezu" firstAttribute="leading" secondItem="v5v-Go-n5d" secondAttribute="leading" constant="17.5" id="7hS-UH-Chr"/>
+                        <constraint firstAttribute="trailing" secondItem="HaY-q2-ezu" secondAttribute="trailing" constant="17.5" id="UCE-uD-qDB"/>
+                        <constraint firstItem="HaY-q2-ezu" firstAttribute="centerY" secondItem="v5v-Go-n5d" secondAttribute="centerY" id="uhS-Sb-uTS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="v5v-Go-n5d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BuZ-gS-igd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="v5v-Go-n5d" secondAttribute="trailing" id="PeF-6w-lAS"/>
+                <constraint firstAttribute="bottom" secondItem="v5v-Go-n5d" secondAttribute="bottom" id="hoJ-BB-fLK"/>
+                <constraint firstItem="v5v-Go-n5d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="y6Y-eB-Lhd"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="120.28985507246378" y="58.59375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="souhuo" width="22" height="22"/>
+    </resources>
+</document>

@@ -100,7 +100,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return 420;
+        return 340;
     }
     else if (section == 1) {
         return 80;

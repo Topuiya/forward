@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="360" id="KGk-i7-Jjw" customClass="ShowNewsTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="360"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="436" height="360"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xinzuo3" translatesAutoresizingMaskIntoConstraints="NO" id="mUb-FS-aDV">
+                        <rect key="frame" x="14" y="20" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="4Hj-CC-7tw"/>
+                            <constraint firstAttribute="width" constant="44" id="eEX-Fb-7Zu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CCCC啦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJP-2Y-UmJ" userLabel="name">
+                        <rect key="frame" x="66" y="26" width="54" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e82-XT-NMn" userLabel="time">
+                        <rect key="frame" x="66" y="43" width="45" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59890276190000002" green="0.59887963529999999" blue="0.59889531139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEK-1k-k3D">
+                        <rect key="frame" x="362" y="30.5" width="60" height="23"/>
+                        <state key="normal" title="+关注" backgroundImage="guangzhukuang">
+                            <color key="titleColor" red="0.91521066429999998" green="0.43139743800000002" blue="0.41062217950000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_tuijian1" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-Gq-UQH">
+                        <rect key="frame" x="14" y="144.5" width="408" height="195.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tgJ-Gq-UQH" secondAttribute="height" multiplier="355:170" id="ktQ-xV-dma"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 美股盘前：道指期货跌2.1% 本周将迎鲍威尔证词与“恐怖数据”                " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epT-6V-jsq" userLabel="title">
+                        <rect key="frame" x="14" y="76" width="408" height="54.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kJP-2Y-UmJ" firstAttribute="top" secondItem="mUb-FS-aDV" secondAttribute="top" constant="6" id="0gt-gI-1gN"/>
+                    <constraint firstItem="epT-6V-jsq" firstAttribute="leading" secondItem="mUb-FS-aDV" secondAttribute="leading" id="4nf-re-tOn"/>
+                    <constraint firstItem="epT-6V-jsq" firstAttribute="top" secondItem="mUb-FS-aDV" secondAttribute="bottom" constant="12" id="7Ze-Vi-uik"/>
+                    <constraint firstItem="kJP-2Y-UmJ" firstAttribute="leading" secondItem="mUb-FS-aDV" secondAttribute="trailing" constant="8" id="DWY-c8-1kH"/>
+                    <constraint firstAttribute="trailing" secondItem="epT-6V-jsq" secondAttribute="trailing" constant="14" id="IDO-Oc-AzX"/>
+                    <constraint firstItem="e82-XT-NMn" firstAttribute="leading" secondItem="kJP-2Y-UmJ" secondAttribute="leading" id="MX6-me-Zvt"/>
+                    <constraint firstItem="e82-XT-NMn" firstAttribute="bottom" secondItem="mUb-FS-aDV" secondAttribute="bottom" constant="-6" id="Po8-zL-x61"/>
+                    <constraint firstItem="tgJ-Gq-UQH" firstAttribute="trailing" secondItem="epT-6V-jsq" secondAttribute="trailing" id="Ur8-dB-ToH"/>
+                    <constraint firstItem="mUb-FS-aDV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Zwp-JO-C1B"/>
+                    <constraint firstAttribute="trailing" secondItem="AEK-1k-k3D" secondAttribute="trailing" constant="14" id="b1u-GM-6RK"/>
+                    <constraint firstItem="AEK-1k-k3D" firstAttribute="centerY" secondItem="mUb-FS-aDV" secondAttribute="centerY" id="fBw-T3-IXG"/>
+                    <constraint firstItem="mUb-FS-aDV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="fnK-N3-xWE"/>
+                    <constraint firstAttribute="bottom" secondItem="tgJ-Gq-UQH" secondAttribute="bottom" constant="20" id="pPU-Dk-1EV"/>
+                    <constraint firstItem="tgJ-Gq-UQH" firstAttribute="top" secondItem="epT-6V-jsq" secondAttribute="bottom" constant="14" id="s7u-0R-atU"/>
+                    <constraint firstItem="tgJ-Gq-UQH" firstAttribute="leading" secondItem="epT-6V-jsq" secondAttribute="leading" id="tA1-ka-mv3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="27.536231884057973" y="31.473214285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="guangzhukuang" width="60" height="22.5"/>
+        <image name="pic_tuijian1" width="355" height="170"/>
+        <image name="xinzuo3" width="44" height="44"/>
+    </resources>
+</document>

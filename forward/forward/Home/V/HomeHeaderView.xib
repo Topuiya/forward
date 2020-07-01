@@ -29,12 +29,21 @@
                                         <constraint firstAttribute="width" constant="22" id="inw-6e-yDv"/>
                                     </constraints>
                                 </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4g-hw-1NV">
+                                    <rect key="frame" x="52" y="0.0" width="282" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="a7x-ez-jnQ" firstAttribute="centerY" secondItem="hDh-ak-MAp" secondAttribute="centerY" id="4g6-ay-cMm"/>
                                 <constraint firstAttribute="height" constant="30" id="7un-G2-13H"/>
+                                <constraint firstAttribute="trailing" secondItem="y4g-hw-1NV" secondAttribute="trailing" constant="20" id="Ci3-TO-Dty"/>
                                 <constraint firstItem="a7x-ez-jnQ" firstAttribute="leading" secondItem="hDh-ak-MAp" secondAttribute="leading" constant="20" id="JEz-CJ-jBA"/>
+                                <constraint firstItem="y4g-hw-1NV" firstAttribute="leading" secondItem="a7x-ez-jnQ" secondAttribute="trailing" constant="10" id="bTK-S5-sIq"/>
+                                <constraint firstAttribute="bottom" secondItem="y4g-hw-1NV" secondAttribute="bottom" id="gAF-3Y-Yx6"/>
+                                <constraint firstItem="y4g-hw-1NV" firstAttribute="top" secondItem="hDh-ak-MAp" secondAttribute="top" id="iqr-Xs-7bd"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -55,12 +64,34 @@
                         <constraint firstAttribute="trailing" secondItem="jlC-73-2MR" secondAttribute="trailing" id="tpT-ob-RHX"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpO-GJ-rop" userLabel="ban">
-                    <rect key="frame" x="32" y="85" width="350" height="182"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpO-GJ-rop" userLabel="bannerView">
+                    <rect key="frame" x="32" y="85" width="350" height="130"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2c-yr-Qm0" userLabel="PagerView" customClass="FSPagerView" customModule="FSPagerView">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="130"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piR-th-2fj" customClass="FSPageControl" customModule="FSPagerView">
+                            <rect key="frame" x="0.0" y="105" width="350" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="ZXh-qw-Fdy"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
+                        <constraint firstItem="W2c-yr-Qm0" firstAttribute="leading" secondItem="TpO-GJ-rop" secondAttribute="leading" id="Bs2-qz-C7r"/>
                         <constraint firstAttribute="width" constant="350" id="Dk9-t0-jK0"/>
-                        <constraint firstAttribute="width" secondItem="TpO-GJ-rop" secondAttribute="height" multiplier="25:13" id="cWO-eZ-2Fe"/>
+                        <constraint firstAttribute="bottom" secondItem="piR-th-2fj" secondAttribute="bottom" id="OeI-my-Hpg"/>
+                        <constraint firstAttribute="trailing" secondItem="piR-th-2fj" secondAttribute="trailing" id="VJA-qI-tSu"/>
+                        <constraint firstItem="W2c-yr-Qm0" firstAttribute="top" secondItem="TpO-GJ-rop" secondAttribute="top" id="ZyT-mb-rKv"/>
+                        <constraint firstAttribute="width" secondItem="TpO-GJ-rop" secondAttribute="height" multiplier="350:130" id="cWO-eZ-2Fe"/>
+                        <constraint firstItem="piR-th-2fj" firstAttribute="leading" secondItem="TpO-GJ-rop" secondAttribute="leading" id="pd0-JS-UyK"/>
+                        <constraint firstAttribute="trailing" secondItem="W2c-yr-Qm0" secondAttribute="trailing" id="udM-Mq-uVY"/>
+                        <constraint firstAttribute="bottom" secondItem="W2c-yr-Qm0" secondAttribute="bottom" id="wL1-8F-woJ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,7 +100,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRi-6h-N4F" userLabel="bottomView">
-                    <rect key="frame" x="0.0" y="377" width="414" height="25"/>
+                    <rect key="frame" x="0.0" y="325" width="414" height="25"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEc-Zg-ueL">
                             <rect key="frame" x="10" y="3.5" width="21" height="18"/>
@@ -92,7 +123,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-FZ-H0g" userLabel="sortView">
-                    <rect key="frame" x="0.0" y="267" width="414" height="100"/>
+                    <rect key="frame" x="0.0" y="215" width="414" height="100"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFt-hh-TcH" userLabel="行情中心">
                             <rect key="frame" x="53" y="10" width="60" height="80"/>
@@ -235,6 +266,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="pageControl" destination="piR-th-2fj" id="gF9-J3-L8N"/>
+                <outlet property="pagerView" destination="W2c-yr-Qm0" id="qae-0q-yud"/>
                 <outlet property="searchViewTop" destination="VPA-8p-ih8" id="tDw-eF-NiQ"/>
             </connections>
             <point key="canvasLocation" x="-244.92753623188409" y="611.04910714285711"/>
