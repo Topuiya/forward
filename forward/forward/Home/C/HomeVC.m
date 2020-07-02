@@ -82,7 +82,13 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         UIView *headView = UIView.new;
         headView.frame = CGRectMake(0, 0, 0, 80);
         UIImageView *signImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pic_qiandao"]];
-        signImageView.frame = CGRectMake(SCREEN_WIDTH/2 -160 , -10, 320, 90);
+        signImageView.frame = CGRectMake(SCREEN_WIDTH/2 -160 , 10, 320, 90);
+        if (kIsIPhoneX_Series) {
+            signImageView.frame = CGRectMake(SCREEN_WIDTH/2 -160 , 10, 320, 90);
+        }else {
+            signImageView.frame = CGRectMake(SCREEN_WIDTH/2 -160 , -10, 320, 90);
+        }
+            
         [headView addSubview:signImageView];
         return headView;
     }
@@ -103,7 +109,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         return 340;
     }
     else if (section == 1) {
-        return 80;
+        return 90;
     }
     else {
         return 20;

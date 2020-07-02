@@ -83,8 +83,9 @@
     }
     else
     {
-        TopicVC *owVC = [[TopicVC alloc]init];
-        return owVC;
+        TopicVC *topicVC = [[TopicVC alloc]init];
+        topicVC.hbd_barShadowHidden = YES;
+        return topicVC;
     }
     
 }
