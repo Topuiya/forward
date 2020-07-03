@@ -39,7 +39,7 @@
         
         [button setTitle:nameArray[i] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.f];
-        
+        //button的样式
         [button setTitleColor:[UIColor colorWithHexString:@"#666666"] forState:UIControlStateNormal];
         button.layer.borderColor = [[UIColor colorWithHexString:@"#F1F1F0"] CGColor];
         //设置边框宽度
@@ -57,63 +57,44 @@
         [self.btnArray addObject:button];
         
         if (button.tag == 0) {
-            button.selected = YES;
-            _selectedBtn = button;
+            [self selectButtonColor:button];
         }
     }
 }
 
-- (void)didClickSortButton:(UIButton *)button {
-    self.selectedBtn = button;
-    button.selected = !button.selected;
-    for (int i = 0; i < self.btnArray.count; i++) {
-        UIButton *btn = self.btnArray[i];
-        if (button.tag == i) {
-            btn.selected = btn.selected;
-            if (_didClickSortButtonBlock) {
-                _didClickSortButtonBlock(button.tag);
-            }
-        }else {
-            btn.selected = NO;
+- (void)didClickSortButton:(UIButton *)sender {
+    self.selectedBtn = sender;
+    sender.selected = !sender.selected;
+    
+    for (NSInteger i = 0; i < [self.btnArray count]; i++) {
+        UIButton *tempBtn = self.btnArray[i];
+        if (sender.tag == i) {
+            tempBtn.selected = sender.selected;
+        } else {
+            tempBtn.selected = NO;
         }
-        
-        [self buttonColor:button];
+        //  改变按钮的tempBtn的状态
+        [self unSelectButtonColor:tempBtn];
     }
-    UIButton *btn = self.btnArray[button.tag];
+    
+    UIButton *btn = self.btnArray[sender.tag];
     if (btn.selected) {
-        //点击之后直接修改button的颜色
-//        [button setTitleColor:[UIColor colorWithHexString:@"#FB6E63"] forState:UIControlStateNormal];
-//        //选中之后的颜色
-//        button.layer.borderColor = [[UIColor colorWithHexString:@"#FDD9C1"] CGColor];
-        [self buttonColor:button];
-
-    }else {
-        //选中之后再次点击的颜色
-//        [button setTitleColor:[UIColor colorWithHexString:@"#666666"] forState:UIControlStateNormal];
-//        button.layer.borderColor = [[UIColor colorWithHexString:@"#F1F1F0"] CGColor];
-        [self selectButtonColor:button];
+        //改变btn的状态
+        [self selectButtonColor:btn];
+    } else {
+        //再次点击
     }
-}
-
-- (void)buttonColor:(UIButton *)btn {
-//    if (btn.selected == NO) {
-        [btn setTitleColor:[UIColor colorWithHexString:@"#FB6E63"] forState:UIControlStateNormal];
-        btn.layer.borderColor = [[UIColor colorWithHexString:@"#FDD9C1"] CGColor];
-//    }
-//    else {
-//        //选中之后的颜色
-//        btn.layer.borderColor = [[UIColor colorWithHexString:@"#666666"] CGColor];
-//        //点击之后直接修改button的颜色
-//        [btn setTitleColor:[UIColor colorWithHexString:@"#FB6E63"] forState:UIControlStateNormal];
-//    }
     
 }
 
 - (void)selectButtonColor:(UIButton *)btn {
-    //选中之后的颜色
-    btn.layer.borderColor = [[UIColor colorWithHexString:@"#666666"] CGColor];
-    //点击之后直接修改button的颜色
-    [btn setTitleColor:[UIColor colorWithHexString:@"#F1F1F0"] forState:UIControlStateNormal];
+    btn.layer.borderColor = [[UIColor colorWithHexString:@"#FB6463"] CGColor];
+    [btn setTitleColor:[UIColor colorWithHexString:@"#FB6E63"] forState:UIControlStateNormal];
+}
+
+- (void)unSelectButtonColor:(UIButton *)btn {
+    btn.layer.borderColor = [[UIColor colorWithHexString:@"#F1F1F0"] CGColor];
+    [btn setTitleColor:[UIColor colorWithHexString:@"#666666"] forState:UIControlStateNormal];
 }
 
 @end

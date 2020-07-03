@@ -9,6 +9,7 @@
 #import "AttentionVC.h"
 #import "ShowNewsTableCell.h"
 #import "AttentionHeadView.h"
+#import "AttentionTableCell.h"
 
 @interface AttentionVC () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -18,11 +19,13 @@
 @implementation AttentionVC
 
 NSString *AttentionShowID = @"AttentionShowTableCell";
+NSString *AttentionTableID = @"AttentionTableCell";
 - (void)viewDidLoad {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ShowNewsTableCell class]) bundle:nil] forCellReuseIdentifier:AttentionShowID];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([AttentionTableCell class]) bundle:nil] forCellReuseIdentifier:AttentionTableID];
 }
 - (UIView *)listView {
     return self.view;
@@ -41,8 +44,14 @@ NSString *AttentionShowID = @"AttentionShowTableCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ShowNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionShowID forIndexPath:indexPath];
-    return cell;
+    if (indexPath.section == 0) {
+        AttentionTableCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionTableID forIndexPath:indexPath];
+        return cell;
+    }
+    else {
+        ShowNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionShowID forIndexPath:indexPath];
+        return cell;
+    }
 }
 
 #pragma mark  - UITableViewDelegate
@@ -56,5 +65,13 @@ NSString *AttentionShowID = @"AttentionShowTableCell";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 180;
+    }
+    else
+        return UITableViewAutomaticDimension;
 }
 @end

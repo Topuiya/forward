@@ -66,6 +66,13 @@ NSString *MineOutID = @"MineOutTableCell";
         self.iconTopConstraint.constant = 90;
     }else
         self.iconTopConstraint.constant = 66;
+    self.title = @"个人中心";
+    self.hbd_barAlpha = 0;
+    //导航栏标题和状态栏颜色:白
+    self.hbd_blackBarStyle = YES;
+    //右边按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"icon_xiaoxizhongxin"] style:UIBarButtonItemStyleDone target:self action:@selector(infoBtnClick)];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -75,12 +82,7 @@ NSString *MineOutID = @"MineOutTableCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.title = @"个人中心";
-    self.hbd_barAlpha = 0;
-    //导航栏标题和状态栏颜色:白
-    self.hbd_blackBarStyle = YES;
-    //右边按钮
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"icon_xiaoxizhongxin"] style:UIBarButtonItemStyleDone target:self action:@selector(infoBtnClick)];
+    self.tabBarController.tabBar.hidden = NO;
 }
 - (void)infoBtnClick {
     

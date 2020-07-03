@@ -27,6 +27,7 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.6.3):
     - BRPickerView/Base
+  - FSCalendar (2.8.1)
   - FSPagerView (0.8.3)
   - HBDNavigationBar (1.7.7)
   - IQKeyboardManager (6.5.5)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - AFNetworking (<= 3.2.1)
   - AxcAE_TabBar
   - BRPickerView
+  - FSCalendar
   - FSPagerView
   - HBDNavigationBar (~> 1.7.7)
   - IQKeyboardManager
@@ -64,6 +66,7 @@ SPEC REPOS:
     - AFNetworking
     - AxcAE_TabBar
     - BRPickerView
+    - FSCalendar
     - FSPagerView
     - HBDNavigationBar
     - IQKeyboardManager
@@ -80,6 +83,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AxcAE_TabBar: 1d5bcf6c4921889dc38839b6ba2c584a9b55251a
   BRPickerView: 67ce855d07ff61771b586fea719053612bfeb1d6
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
@@ -92,6 +96,6 @@ SPEC CHECKSUMS:
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   YPNavigationBarTransition: 7480d51fd36ae8bf0d5ad42d7ec393adfd37d486
 
-PODFILE CHECKSUM: b077f2f9c45702a9154f10bd49d16a50a94cf550
+PODFILE CHECKSUM: 5422af24272013dabf7e013a4a012c93feb3ffdf
 
 COCOAPODS: 1.9.1

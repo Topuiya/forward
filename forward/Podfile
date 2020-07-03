@@ -15,6 +15,7 @@ pod 'SDWebImage', '>= 5.0.0'
 pod 'HBDNavigationBar', '~> 1.7.7'
 pod 'YPNavigationBarTransition', '~> 2.0'
 pod 'FSPagerView'
+pod 'FSCalendar'
 
 pod 'MJExtension'
 pod 'BRPickerView'

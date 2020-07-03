@@ -94,6 +94,22 @@
 		186E616B24ADD01E00658E37 /* AttentionHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E616A24ADD01E00658E37 /* AttentionHeadView.xib */; };
 		186E616E24ADD85B00658E37 /* TimeNewsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E616D24ADD85B00658E37 /* TimeNewsHeadView.m */; };
 		186E617024ADD8A900658E37 /* TimeNewsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E616F24ADD8A900658E37 /* TimeNewsHeadView.xib */; };
+		18A8A8EF24AEC595007D7AA9 /* TimeNewsTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A8ED24AEC595007D7AA9 /* TimeNewsTopTableCell.m */; };
+		18A8A8F024AEC595007D7AA9 /* TimeNewsTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A8EE24AEC595007D7AA9 /* TimeNewsTopTableCell.xib */; };
+		18A8A8F424AEC86E007D7AA9 /* TimeNewsDetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A8F224AEC86E007D7AA9 /* TimeNewsDetailTableCell.m */; };
+		18A8A8F524AEC86E007D7AA9 /* TimeNewsDetailTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A8F324AEC86E007D7AA9 /* TimeNewsDetailTableCell.xib */; };
+		18A8A8F924AEE081007D7AA9 /* QuotesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A8F724AEE081007D7AA9 /* QuotesCollectionCell.m */; };
+		18A8A8FA24AEE081007D7AA9 /* QuotesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A8F824AEE081007D7AA9 /* QuotesCollectionCell.xib */; };
+		18A8A8FE24AF0112007D7AA9 /* AttentionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A8FC24AF0112007D7AA9 /* AttentionTableCell.m */; };
+		18A8A8FF24AF0112007D7AA9 /* AttentionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A8FD24AF0112007D7AA9 /* AttentionTableCell.xib */; };
+		18A8A90324AF0174007D7AA9 /* AttentionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A90124AF0174007D7AA9 /* AttentionCollectionCell.m */; };
+		18A8A90424AF0174007D7AA9 /* AttentionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A90224AF0174007D7AA9 /* AttentionCollectionCell.xib */; };
+		18A8A90924AF0FB7007D7AA9 /* CalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A90724AF0FB7007D7AA9 /* CalendarVC.m */; };
+		18A8A90A24AF0FB7007D7AA9 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A90824AF0FB7007D7AA9 /* CalendarVC.xib */; };
+		18A8A90D24AF1839007D7AA9 /* CalendarHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A90C24AF1839007D7AA9 /* CalendarHeadView.m */; };
+		18A8A90F24AF1845007D7AA9 /* CalendarHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A90E24AF1845007D7AA9 /* CalendarHeadView.xib */; };
+		18A8A91324AF188A007D7AA9 /* CalendarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A91124AF188A007D7AA9 /* CalendarTableViewCell.m */; };
+		18A8A91424AF188A007D7AA9 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A91224AF188A007D7AA9 /* CalendarTableViewCell.xib */; };
 		548E54158FFAA2D7DD047AF7 /* Pods_forward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AA93C2C2B1812DD5096852 /* Pods_forward.framework */; };
 /* End PBXBuildFile section */
 
@@ -249,6 +265,30 @@
 		186E616C24ADD85B00658E37 /* TimeNewsHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeNewsHeadView.h; sourceTree = "<group>"; };
 		186E616D24ADD85B00658E37 /* TimeNewsHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNewsHeadView.m; sourceTree = "<group>"; };
 		186E616F24ADD8A900658E37 /* TimeNewsHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNewsHeadView.xib; sourceTree = "<group>"; };
+		18A8A8EC24AEC595007D7AA9 /* TimeNewsTopTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeNewsTopTableCell.h; sourceTree = "<group>"; };
+		18A8A8ED24AEC595007D7AA9 /* TimeNewsTopTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNewsTopTableCell.m; sourceTree = "<group>"; };
+		18A8A8EE24AEC595007D7AA9 /* TimeNewsTopTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNewsTopTableCell.xib; sourceTree = "<group>"; };
+		18A8A8F124AEC86E007D7AA9 /* TimeNewsDetailTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeNewsDetailTableCell.h; sourceTree = "<group>"; };
+		18A8A8F224AEC86E007D7AA9 /* TimeNewsDetailTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNewsDetailTableCell.m; sourceTree = "<group>"; };
+		18A8A8F324AEC86E007D7AA9 /* TimeNewsDetailTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNewsDetailTableCell.xib; sourceTree = "<group>"; };
+		18A8A8F624AEE081007D7AA9 /* QuotesCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuotesCollectionCell.h; sourceTree = "<group>"; };
+		18A8A8F724AEE081007D7AA9 /* QuotesCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuotesCollectionCell.m; sourceTree = "<group>"; };
+		18A8A8F824AEE081007D7AA9 /* QuotesCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotesCollectionCell.xib; sourceTree = "<group>"; };
+		18A8A8FB24AF0112007D7AA9 /* AttentionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttentionTableCell.h; sourceTree = "<group>"; };
+		18A8A8FC24AF0112007D7AA9 /* AttentionTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionTableCell.m; sourceTree = "<group>"; };
+		18A8A8FD24AF0112007D7AA9 /* AttentionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionTableCell.xib; sourceTree = "<group>"; };
+		18A8A90024AF0174007D7AA9 /* AttentionCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttentionCollectionCell.h; sourceTree = "<group>"; };
+		18A8A90124AF0174007D7AA9 /* AttentionCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttentionCollectionCell.m; sourceTree = "<group>"; };
+		18A8A90224AF0174007D7AA9 /* AttentionCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionCollectionCell.xib; sourceTree = "<group>"; };
+		18A8A90624AF0FB7007D7AA9 /* CalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarVC.h; sourceTree = "<group>"; };
+		18A8A90724AF0FB7007D7AA9 /* CalendarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarVC.m; sourceTree = "<group>"; };
+		18A8A90824AF0FB7007D7AA9 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
+		18A8A90B24AF1839007D7AA9 /* CalendarHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarHeadView.h; sourceTree = "<group>"; };
+		18A8A90C24AF1839007D7AA9 /* CalendarHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarHeadView.m; sourceTree = "<group>"; };
+		18A8A90E24AF1845007D7AA9 /* CalendarHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarHeadView.xib; sourceTree = "<group>"; };
+		18A8A91024AF188A007D7AA9 /* CalendarTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarTableViewCell.h; sourceTree = "<group>"; };
+		18A8A91124AF188A007D7AA9 /* CalendarTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarTableViewCell.m; sourceTree = "<group>"; };
+		18A8A91224AF188A007D7AA9 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		68AA93C2C2B1812DD5096852 /* Pods_forward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_forward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA66BFE9A349C9CCE360BAF /* Pods-forward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forward.release.xcconfig"; path = "Target Support Files/Pods-forward/Pods-forward.release.xcconfig"; sourceTree = "<group>"; };
 		85E0248B19BCD10735F60D87 /* Pods-forward.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forward.debug.xcconfig"; path = "Target Support Files/Pods-forward/Pods-forward.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +367,7 @@
 		1837C60624AADBCC00D27ACD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				18A8A90524AF0F7F007D7AA9 /* Calendar */,
 				1837050824AC1FB600A8278D /* M */,
 				1837C69324AB37C200D27ACD /* V */,
 				1837C69224AB37B300D27ACD /* C */,
@@ -505,6 +546,9 @@
 				1837C68324AB2F2E00D27ACD /* HomeQuotesTableCell.h */,
 				1837C68424AB2F2E00D27ACD /* HomeQuotesTableCell.m */,
 				1837C68524AB2F2E00D27ACD /* HomeQuotesTableCell.xib */,
+				18A8A8F624AEE081007D7AA9 /* QuotesCollectionCell.h */,
+				18A8A8F724AEE081007D7AA9 /* QuotesCollectionCell.m */,
+				18A8A8F824AEE081007D7AA9 /* QuotesCollectionCell.xib */,
 				1837C68824AB2F7E00D27ACD /* HotNewsTableCell.h */,
 				1837C68924AB2F7E00D27ACD /* HotNewsTableCell.m */,
 				1837C68A24AB2F7E00D27ACD /* HotNewsTableCell.xib */,
@@ -572,6 +616,12 @@
 				186E616224ADC3DC00658E37 /* HotTopicTableCell.h */,
 				186E616324ADC3DC00658E37 /* HotTopicTableCell.m */,
 				186E616424ADC3DC00658E37 /* HotTopicTableCell.xib */,
+				18A8A8FB24AF0112007D7AA9 /* AttentionTableCell.h */,
+				18A8A8FC24AF0112007D7AA9 /* AttentionTableCell.m */,
+				18A8A8FD24AF0112007D7AA9 /* AttentionTableCell.xib */,
+				18A8A90024AF0174007D7AA9 /* AttentionCollectionCell.h */,
+				18A8A90124AF0174007D7AA9 /* AttentionCollectionCell.m */,
+				18A8A90224AF0174007D7AA9 /* AttentionCollectionCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -611,6 +661,12 @@
 				186E616C24ADD85B00658E37 /* TimeNewsHeadView.h */,
 				186E616D24ADD85B00658E37 /* TimeNewsHeadView.m */,
 				186E616F24ADD8A900658E37 /* TimeNewsHeadView.xib */,
+				18A8A8EC24AEC595007D7AA9 /* TimeNewsTopTableCell.h */,
+				18A8A8ED24AEC595007D7AA9 /* TimeNewsTopTableCell.m */,
+				18A8A8EE24AEC595007D7AA9 /* TimeNewsTopTableCell.xib */,
+				18A8A8F124AEC86E007D7AA9 /* TimeNewsDetailTableCell.h */,
+				18A8A8F224AEC86E007D7AA9 /* TimeNewsDetailTableCell.m */,
+				18A8A8F324AEC86E007D7AA9 /* TimeNewsDetailTableCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -648,6 +704,22 @@
 				186E615624ADB19000658E37 /* MineTitleModel.m */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		18A8A90524AF0F7F007D7AA9 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				18A8A90624AF0FB7007D7AA9 /* CalendarVC.h */,
+				18A8A90724AF0FB7007D7AA9 /* CalendarVC.m */,
+				18A8A90824AF0FB7007D7AA9 /* CalendarVC.xib */,
+				18A8A90B24AF1839007D7AA9 /* CalendarHeadView.h */,
+				18A8A90C24AF1839007D7AA9 /* CalendarHeadView.m */,
+				18A8A90E24AF1845007D7AA9 /* CalendarHeadView.xib */,
+				18A8A91024AF188A007D7AA9 /* CalendarTableViewCell.h */,
+				18A8A91124AF188A007D7AA9 /* CalendarTableViewCell.m */,
+				18A8A91224AF188A007D7AA9 /* CalendarTableViewCell.xib */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		C0F5AB08285E99A6F78E17AA /* Frameworks */ = {
@@ -718,6 +790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1837C66B24AADE8B00D27ACD /* PublishVC.xib in Resources */,
+				18A8A90F24AF1845007D7AA9 /* CalendarHeadView.xib in Resources */,
 				186E615424ADAD3A00658E37 /* MineOutTableCell.xib in Resources */,
 				1837C69124AB37AD00D27ACD /* QuotesCenterTableCell.xib in Resources */,
 				1837C66624AADE7500D27ACD /* QuotesVC.xib in Resources */,
@@ -727,6 +800,7 @@
 				186E616B24ADD01E00658E37 /* AttentionHeadView.xib in Resources */,
 				1837C67D24AB0AE200D27ACD /* HomeHeaderView.xib in Resources */,
 				18672AFD24AC683F00BF4B17 /* TopicVC.xib in Resources */,
+				18A8A90A24AF0FB7007D7AA9 /* CalendarVC.xib in Resources */,
 				1837C5FD24AAD89400D27ACD /* LaunchScreen.storyboard in Resources */,
 				1837C69A24AB3B4500D27ACD /* QuotesHeadView.xib in Resources */,
 				1837C68224AB2D1E00D27ACD /* HomeTitleView.xib in Resources */,
@@ -734,10 +808,15 @@
 				186E614A24AD896A00658E37 /* MineItemTableCell.xib in Resources */,
 				1837C68C24AB2F7E00D27ACD /* HotNewsTableCell.xib in Resources */,
 				1837C66124AADE5700D27ACD /* HomeVC.xib in Resources */,
+				18A8A90424AF0174007D7AA9 /* AttentionCollectionCell.xib in Resources */,
+				18A8A8FF24AF0112007D7AA9 /* AttentionTableCell.xib in Resources */,
+				18A8A8F024AEC595007D7AA9 /* TimeNewsTopTableCell.xib in Resources */,
 				18672B1B24AC8B7200BF4B17 /* SearchHeadView.xib in Resources */,
+				18A8A8F524AEC86E007D7AA9 /* TimeNewsDetailTableCell.xib in Resources */,
 				1837C67024AADEA400D27ACD /* NewsVC.xib in Resources */,
 				18672AF824AC682800BF4B17 /* PopularVC.xib in Resources */,
 				1837C67524AADEB200D27ACD /* MineVC.xib in Resources */,
+				18A8A8FA24AEE081007D7AA9 /* QuotesCollectionCell.xib in Resources */,
 				1837C5FA24AAD89400D27ACD /* Assets.xcassets in Resources */,
 				18672B0524AC71F100BF4B17 /* ShowNewsTableCell.xib in Resources */,
 				1837C68724AB2F2E00D27ACD /* HomeQuotesTableCell.xib in Resources */,
@@ -747,6 +826,7 @@
 				18672AF324AC67CF00BF4B17 /* AttentionVC.xib in Resources */,
 				1837C5F824AAD89200D27ACD /* Main.storyboard in Resources */,
 				18672B1624AC891300BF4B17 /* BusinessNewsTableCell.xib in Resources */,
+				18A8A91424AF188A007D7AA9 /* CalendarTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +881,7 @@
 			files = (
 				18672AF724AC682800BF4B17 /* PopularVC.m in Sources */,
 				1837C67824AADFEB00D27ACD /* BaseNavigationController.m in Sources */,
+				18A8A8EF24AEC595007D7AA9 /* TimeNewsTopTableCell.m in Sources */,
 				186E615F24ADBC2400658E37 /* TopicFootView.m in Sources */,
 				1837C68B24AB2F7E00D27ACD /* HotNewsTableCell.m in Sources */,
 				1837C65224AADD2900D27ACD /* ENDNetWorkPOST.m in Sources */,
@@ -811,12 +892,15 @@
 				18672B0924AC819100BF4B17 /* BusinessNewsVC.m in Sources */,
 				1837C67424AADEB200D27ACD /* MineVC.m in Sources */,
 				18672AF224AC67CF00BF4B17 /* AttentionVC.m in Sources */,
+				18A8A91324AF188A007D7AA9 /* CalendarTableViewCell.m in Sources */,
 				1837C64D24AADD2900D27ACD /* NSString+DealError.m in Sources */,
 				1837C66524AADE7500D27ACD /* QuotesVC.m in Sources */,
 				1837C65B24AADD2900D27ACD /* BaseTabBarController.m in Sources */,
 				186E616E24ADD85B00658E37 /* TimeNewsHeadView.m in Sources */,
 				1837C66A24AADE8B00D27ACD /* PublishVC.m in Sources */,
+				18A8A8FE24AF0112007D7AA9 /* AttentionTableCell.m in Sources */,
 				18672AEE24AC673000BF4B17 /* ListViewController.m in Sources */,
+				18A8A90D24AF1839007D7AA9 /* CalendarHeadView.m in Sources */,
 				1837C64C24AADD2900D27ACD /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				1837C5EF24AAD89200D27ACD /* AppDelegate.m in Sources */,
 				1837C65C24AADD2900D27ACD /* TestTabBar.m in Sources */,
@@ -827,11 +911,14 @@
 				1837C60024AAD89400D27ACD /* main.m in Sources */,
 				1837C64E24AADD2900D27ACD /* EGHCodeTool.m in Sources */,
 				1837C65624AADD2900D27ACD /* ENDLCPNetWorkERROR.m in Sources */,
+				18A8A90924AF0FB7007D7AA9 /* CalendarVC.m in Sources */,
 				1837C64A24AADD2900D27ACD /* StringAndLabelDealTool.m in Sources */,
+				18A8A8F924AEE081007D7AA9 /* QuotesCollectionCell.m in Sources */,
 				186E615A24ADBBDE00658E37 /* TopicHeadView.m in Sources */,
 				1837C65324AADD2900D27ACD /* ENDNetWorkManager.m in Sources */,
 				1837C68024AB2D1300D27ACD /* HomeTitleView.m in Sources */,
 				1837C64B24AADD2900D27ACD /* Toast.m in Sources */,
+				18A8A90324AF0174007D7AA9 /* AttentionCollectionCell.m in Sources */,
 				1837C66024AADE5700D27ACD /* HomeVC.m in Sources */,
 				186E616924ADD00F00658E37 /* AttentionHeadView.m in Sources */,
 				1837C65124AADD2900D27ACD /* LCPReachability.m in Sources */,
@@ -840,6 +927,7 @@
 				1837050E24AC205B00A8278D /* HomeBannerDataModel.m in Sources */,
 				1837C67B24AB09E800D27ACD /* HomeHeaderView.m in Sources */,
 				18672B0424AC71F100BF4B17 /* ShowNewsTableCell.m in Sources */,
+				18A8A8F424AEC86E007D7AA9 /* TimeNewsDetailTableCell.m in Sources */,
 				1837C68624AB2F2E00D27ACD /* HomeQuotesTableCell.m in Sources */,
 				1837C64624AADD2900D27ACD /* EGHImagePickerVCManager.m in Sources */,
 				1837C66F24AADEA400D27ACD /* NewsVC.m in Sources */,

@@ -18,7 +18,11 @@
 @implementation QuotesVC
 
 NSString *QuotesCenterTableCellID = @"QuotesCenterTableCell";
+
 - (void)viewDidLoad {
+    self.title = @"行情中心";
+    self.hbd_barTintColor = UIColor.whiteColor;
+    
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -26,8 +30,7 @@ NSString *QuotesCenterTableCellID = @"QuotesCenterTableCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.title = @"行情中心";
-    self.hbd_barTintColor = UIColor.whiteColor;
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 #pragma mark - UITableViewViewDataSource

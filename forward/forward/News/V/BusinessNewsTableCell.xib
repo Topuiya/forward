@@ -36,7 +36,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvx-Kn-XHA">
-                        <rect key="frame" x="340.5" y="58.5" width="30" height="29"/>
+                        <rect key="frame" x="340.5" y="64.5" width="30" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="233">
                             <color key="titleColor" red="0.60641843080000002" green="0.60639494660000004" blue="0.60641086099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -46,12 +46,12 @@
                 <constraints>
                     <constraint firstItem="Uvx-Kn-XHA" firstAttribute="trailing" secondItem="qCP-XZ-Udf" secondAttribute="trailing" id="4PU-ub-qDK"/>
                     <constraint firstItem="qCP-XZ-Udf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5G8-St-j9F"/>
-                    <constraint firstItem="Uvx-Kn-XHA" firstAttribute="bottom" secondItem="Rz5-tl-msV" secondAttribute="bottom" constant="-6" id="D7T-DF-gP7"/>
+                    <constraint firstItem="Uvx-Kn-XHA" firstAttribute="bottom" secondItem="Rz5-tl-msV" secondAttribute="bottom" id="D7T-DF-gP7"/>
                     <constraint firstAttribute="bottom" secondItem="Rz5-tl-msV" secondAttribute="bottom" constant="16" id="NK8-ko-Hlz"/>
                     <constraint firstAttribute="trailing" secondItem="Rz5-tl-msV" secondAttribute="trailing" constant="16" id="V7q-Hd-sN1"/>
                     <constraint firstItem="Xw2-4f-nOh" firstAttribute="leading" secondItem="qCP-XZ-Udf" secondAttribute="leading" id="WeA-Ks-rnI"/>
                     <constraint firstItem="Rz5-tl-msV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="cx5-ta-4Ru"/>
-                    <constraint firstItem="Xw2-4f-nOh" firstAttribute="bottom" secondItem="Uvx-Kn-XHA" secondAttribute="bottom" id="ekw-ES-tAS"/>
+                    <constraint firstItem="Uvx-Kn-XHA" firstAttribute="centerY" secondItem="Xw2-4f-nOh" secondAttribute="centerY" id="deP-C9-Gmy"/>
                     <constraint firstItem="qCP-XZ-Udf" firstAttribute="top" secondItem="Rz5-tl-msV" secondAttribute="top" constant="6" id="gMd-k2-JPv"/>
                     <constraint firstItem="Rz5-tl-msV" firstAttribute="leading" secondItem="qCP-XZ-Udf" secondAttribute="trailing" constant="16" id="jLH-86-hOd"/>
                 </constraints>

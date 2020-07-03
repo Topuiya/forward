@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSArray *bannerArray;
 @property (weak, nonatomic) IBOutlet FSPagerView *pagerView;
 @property (weak, nonatomic) IBOutlet FSPageControl *pageControl;
+/*四个分类View*/
+@property (weak, nonatomic) IBOutlet UIView *calendarView;
 
 @end
 
@@ -60,9 +62,25 @@ NSString *HomeBannerCellID = @"BannerCell";
         self.searchViewTop.constant += 20;
     }
     [self addFSPagerView];
+    
+    [self addViewTapGesture];
+    
     return self;
 }
 
+//添加View手势
+- (void)addViewTapGesture {
+    //日历数据
+    self.calendarView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *calendarViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedCarlendarView)];
+    [self.calendarView addGestureRecognizer:calendarViewTap];
+}
+
+- (void)didSelectedCarlendarView {
+    if ([self.delegate respondsToSelector:@selector(didSelectedCarlendarView)]) {
+        [self.delegate didSelectedCarlendarView];
+    }
+}
 
 - (void)addFSPagerView {
     self.pagerView.delegate = self;
@@ -74,7 +92,6 @@ NSString *HomeBannerCellID = @"BannerCell";
     
     self.pageControl.numberOfPages = self.bannerArray.count;
     self.pageControl.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-//    self.pageControl.contentInsets = UIEdgeInsetsMake(0, 20, 0, 20);
     [self.pageControl setImage:[UIImage imageNamed:@"bannergundong"] forState:UIControlStateNormal];
     [self.pageControl setImage:[UIImage imageNamed:@"bannerxinshigundong"] forState:UIControlStateSelected];
     [self.pagerView registerClass:[FSPagerViewCell class] forCellWithReuseIdentifier:@"cell"];

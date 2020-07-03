@@ -8,12 +8,12 @@
 
 #import "HomeVC.h"
 #import "HomeHeaderView.h"
-#import <Masonry.h>
 #import "HomeTitleView.h"
 #import "HomeQuotesTableCell.h"
 #import "HotNewsTableCell.h"
+#import "CalendarVC.h"
 
-@interface HomeVC () <UITableViewDelegate,UITableViewDataSource>
+@interface HomeVC () <UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTop;
@@ -29,7 +29,6 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeQuotesTableCell class]) bundle:nil] forCellReuseIdentifier:QuotesTableCellID];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HotNewsTableCell class]) bundle:nil] forCellReuseIdentifier:HotNewsTableCellID];
@@ -47,7 +46,11 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     else {
         self.tableViewTop.constant = -20;
     }
-    
+    self.tabBarController.tabBar.hidden = NO;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    self.hbd_barHidden = NO;
+//    self.tabBarController.tabBar.hidden = YES;
 }
 
 #pragma mark - UITableViewViewDataSource
@@ -66,16 +69,27 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == 3) {
-    HotNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:HotNewsTableCellID];
-    return cell;
-//    }
-    
+    if (indexPath.section == 2) {
+        HomeQuotesTableCell *cell = [tableView dequeueReusableCellWithIdentifier:QuotesTableCellID];
+        return cell;
+    }
+    else {
+        HotNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:HotNewsTableCellID];
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 2) {
+        return 100;
+    } else
+        return UITableViewAutomaticDimension;;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         HomeHeaderView *headView = [[HomeHeaderView alloc] init];
+        headView.delegate = self;
         return headView;
     }
     else if (section == 1) {
@@ -115,6 +129,16 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         return 20;
     }
 
+}
+
+#pragma mark - HomeHeaderViewDelegate
+
+//日历数据
+- (void)didSelectedCarlendarView {
+    CalendarVC *vc = CalendarVC.new;
+//    vc.tabBarController.tabBar.hidden = YES;
+//    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

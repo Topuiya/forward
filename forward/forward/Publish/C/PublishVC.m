@@ -40,6 +40,10 @@
     self.navigationItem.titleView = self.myCategoryView;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 

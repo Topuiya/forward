@@ -15,8 +15,29 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fCS-Td-pPI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jVN-Lc-9io">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fCS-Td-pPI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0NG-sf-o4b"/>
+                    <constraint firstAttribute="trailing" secondItem="fCS-Td-pPI" secondAttribute="trailing" id="4h2-UE-Wl0"/>
+                    <constraint firstAttribute="bottom" secondItem="fCS-Td-pPI" secondAttribute="bottom" id="E7o-ph-maq"/>
+                    <constraint firstItem="fCS-Td-pPI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rzB-LE-S8R"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="collectionView" destination="fCS-Td-pPI" id="yAE-3d-HbY"/>
+            </connections>
             <point key="canvasLocation" x="92.028985507246389" y="172.43303571428569"/>
         </tableViewCell>
     </objects>

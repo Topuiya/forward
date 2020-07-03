@@ -266,6 +266,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="calendarView" destination="AOB-mc-yFV" id="tfJ-Qw-d0R"/>
                 <outlet property="pageControl" destination="piR-th-2fj" id="gF9-J3-L8N"/>
                 <outlet property="pagerView" destination="W2c-yr-Qm0" id="qae-0q-yud"/>
                 <outlet property="searchViewTop" destination="VPA-8p-ih8" id="tDw-eF-NiQ"/>

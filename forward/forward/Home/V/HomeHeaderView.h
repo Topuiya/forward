@@ -10,7 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class HomeHeaderView;
+
+@protocol HomeHeaderViewDelegate <NSObject>
+
+- (void)didSelectedCarlendarView;
+
+@end
+
 @interface HomeHeaderView : UIView
+
+@property (nonatomic, weak) id <HomeHeaderViewDelegate> delegate;
 
 @end
 
