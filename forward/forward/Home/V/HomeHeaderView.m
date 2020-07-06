@@ -86,6 +86,9 @@ NSString *HomeBannerCellID = @"BannerCell";
     self.pagerView.delegate = self;
     self.pagerView.dataSource = self;
 
+    self.pagerView.layer.shadowRadius = 0;
+    self.pagerView.layer.shadowOpacity = 0;
+    
     //效果:交叠
     self.pagerView.transformer = [[FSPagerViewTransformer alloc] initWithType:FSPagerViewTransformerTypeOverlap];
     self.pagerView.itemSize = FSPagerViewAutomaticSize;

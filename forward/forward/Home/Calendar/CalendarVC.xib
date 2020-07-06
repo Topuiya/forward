@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarVC">
             <connections>
+                <outlet property="calendar" destination="kZ3-QG-pnM" id="8We-sT-krS"/>
                 <outlet property="tableView" destination="DhL-1w-Jte" id="8dT-Qf-ijQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,8 +19,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZ3-QG-pnM" customClass="FSCalendar">
+                    <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="E3R-fz-wvX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DhL-1w-Jte">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
@@ -27,11 +46,14 @@
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="DhL-1w-Jte" secondAttribute="bottom" id="13N-OX-Erq"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="DhL-1w-Jte" secondAttribute="trailing" id="54c-uv-3lj"/>
+                <constraint firstItem="kZ3-QG-pnM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="9Xo-hT-3WE"/>
                 <constraint firstItem="DhL-1w-Jte" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="IsR-pq-YdJ"/>
-                <constraint firstItem="DhL-1w-Jte" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="fdR-h9-Xlx"/>
+                <constraint firstItem="kZ3-QG-pnM" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="YSg-On-hgU"/>
+                <constraint firstItem="DhL-1w-Jte" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="70" id="fdR-h9-Xlx"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="kZ3-QG-pnM" secondAttribute="trailing" id="h6c-Bq-yVn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="133" y="121"/>
+            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
         </view>
     </objects>
 </document>

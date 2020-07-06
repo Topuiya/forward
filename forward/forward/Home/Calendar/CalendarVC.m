@@ -10,9 +10,12 @@
 #import "CalendarHeadView.h"
 #import "CalendarTableViewCell.h"
 #import "UIImage+OriginalImage.h"
+#import <FSCalendar.h>
+#import "UIImage+Image.h"
 
-@interface CalendarVC () <UITableViewDelegate,UITableViewDataSource>
+@interface CalendarVC () <UITableViewDelegate,UITableViewDataSource,FSCalendarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet FSCalendar *calendar;
 
 @end
 
@@ -32,6 +35,19 @@ NSString *CalendarTableID = @"CalendarTableViewCell";
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CalendarTableViewCell class]) bundle:nil] forCellReuseIdentifier:CalendarTableID];
+    
+    [self setCalendarStyle];
+    
+    
+}
+
+- (void)setCalendarStyle {
+    self.calendar.delegate = self;
+    self.calendar.backgroundColor = [UIColor colorWithHexString:@"#F1F1F1"];
+    self.calendar.appearance.weekdayTextColor = [UIColor colorWithHexString:@"#5B5B5B"];
+    self.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh_ch"];
+    self.calendar.scope = FSCalendarScopeWeek;
+    self.calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,12 +67,18 @@ NSString *CalendarTableID = @"CalendarTableViewCell";
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CalendarHeadView *headView = CalendarHeadView.new;
-    return headView;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    CalendarHeadView *headView = CalendarHeadView.new;
+//    return headView;
+//}
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 80;
+    return 0.01f;
+}
+
+
+- (nullable UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance fillSelectionColorForDate:(NSDate *)date {
+    UIImage *selectedImage = [UIImage imageNamed:@"xuanzhongkang"];
+    return [UIColor colorWithPatternImage:selectedImage];
 }
 
 @end

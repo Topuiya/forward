@@ -12,13 +12,19 @@
 #import "MineInfoTableCell.h"
 #import "MineOutTableCell.h"
 #import "MineTitleModel.h"
+#import "RegisterVC.h"
+#import "LoginVC.h"
 
 @interface MineVC () <UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconTopConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic, strong) NSArray *titleArray;
+
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+//签到按钮
+@property (weak, nonatomic) IBOutlet UIView *signinBtn;
 
 @end
 
@@ -73,12 +79,9 @@ NSString *MineOutID = @"MineOutTableCell";
     //右边按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"icon_xiaoxizhongxin"] style:UIBarButtonItemStyleDone target:self action:@selector(infoBtnClick)];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineItemTableCell class]) bundle:nil] forCellReuseIdentifier:MineItemID];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineInfoTableCell class]) bundle:nil] forCellReuseIdentifier:MineInfoID];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineOutTableCell class]) bundle:nil] forCellReuseIdentifier:MineOutID];
+    [self loadTableView];
+    
+    [self addIconImageViewTouch];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,6 +90,32 @@ NSString *MineOutID = @"MineOutTableCell";
 - (void)infoBtnClick {
     
 }
+
+//头像点击
+- (void)addIconImageViewTouch {
+    self.iconImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *iconTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedIconImageView)];
+    [self.iconImageView addGestureRecognizer:iconTap];
+    
+}
+- (void)didSelectedIconImageView {
+//    RegisterVC *registerVC = RegisterVC.new;
+//    [self presentViewController:registerVC animated:YES completion:^{
+//    }];
+    
+    LoginVC *loginVC = LoginVC.new;
+    [self.navigationController pushViewController:loginVC animated:YES];
+}
+
+- (void)loadTableView {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineItemTableCell class]) bundle:nil] forCellReuseIdentifier:MineItemID];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineInfoTableCell class]) bundle:nil] forCellReuseIdentifier:MineInfoID];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineOutTableCell class]) bundle:nil] forCellReuseIdentifier:MineOutID];
+}
+
 
 #pragma mark  - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -10,7 +10,8 @@
 #import <FSCalendar.h>
 
 @interface CalendarHeadView () <FSCalendarDelegate,FSCalendarDataSource>
-@property (weak, nonatomic) FSCalendar *calendar;
+
+@property (weak, nonatomic) IBOutlet FSCalendar *calendar;
 
 @end
 
@@ -27,6 +28,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.calendar.appearance.weekdayTextColor = UIColor.blackColor;
+    self.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh_ch"];
+    self.calendar.scope = FSCalendarScopeWeek;
+    self.calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
 }
 
 

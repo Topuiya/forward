@@ -9,7 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineVC">
             <connections>
+                <outlet property="iconImageView" destination="ePp-qo-OUm" id="Gxl-8q-w69"/>
                 <outlet property="iconTopConstraint" destination="d5G-l9-sHe" id="izT-58-mQF"/>
+                <outlet property="nickNameLabel" destination="V2g-y3-CXj" id="KNV-18-Rcs"/>
+                <outlet property="signinBtn" destination="lth-YR-r22" id="k7T-J4-Y6L"/>
                 <outlet property="tableView" destination="SJw-cF-cUD" id="iXR-ck-zIl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
