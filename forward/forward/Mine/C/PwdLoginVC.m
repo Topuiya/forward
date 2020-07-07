@@ -9,34 +9,43 @@
 #import "PwdLoginVC.h"
 #import "JXCategoryTitleView.h"
 #import "RegisterVC.h"
+#import "UserModel.h"
 
 @interface PwdLoginVC ()
 
 @property (weak, nonatomic) IBOutlet UIButton *getNumBtn;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+
+//最底立即注册
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 @property (weak, nonatomic) IBOutlet UILabel *promptLabel;
+//三个textField
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextF;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTextF;
 
+@property (copy, nonatomic)NSString *phone;
+@property (copy, nonatomic)NSString *pwd;
 @end
 
 @implementation PwdLoginVC
 
 - (void)viewDidLoad {
-    if (SCREEN_WIDTH == 375) {
-        self.bottomViewHeight.constant = 350;
-    }
+    //隐藏提示文字
+    self.promptLabel.hidden = YES;
+//    if (SCREEN_WIDTH == 375) {
+//        self.bottomViewHeight.constant = 350;
+//    }
+    
+    self.bottomView.layer.borderWidth = 1;
+    self.bottomView.layer.borderColor = [[UIColor colorWithHexString:@"#F1B5B1"] CGColor];
     
     self.getNumBtn.tintColor = UIColor.whiteColor;
+    //修改光标颜色
+    self.phoneTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
+    self.pwdTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
     
-    CAGradientLayer *gl = [CAGradientLayer layer];
-    gl.cornerRadius = 12.5;
-    gl.frame = CGRectMake(0,0,_getNumBtn.frame.size.width,_getNumBtn.frame.size.height);
-    gl.startPoint = CGPointMake(0, 0);
-    gl.endPoint = CGPointMake(1, 1);
-    gl.locations = @[@(0.0),@(1.0f)];
-    gl.colors = @[(__bridge id)RGB(251, 182, 99).CGColor,(__bridge id)RGB(251, 100, 99).CGColor];
-    [self.getNumBtn.layer addSublayer:gl];
-    
+
     [self.registerBtn addTarget:self action:@selector(didRdegisterBtnClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -48,6 +57,33 @@
 
 - (UIView *)listView {
     return self.view;
+}
+
+- (IBAction)loginBtnClick:(UIButton *)sender {
+    [self loginWithPwd];
+}
+
+
+- (void)loginWithPwd
+{
+    _phone = self.phoneTextF.text;
+    _pwd = self.pwdTextF.text;
+    
+    WEAKSELF
+    NSDictionary *dic = @{@"phone":_phone,@"password":_pwd,@"type":@(1),@"project":ProjectCategory};
+    [ENDNetWorkManager getWithPathUrl:@"/system/login" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        //登录之后归档数据
+        [EGHCodeTool archiveOJBC:user saveKey:userModel];
+        NSNumber *islog = @1;
+        [EGHCodeTool archiveOJBC:islog saveKey:isLog];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"登录失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 @end

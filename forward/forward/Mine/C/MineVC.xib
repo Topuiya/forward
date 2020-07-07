@@ -9,9 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineVC">
             <connections>
+                <outlet property="attentionLaebl" destination="qCi-7b-rIQ" id="hYK-2J-CMU"/>
+                <outlet property="fansLabel" destination="3fw-3l-cXb" id="dyW-eY-G8b"/>
+                <outlet property="historyLabel" destination="7ne-Wq-eMl" id="WTM-Mb-3Xk"/>
                 <outlet property="iconImageView" destination="ePp-qo-OUm" id="Gxl-8q-w69"/>
                 <outlet property="iconTopConstraint" destination="d5G-l9-sHe" id="izT-58-mQF"/>
-                <outlet property="nickNameLabel" destination="V2g-y3-CXj" id="KNV-18-Rcs"/>
+                <outlet property="nickNameLabel" destination="V2g-y3-CXj" id="zxN-aW-t0G"/>
                 <outlet property="signinBtn" destination="lth-YR-r22" id="k7T-J4-Y6L"/>
                 <outlet property="tableView" destination="SJw-cF-cUD" id="iXR-ck-zIl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yor-LL-M4p">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yor-LL-M4p" userLabel="TopView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine-beijing" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-qB-fxR">
@@ -109,8 +112,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sje-Zb-XXc" userLabel="historyView">
                                     <rect key="frame" x="174.5" y="15.5" width="65" height="50"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-Wq-eMl">
-                                            <rect key="frame" x="29" y="6" width="7" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-Wq-eMl">
+                                            <rect key="frame" x="28" y="6" width="9.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -125,7 +128,6 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="65" id="3Z6-Za-6PU"/>
                                         <constraint firstItem="7ne-Wq-eMl" firstAttribute="centerX" secondItem="Sje-Zb-XXc" secondAttribute="centerX" id="9fS-Ig-HGt"/>
-                                        <constraint firstItem="Box-Ed-rrC" firstAttribute="top" secondItem="7ne-Wq-eMl" secondAttribute="bottom" constant="7" id="G6A-os-BqE"/>
                                         <constraint firstItem="7ne-Wq-eMl" firstAttribute="centerY" secondItem="Sje-Zb-XXc" secondAttribute="centerY" multiplier="0.6" id="M1z-eK-pSe"/>
                                         <constraint firstAttribute="height" constant="50" id="PWc-9h-vcN"/>
                                         <constraint firstItem="Box-Ed-rrC" firstAttribute="centerX" secondItem="Sje-Zb-XXc" secondAttribute="centerX" id="ayX-KM-MbW"/>
@@ -175,6 +177,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Sje-Zb-XXc" firstAttribute="centerY" secondItem="8Ah-0R-sys" secondAttribute="centerY" id="46a-bu-crT"/>
+                                <constraint firstItem="Box-Ed-rrC" firstAttribute="centerY" secondItem="4Ff-hY-UOa" secondAttribute="centerY" id="9k7-EP-K87"/>
                                 <constraint firstItem="3Os-5G-dCW" firstAttribute="centerY" secondItem="8Ah-0R-sys" secondAttribute="centerY" id="Ina-PD-U26"/>
                                 <constraint firstItem="e7k-ql-f0R" firstAttribute="centerY" secondItem="ap9-R8-4hL" secondAttribute="centerY" id="Kug-da-Jgy"/>
                                 <constraint firstItem="ap9-R8-4hL" firstAttribute="centerX" secondItem="8Ah-0R-sys" secondAttribute="centerX" multiplier="0.7" id="O2D-a6-QEo"/>

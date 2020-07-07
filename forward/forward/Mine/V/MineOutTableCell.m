@@ -8,17 +8,22 @@
 
 #import "MineOutTableCell.h"
 
+@interface MineOutTableCell ()
+@property (weak, nonatomic) IBOutlet UIButton *outBtn;
+
+@end
+
 @implementation MineOutTableCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    [self.outBtn addTarget:self action:@selector(clickOutButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)clickOutButton:(UIButton *)button {
+    if (_didClickOutButtonBlock) {
+        _didClickOutButtonBlock();
+    }
 }
 
 @end

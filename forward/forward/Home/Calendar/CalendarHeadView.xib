@@ -10,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CalendarHeadView">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="347"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="314"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Rv-vTA" customClass="FSCalendar">
@@ -40,7 +40,7 @@
             <connections>
                 <outlet property="calendar" destination="voa-Rv-vTA" id="Ap9-Bu-G6K"/>
             </connections>
-            <point key="canvasLocation" x="85.507246376811594" y="53.236607142857139"/>
+            <point key="canvasLocation" x="85.507246376811594" y="42.1875"/>
         </view>
     </objects>
 </document>

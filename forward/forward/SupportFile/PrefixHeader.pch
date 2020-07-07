@@ -30,6 +30,9 @@
 #import <HBDNavigationBar/HBDNavigationController.h>
 #import "UIColor+Hex.h"
 
+#define userModel @"userModel"
+#define isLog @"islog"
+
 #define DJLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
 #endif /* PrefixHeader_pch */

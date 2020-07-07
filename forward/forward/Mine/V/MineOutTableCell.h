@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MineOutTableCell : UITableViewCell
 
+@property (nonatomic, copy)void (^didClickOutButtonBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

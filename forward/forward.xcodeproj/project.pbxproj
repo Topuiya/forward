@@ -64,6 +64,9 @@
 		184FB1CE24B3131F00FD1AE6 /* OtherLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FB1CC24B3131F00FD1AE6 /* OtherLoginVC.m */; };
 		184FB1CF24B3131F00FD1AE6 /* OtherLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184FB1CD24B3131F00FD1AE6 /* OtherLoginVC.xib */; };
 		184FB1D224B313D100FD1AE6 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FB1D124B313D100FD1AE6 /* LoginVC.m */; };
+		185A547424B40B6C0020410D /* MyCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A547324B40B6C0020410D /* MyCodeView.m */; };
+		185A547624B40B790020410D /* MyCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185A547524B40B790020410D /* MyCodeView.xib */; };
+		185A547924B445480020410D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A547824B445480020410D /* UserModel.m */; };
 		18672AEB24AC66B800BF4B17 /* ContentBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18672AEA24AC66B800BF4B17 /* ContentBaseViewController.m */; };
 		18672AEE24AC673000BF4B17 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18672AED24AC673000BF4B17 /* ListViewController.m */; };
 		18672AF224AC67CF00BF4B17 /* AttentionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18672AF024AC67CF00BF4B17 /* AttentionVC.m */; };
@@ -226,6 +229,11 @@
 		184FB1CD24B3131F00FD1AE6 /* OtherLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherLoginVC.xib; sourceTree = "<group>"; };
 		184FB1D024B313D100FD1AE6 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		184FB1D124B313D100FD1AE6 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		185A547224B40B6C0020410D /* MyCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCodeView.h; sourceTree = "<group>"; };
+		185A547324B40B6C0020410D /* MyCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCodeView.m; sourceTree = "<group>"; };
+		185A547524B40B790020410D /* MyCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCodeView.xib; sourceTree = "<group>"; };
+		185A547724B445480020410D /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		185A547824B445480020410D /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		18672AE924AC66B800BF4B17 /* ContentBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentBaseViewController.h; sourceTree = "<group>"; };
 		18672AEA24AC66B800BF4B17 /* ContentBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentBaseViewController.m; sourceTree = "<group>"; };
 		18672AEC24AC673000BF4B17 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
@@ -447,24 +455,24 @@
 		1837C60C24AADD2900D27ACD /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				1837C60D24AADD2900D27ACD /* EGHImagePickerVCManager.m */,
-				1837C60E24AADD2900D27ACD /* TimerTool.m */,
-				1837C60F24AADD2900D27ACD /* ENDGradientLabel.m */,
-				1837C61024AADD2900D27ACD /* EGHViewsTool.m */,
-				1837C61124AADD2900D27ACD /* StringAndLabelDealTool.m */,
-				1837C61224AADD2900D27ACD /* UILabel+YBAttributeTextTapAction.h */,
-				1837C61324AADD2900D27ACD /* NSString+DealError.h */,
 				1837C61424AADD2900D27ACD /* EGHCodeTool.h */,
-				1837C61524AADD2900D27ACD /* Toast.m */,
-				1837C61624AADD2900D27ACD /* EGHImagePickerVCManager.h */,
-				1837C61724AADD2900D27ACD /* TimerTool.h */,
-				1837C61824AADD2900D27ACD /* UILabel+YBAttributeTextTapAction.m */,
-				1837C61924AADD2900D27ACD /* EGHViewsTool.h */,
-				1837C61A24AADD2900D27ACD /* StringAndLabelDealTool.h */,
-				1837C61B24AADD2900D27ACD /* ENDGradientLabel.h */,
-				1837C61C24AADD2900D27ACD /* Toast.h */,
-				1837C61D24AADD2900D27ACD /* NSString+DealError.m */,
 				1837C61E24AADD2900D27ACD /* EGHCodeTool.m */,
+				1837C61624AADD2900D27ACD /* EGHImagePickerVCManager.h */,
+				1837C60D24AADD2900D27ACD /* EGHImagePickerVCManager.m */,
+				1837C61924AADD2900D27ACD /* EGHViewsTool.h */,
+				1837C61024AADD2900D27ACD /* EGHViewsTool.m */,
+				1837C61B24AADD2900D27ACD /* ENDGradientLabel.h */,
+				1837C60F24AADD2900D27ACD /* ENDGradientLabel.m */,
+				1837C61324AADD2900D27ACD /* NSString+DealError.h */,
+				1837C61D24AADD2900D27ACD /* NSString+DealError.m */,
+				1837C61A24AADD2900D27ACD /* StringAndLabelDealTool.h */,
+				1837C61124AADD2900D27ACD /* StringAndLabelDealTool.m */,
+				1837C61724AADD2900D27ACD /* TimerTool.h */,
+				1837C60E24AADD2900D27ACD /* TimerTool.m */,
+				1837C61C24AADD2900D27ACD /* Toast.h */,
+				1837C61524AADD2900D27ACD /* Toast.m */,
+				1837C61224AADD2900D27ACD /* UILabel+YBAttributeTextTapAction.h */,
+				1837C61824AADD2900D27ACD /* UILabel+YBAttributeTextTapAction.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -706,6 +714,9 @@
 				184FB1CB24B3131F00FD1AE6 /* OtherLoginVC.h */,
 				184FB1CC24B3131F00FD1AE6 /* OtherLoginVC.m */,
 				184FB1CD24B3131F00FD1AE6 /* OtherLoginVC.xib */,
+				185A547224B40B6C0020410D /* MyCodeView.h */,
+				185A547324B40B6C0020410D /* MyCodeView.m */,
+				185A547524B40B790020410D /* MyCodeView.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -731,6 +742,8 @@
 			children = (
 				186E615524ADB19000658E37 /* MineTitleModel.h */,
 				186E615624ADB19000658E37 /* MineTitleModel.m */,
+				185A547724B445480020410D /* UserModel.h */,
+				185A547824B445480020410D /* UserModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -857,6 +870,7 @@
 				186E616624ADC3DC00658E37 /* HotTopicTableCell.xib in Resources */,
 				18672AF324AC67CF00BF4B17 /* AttentionVC.xib in Resources */,
 				1837C5F824AAD89200D27ACD /* Main.storyboard in Resources */,
+				185A547624B40B790020410D /* MyCodeView.xib in Resources */,
 				18672B1624AC891300BF4B17 /* BusinessNewsTableCell.xib in Resources */,
 				18A8A91424AF188A007D7AA9 /* CalendarTableViewCell.xib in Resources */,
 			);
@@ -930,6 +944,7 @@
 				1837C66524AADE7500D27ACD /* QuotesVC.m in Sources */,
 				1837C65B24AADD2900D27ACD /* BaseTabBarController.m in Sources */,
 				186E616E24ADD85B00658E37 /* TimeNewsHeadView.m in Sources */,
+				185A547424B40B6C0020410D /* MyCodeView.m in Sources */,
 				1837C66A24AADE8B00D27ACD /* PublishVC.m in Sources */,
 				18A8A8FE24AF0112007D7AA9 /* AttentionTableCell.m in Sources */,
 				18672AEE24AC673000BF4B17 /* ListViewController.m in Sources */,
@@ -938,6 +953,7 @@
 				1837C5EF24AAD89200D27ACD /* AppDelegate.m in Sources */,
 				1837C65C24AADD2900D27ACD /* TestTabBar.m in Sources */,
 				1837C64824AADD2900D27ACD /* ENDGradientLabel.m in Sources */,
+				185A547924B445480020410D /* UserModel.m in Sources */,
 				1837C65424AADD2900D27ACD /* ENDNetWorkDELETE.m in Sources */,
 				1837C64724AADD2900D27ACD /* TimerTool.m in Sources */,
 				186E616524ADC3DC00658E37 /* HotTopicTableCell.m in Sources */,

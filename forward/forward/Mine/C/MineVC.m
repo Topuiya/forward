@@ -14,15 +14,19 @@
 #import "MineTitleModel.h"
 #import "RegisterVC.h"
 #import "LoginVC.h"
+#import "UserModel.h"
 
 @interface MineVC () <UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconTopConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *titleArray;
-
+//TopView属性
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *attentionLaebl;
+@property (weak, nonatomic) IBOutlet UILabel *historyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fansLabel;
 //签到按钮
 @property (weak, nonatomic) IBOutlet UIView *signinBtn;
 
@@ -86,9 +90,28 @@ NSString *MineOutID = @"MineOutTableCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.tabBar.hidden = NO;
+    [self setTopViewData];
 }
 - (void)infoBtnClick {
     
+}
+
+- (void)setTopViewData {
+    //取出本地的数据
+    UserModel *user = [EGHCodeTool getOBJCWithSavekey:userModel];
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log  isEqual: @1]) {
+        NSURL *picURL = [NSURL URLWithString:user.head];
+        [self.iconImageView sd_setImageWithURL:picURL placeholderImage:[UIImage imageNamed:@"denglutouxiang"]];
+        self.nickNameLabel.text = user.nickName;
+        self.fansLabel.text = user.fansCount.description;
+    }
+    else {
+        self.iconImageView.image = [UIImage imageNamed:@"denglutouxiang"];
+        self.nickNameLabel.text = @"注册/登录";
+        self.historyLabel.text = @"0";
+        self.fansLabel.text = @"0";
+    }
 }
 
 //头像点击
@@ -99,10 +122,6 @@ NSString *MineOutID = @"MineOutTableCell";
     
 }
 - (void)didSelectedIconImageView {
-//    RegisterVC *registerVC = RegisterVC.new;
-//    [self presentViewController:registerVC animated:YES completion:^{
-//    }];
-    
     LoginVC *loginVC = LoginVC.new;
     [self.navigationController pushViewController:loginVC animated:YES];
 }
@@ -135,6 +154,15 @@ NSString *MineOutID = @"MineOutTableCell";
     }
     else if (indexPath.section == 2) {
         MineOutTableCell *cell = [tableView dequeueReusableCellWithIdentifier:MineOutID forIndexPath:indexPath];
+        WEAKSELF
+        cell.didClickOutButtonBlock = ^{
+            //退出登录
+            //取出本地的数据
+            NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+            log = @0;
+            [EGHCodeTool archiveOJBC:log saveKey:isLog];
+            [self setTopViewData];
+        };
         return cell;
     }
     else {
