@@ -1,8 +1,8 @@
 //
-//  HotNewsTableCell.h
+//  DetailVC.h
 //  forward
 //
-//  Created by apple on 2020/6/30.
+//  Created by apple on 2020/7/8.
 //  Copyright © 2020 zzh. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HotNewsTableCell : UITableViewCell
+@interface DetailVC : UIViewController
 
 @property (nonatomic, strong)HomeNewsModel *newsModel;
 

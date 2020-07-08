@@ -1,59 +1,63 @@
 //
-//  OtherLoginVC.m
+//  ForgetPwdVC.m
 //  forward
 //
-//  Created by apple on 2020/7/6.
+//  Created by apple on 2020/7/8.
 //  Copyright © 2020 zzh. All rights reserved.
 //
 
-#import "OtherLoginVC.h"
-#import "JXCategoryTitleView.h"
+#import "ForgetPwdVC.h"
 #import "MyCodeView.h"
 #import "UserModel.h"
 
-@interface OtherLoginVC () <MyCodeViewDelegate,UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
-@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
-
+@interface ForgetPwdVC () <UITextFieldDelegate,MyCodeViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextF;
-@property (weak, nonatomic) IBOutlet UIButton *getNumBtn;
 @property (weak, nonatomic) IBOutlet UITextField *captchaTextF;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTextF;
+@property (weak, nonatomic) IBOutlet UITextField *repeatPwdTextF;
 
 @property (weak, nonatomic)MyCodeView *myCodeView;
 @property (weak, nonatomic)UIView *coverView;
-@property (copy, nonatomic)NSString *phone;
-@property (copy, nonatomic)NSString *pwd;
 @property (copy, nonatomic)NSString *picCode;
 @end
 
-@implementation OtherLoginVC
+@implementation ForgetPwdVC
 
 - (void)viewDidLoad {
-    self.bottomView.layer.borderWidth = 1;
-    self.bottomView.layer.borderColor = [[UIColor colorWithHexString:@"#F1B5B1"] CGColor];
+    [super viewDidLoad];
+    self.hbd_barAlpha = 1;
+    [self setForTextField];
+}
+//设置输入框
+- (void)setForTextField {
+    self.phoneTextF.delegate = self;
+    self.captchaTextF.delegate = self;
+    self.pwdTextF.delegate = self;
+    self.repeatPwdTextF.delegate = self;
     //修改光标颜色
     self.phoneTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
     self.captchaTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
-    [self.getNumBtn addTarget:self action:@selector(clickGetNumButton) forControlEvents:UIControlEventTouchUpInside];
-    [self.loginBtn addTarget:self action:@selector(clickLoginButton) forControlEvents:UIControlEventTouchUpInside];
-    self.captchaTextF.delegate = self;
-    self.phoneTextF.delegate = self;
+    self.pwdTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
+    self.repeatPwdTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
 }
-- (UIView *)listView {
-    return self.view;
-}
-
-- (void)clickGetNumButton {
+//点击获取验证码按钮
+- (IBAction)getCaptchaBtnBtn:(id)sender {
+    
     MyCodeView *codeView = [[MyCodeView alloc] initWithFrame:CGRectMake(0, 0, 300, 220)];
     codeView.layer.cornerRadius = 20;
     //设置代理
     codeView.delegate = self;
     self.myCodeView = codeView;
-    
+    //弹出窗口
     [self addCoverView];
+    //获取图形验证码
     [self getPicCode];
     
+}
+//点击完成按钮
+- (IBAction)completeBtnClick:(id)sender {
+    //提交
+    [self alterPwd];
 }
 
 //弹出窗口
@@ -118,7 +122,7 @@
         self.picCode = @" ";
     }
     NSDictionary *dic = @{@"phone":self.phoneTextF.text,
-                          @"type":@(2),
+                          @"type":@(3),
                           @"project":ProjectCategory,
                           @"code":self.picCode};
     [ENDNetWorkManager postWithPathUrl:@"/system/sendCode" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
@@ -129,30 +133,20 @@
         [Toast makeText:weakSelf.coverView Message:@"发送验证码失败" afterHideTime:DELAYTiME];
     }];
 }
-
-//登录按钮点击
-- (void)clickLoginButton {
-    [self loginWithCode];
-}
-
-- (void)loginWithCode
-{
+//重置密码
+- (void)alterPwd {
     WEAKSELF
     NSDictionary *dic = @{@"phone":self.phoneTextF.text,
+                          @"newPassword":self.pwdTextF.text,
+                          @"confirmPassword":self.repeatPwdTextF.text,
                           @"code":self.captchaTextF.text,
-                          @"type":@(2),
                           @"project":ProjectCategory};
-    [ENDNetWorkManager getWithPathUrl:@"/system/login" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
-        NSError *error;
-        UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
-        //登录之后归档数据
-        [EGHCodeTool archiveOJBC:user saveKey:userModel];
-        NSNumber *islog = @1;
-        [EGHCodeTool archiveOJBC:islog saveKey:isLog];
-        [self.navigationController popViewControllerAnimated:YES];
+    [ENDNetWorkManager postWithPathUrl:@"/system/resetPassword" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        //返回
+        [self dismissViewControllerAnimated:YES completion:^{
+        }];
     } failure:^(BOOL failuer, NSError *error) {
-        NSLog(@"%@",error.description);
-        [Toast makeText:weakSelf.view Message:@"登录失败" afterHideTime:DELAYTiME];
+        [Toast makeText:weakSelf.coverView Message:@"修改密码失败!"  afterHideTime:DELAYTiME];
     }];
 }
 

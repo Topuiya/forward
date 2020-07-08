@@ -12,11 +12,14 @@
 #import "HomeQuotesTableCell.h"
 #import "HotNewsTableCell.h"
 #import "CalendarVC.h"
+#import "HomeNewsModel.h"
+#import "DetailVC.h"
 
 @interface HomeVC () <UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTop;
+@property (nonatomic, strong) NSArray *newsArray;
 
 @end
 
@@ -36,6 +39,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.title = @"首页";
     //隐藏导航栏
     self.hbd_barHidden = YES;
@@ -47,9 +51,15 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         self.tableViewTop.constant = -20;
     }
     self.tabBarController.tabBar.hidden = NO;
+    
+    if (self.newsArray == nil) {
+        [self getTopics];
+    }
+    
+//    NSLog(@"-----newsArray:%@",_newsArray);
 }
 - (void)viewWillDisappear:(BOOL)animated {
-    self.hbd_barHidden = NO;
+//    self.hbd_barHidden = NO;
 //    self.tabBarController.tabBar.hidden = YES;
 }
 
@@ -75,6 +85,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     }
     else {
         HotNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:HotNewsTableCellID];
+        cell.newsModel = self.newsArray[indexPath.row];
         return cell;
     }
 }
@@ -131,13 +142,32 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 3) {
+//        HomeNewsModel *model = _newsArray[indexPath.row];
+//        DetailVC *detailVC = DetailVC.new;
+//        detailVC.model = dataModel;
+//        [self.navigationController pushViewController:detailVC animated:YES];
+    }
+}
+
+-(void)getTopics{
+    WEAKSELF
+//    NSDictionary *dic = @{@"pageNumber":@10};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationFade];
+    } failure:^(BOOL failuer, NSError *error) {
+        [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
+    }];
+}
+
 #pragma mark - HomeHeaderViewDelegate
 
 //日历数据
 - (void)didSelectedCarlendarView {
     CalendarVC *vc = CalendarVC.new;
-//    vc.tabBarController.tabBar.hidden = YES;
-//    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

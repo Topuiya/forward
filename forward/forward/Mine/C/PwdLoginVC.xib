@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="bottomView" destination="fFg-Kb-LY9" id="gHg-S7-j1W"/>
                 <outlet property="bottomViewHeight" destination="PtI-Ma-mMC" id="fgQ-AS-7yy"/>
+                <outlet property="forgetBtn" destination="7bT-ml-7x8" id="bik-Ob-2gJ"/>
                 <outlet property="getNumBtn" destination="hfx-VH-iCm" id="9os-cU-Uc0"/>
                 <outlet property="phoneTextF" destination="33F-P8-SMs" id="bZR-fp-Bhe"/>
                 <outlet property="promptLabel" destination="VLT-qg-Ain" id="i3K-ay-Hz6"/>

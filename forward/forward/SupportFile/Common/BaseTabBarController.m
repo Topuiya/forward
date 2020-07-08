@@ -101,9 +101,10 @@ static NSInteger lastIdx = 0;
 }
 - (void)setSelectedIndex:(NSUInteger)selectedIndex{
     [super setSelectedIndex:selectedIndex];
-    if(self.axcTabBar){
-        self.axcTabBar.selectIndex = selectedIndex;
-    }
+//    if(self.axcTabBar){
+//        self.axcTabBar.selectIndex = selectedIndex;
+//    }
+    self.axcTabBar.selectIndex = selectedIndex;
 }
 
 // 10.添加适配

@@ -28,14 +28,14 @@
     
     // 设置主窗口,并设置根控制器
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+//
     HBDNavigationController *homeNav = [[HBDNavigationController alloc] initWithRootViewController:[HomeVC new]];
     HBDNavigationController *quotesNav = [[HBDNavigationController alloc] initWithRootViewController:[QuotesVC new]];
     HBDNavigationController *publishNav = [[HBDNavigationController alloc] initWithRootViewController:[PublishVC new]];
     HBDNavigationController *newsNav = [[HBDNavigationController alloc] initWithRootViewController:[NewsVC new]];
     HBDNavigationController *mineNav = [[HBDNavigationController alloc] initWithRootViewController:[MineVC new]];
-    
-    //开启AxcAE_TabBar
+////
+//    //开启AxcAE_TabBar
     BaseTabBarController *tabBarVC = [BaseTabBarController new];
     tabBarVC.viewControllers = @[homeNav,quotesNav,publishNav,newsNav,mineNav];
     self.window.rootViewController = tabBarVC;

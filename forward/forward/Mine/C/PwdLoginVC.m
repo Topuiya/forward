@@ -10,8 +10,9 @@
 #import "JXCategoryTitleView.h"
 #import "RegisterVC.h"
 #import "UserModel.h"
+#import "ForgetPwdVC.h"
 
-@interface PwdLoginVC ()
+@interface PwdLoginVC () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *getNumBtn;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
@@ -19,13 +20,13 @@
 
 //最底立即注册
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgetBtn;
+
 @property (weak, nonatomic) IBOutlet UILabel *promptLabel;
-//三个textField
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextF;
 
-@property (copy, nonatomic)NSString *phone;
-@property (copy, nonatomic)NSString *pwd;
 @end
 
 @implementation PwdLoginVC
@@ -41,16 +42,25 @@
     self.bottomView.layer.borderColor = [[UIColor colorWithHexString:@"#F1B5B1"] CGColor];
     
     self.getNumBtn.tintColor = UIColor.whiteColor;
+    
+    self.phoneTextF.delegate = self;
+    self.pwdTextF.delegate = self;
     //修改光标颜色
     self.phoneTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
     self.pwdTextF.tintColor = [UIColor colorWithHexString:@"#FBB663"];
-    
 
     [self.registerBtn addTarget:self action:@selector(didRdegisterBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.forgetBtn addTarget:self action:@selector(didForgetBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)didRdegisterBtnClick:(UIButton *)button {
     RegisterVC *vc = RegisterVC.new;
+    [self presentViewController:vc animated:YES completion:^{
+    }];
+}
+- (void)didForgetBtnClick:(UIButton *)button {
+    ForgetPwdVC *vc = ForgetPwdVC.new;
     [self presentViewController:vc animated:YES completion:^{
     }];
 }
@@ -62,15 +72,14 @@
 - (IBAction)loginBtnClick:(UIButton *)sender {
     [self loginWithPwd];
 }
-
-
+//使用密码登录
 - (void)loginWithPwd
 {
-    _phone = self.phoneTextF.text;
-    _pwd = self.pwdTextF.text;
-    
     WEAKSELF
-    NSDictionary *dic = @{@"phone":_phone,@"password":_pwd,@"type":@(1),@"project":ProjectCategory};
+    NSDictionary *dic = @{@"phone":self.phoneTextF.text,
+                          @"password":self.pwdTextF.text,
+                          @"type":@(1),
+                          @"project":ProjectCategory};
     [ENDNetWorkManager getWithPathUrl:@"/system/login" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
         UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
