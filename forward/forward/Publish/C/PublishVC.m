@@ -13,9 +13,7 @@
 #import "TopicVC.h"
 
 @interface PublishVC () <JXCategoryViewDelegate>
-
 @property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
-
 @end
 
 @implementation PublishVC
@@ -71,13 +69,6 @@
     if (index == 0)
     {
         AttentionVC *attentiopnVC = [[AttentionVC alloc]init];
-        //拿到要使用的模型数组
-//        RankTeamListModel *tempModel = _teamListArray[0];
-        //对改数组排序
-//        NSArray *wzryArray = [self mySortArray:tempModel.list];
-//        tempModel.list = wzryArray;
-        //传递模型
-//        wzryVC.WzryModel = tempModel;
         return attentiopnVC;
     }
     else if(index == 1)

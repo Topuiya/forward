@@ -10,11 +10,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineVC">
             <connections>
                 <outlet property="attentionLaebl" destination="qCi-7b-rIQ" id="hYK-2J-CMU"/>
+                <outlet property="attentionView" destination="3Os-5G-dCW" id="N0Z-Lj-R5p"/>
                 <outlet property="fansLabel" destination="3fw-3l-cXb" id="dyW-eY-G8b"/>
+                <outlet property="fansView" destination="Asi-vu-Y4B" id="khr-1E-thp"/>
                 <outlet property="historyLabel" destination="7ne-Wq-eMl" id="WTM-Mb-3Xk"/>
                 <outlet property="iconImageView" destination="ePp-qo-OUm" id="Gxl-8q-w69"/>
                 <outlet property="iconTopConstraint" destination="d5G-l9-sHe" id="izT-58-mQF"/>
                 <outlet property="nickNameLabel" destination="V2g-y3-CXj" id="zxN-aW-t0G"/>
+                <outlet property="signInView" destination="lth-YR-r22" id="jOl-pJ-ERY"/>
                 <outlet property="signinBtn" destination="lth-YR-r22" id="k7T-J4-Y6L"/>
                 <outlet property="tableView" destination="SJw-cF-cUD" id="iXR-ck-zIl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

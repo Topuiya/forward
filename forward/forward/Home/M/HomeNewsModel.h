@@ -7,6 +7,7 @@
 //
 
 #import "BaseModel.h"
+#import "UserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *content;
 @property (nonatomic, assign)double publishTime;
 @property (nonatomic, copy)NSString *picture;
+
+@property (nonatomic, strong)UserModel *user;
 
 @end
 

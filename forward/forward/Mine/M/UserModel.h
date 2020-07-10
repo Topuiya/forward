@@ -6,6 +6,7 @@
 //  Copyright © 2020 zzh. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "BaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSNumber *fansCount;
 @property (nonatomic, copy)NSString *signature;
 @property (nonatomic, strong)NSNumber *userId;
+@property (nonatomic, copy)NSString *projectKey;
 
 @end
 

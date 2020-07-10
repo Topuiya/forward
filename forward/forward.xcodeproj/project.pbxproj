@@ -125,8 +125,28 @@
 		18B4281524B5ABFA00769F0C /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B4281324B5ABFA00769F0C /* DetailVC.xib */; };
 		18B4281B24B5AFB900769F0C /* DetailHeadTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4281924B5AFB900769F0C /* DetailHeadTableCell.m */; };
 		18B4281C24B5AFB900769F0C /* DetailHeadTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B4281A24B5AFB900769F0C /* DetailHeadTableCell.xib */; };
+		18B64FC124B6BCD200EC46E6 /* QuoteCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B64FC024B6BCD200EC46E6 /* QuoteCalendarModel.m */; };
+		18B64FC524B6E29100EC46E6 /* TimeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B64FC424B6E29100EC46E6 /* TimeNewsModel.m */; };
+		18B64FC824B6E71800EC46E6 /* BusinessNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B64FC724B6E71800EC46E6 /* BusinessNewsModel.m */; };
 		18BC331924B2EEE70093E013 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC331724B2EEE70093E013 /* RegisterVC.m */; };
 		18BC331A24B2EEE70093E013 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BC331824B2EEE70093E013 /* RegisterVC.xib */; };
+		18D1214924B8196C008EBCB2 /* MyFollowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1214724B8196C008EBCB2 /* MyFollowVC.m */; };
+		18D1214A24B8196C008EBCB2 /* MyFollowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1214824B8196C008EBCB2 /* MyFollowVC.xib */; };
+		18D1214E24B81AE8008EBCB2 /* MyFollowTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1214C24B81AE8008EBCB2 /* MyFollowTableCell.m */; };
+		18D1214F24B81AE8008EBCB2 /* MyFollowTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1214D24B81AE8008EBCB2 /* MyFollowTableCell.xib */; };
+		18D1215224B81BE3008EBCB2 /* MyFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1215124B81BE3008EBCB2 /* MyFollowModel.m */; };
+		18D1215624B831FE008EBCB2 /* MyFansVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1215424B831FE008EBCB2 /* MyFansVC.m */; };
+		18D1215724B831FE008EBCB2 /* MyFansVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1215524B831FE008EBCB2 /* MyFansVC.xib */; };
+		18D1215B24B833F4008EBCB2 /* MyFansTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1215924B833F4008EBCB2 /* MyFansTableCell.m */; };
+		18D1215C24B833F4008EBCB2 /* MyFansTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1215A24B833F4008EBCB2 /* MyFansTableCell.xib */; };
+		18D1215F24B840E3008EBCB2 /* TopicSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1215E24B840E3008EBCB2 /* TopicSortModel.m */; };
+		18D1216824B84581008EBCB2 /* PublishTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1216624B84581008EBCB2 /* PublishTopicVC.m */; };
+		18D1216924B84581008EBCB2 /* PublishTopicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1216724B84581008EBCB2 /* PublishTopicVC.xib */; };
+		18D1216D24B84E35008EBCB2 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1216B24B84E35008EBCB2 /* SignInVC.m */; };
+		18D1216E24B84E35008EBCB2 /* SignInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1216C24B84E35008EBCB2 /* SignInVC.xib */; };
+		18D1217124B85DF5008EBCB2 /* DIYCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1216F24B85DF5008EBCB2 /* DIYCalendarCell.m */; };
+		18D1217824B8607B008EBCB2 /* CheckInSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1217624B8607B008EBCB2 /* CheckInSuccessView.m */; };
+		18D1217924B8607B008EBCB2 /* CheckInSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1217724B8607B008EBCB2 /* CheckInSuccessView.xib */; };
 		548E54158FFAA2D7DD047AF7 /* Pods_forward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AA93C2C2B1812DD5096852 /* Pods_forward.framework */; };
 /* End PBXBuildFile section */
 
@@ -330,9 +350,42 @@
 		18B4281824B5AFB900769F0C /* DetailHeadTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeadTableCell.h; sourceTree = "<group>"; };
 		18B4281924B5AFB900769F0C /* DetailHeadTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeadTableCell.m; sourceTree = "<group>"; };
 		18B4281A24B5AFB900769F0C /* DetailHeadTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeadTableCell.xib; sourceTree = "<group>"; };
+		18B64FBF24B6BCD200EC46E6 /* QuoteCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCalendarModel.h; sourceTree = "<group>"; };
+		18B64FC024B6BCD200EC46E6 /* QuoteCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteCalendarModel.m; sourceTree = "<group>"; };
+		18B64FC324B6E29100EC46E6 /* TimeNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeNewsModel.h; sourceTree = "<group>"; };
+		18B64FC424B6E29100EC46E6 /* TimeNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNewsModel.m; sourceTree = "<group>"; };
+		18B64FC624B6E71800EC46E6 /* BusinessNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessNewsModel.h; sourceTree = "<group>"; };
+		18B64FC724B6E71800EC46E6 /* BusinessNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessNewsModel.m; sourceTree = "<group>"; };
 		18BC331624B2EEE70093E013 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		18BC331724B2EEE70093E013 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		18BC331824B2EEE70093E013 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		18D1214624B8196C008EBCB2 /* MyFollowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowVC.h; sourceTree = "<group>"; };
+		18D1214724B8196C008EBCB2 /* MyFollowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowVC.m; sourceTree = "<group>"; };
+		18D1214824B8196C008EBCB2 /* MyFollowVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFollowVC.xib; sourceTree = "<group>"; };
+		18D1214B24B81AE8008EBCB2 /* MyFollowTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowTableCell.h; sourceTree = "<group>"; };
+		18D1214C24B81AE8008EBCB2 /* MyFollowTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowTableCell.m; sourceTree = "<group>"; };
+		18D1214D24B81AE8008EBCB2 /* MyFollowTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFollowTableCell.xib; sourceTree = "<group>"; };
+		18D1215024B81BE3008EBCB2 /* MyFollowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowModel.h; sourceTree = "<group>"; };
+		18D1215124B81BE3008EBCB2 /* MyFollowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowModel.m; sourceTree = "<group>"; };
+		18D1215324B831FE008EBCB2 /* MyFansVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFansVC.h; sourceTree = "<group>"; };
+		18D1215424B831FE008EBCB2 /* MyFansVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFansVC.m; sourceTree = "<group>"; };
+		18D1215524B831FE008EBCB2 /* MyFansVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFansVC.xib; sourceTree = "<group>"; };
+		18D1215824B833F4008EBCB2 /* MyFansTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFansTableCell.h; sourceTree = "<group>"; };
+		18D1215924B833F4008EBCB2 /* MyFansTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFansTableCell.m; sourceTree = "<group>"; };
+		18D1215A24B833F4008EBCB2 /* MyFansTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFansTableCell.xib; sourceTree = "<group>"; };
+		18D1215D24B840E3008EBCB2 /* TopicSortModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicSortModel.h; sourceTree = "<group>"; };
+		18D1215E24B840E3008EBCB2 /* TopicSortModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicSortModel.m; sourceTree = "<group>"; };
+		18D1216524B84581008EBCB2 /* PublishTopicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishTopicVC.h; sourceTree = "<group>"; };
+		18D1216624B84581008EBCB2 /* PublishTopicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishTopicVC.m; sourceTree = "<group>"; };
+		18D1216724B84581008EBCB2 /* PublishTopicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishTopicVC.xib; sourceTree = "<group>"; };
+		18D1216A24B84E35008EBCB2 /* SignInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
+		18D1216B24B84E35008EBCB2 /* SignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
+		18D1216C24B84E35008EBCB2 /* SignInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInVC.xib; sourceTree = "<group>"; };
+		18D1216F24B85DF5008EBCB2 /* DIYCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYCalendarCell.m; sourceTree = "<group>"; };
+		18D1217024B85DF5008EBCB2 /* DIYCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYCalendarCell.h; sourceTree = "<group>"; };
+		18D1217524B8607B008EBCB2 /* CheckInSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInSuccessView.h; sourceTree = "<group>"; };
+		18D1217624B8607B008EBCB2 /* CheckInSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInSuccessView.m; sourceTree = "<group>"; };
+		18D1217724B8607B008EBCB2 /* CheckInSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInSuccessView.xib; sourceTree = "<group>"; };
 		68AA93C2C2B1812DD5096852 /* Pods_forward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_forward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA66BFE9A349C9CCE360BAF /* Pods-forward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forward.release.xcconfig"; path = "Target Support Files/Pods-forward/Pods-forward.release.xcconfig"; sourceTree = "<group>"; };
 		85E0248B19BCD10735F60D87 /* Pods-forward.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forward.debug.xcconfig"; path = "Target Support Files/Pods-forward/Pods-forward.debug.xcconfig"; sourceTree = "<group>"; };
@@ -444,6 +497,7 @@
 		1837C60924AADC2700D27ACD /* News */ = {
 			isa = PBXGroup;
 			children = (
+				18B64FC224B6E27100EC46E6 /* M */,
 				18672B1124AC88F900BF4B17 /* V */,
 				18672B1024AC88EF00BF4B17 /* C */,
 			);
@@ -641,6 +695,9 @@
 				18672AF924AC683F00BF4B17 /* TopicVC.h */,
 				18672AFA24AC683F00BF4B17 /* TopicVC.m */,
 				18672AFB24AC683F00BF4B17 /* TopicVC.xib */,
+				18D1216524B84581008EBCB2 /* PublishTopicVC.h */,
+				18D1216624B84581008EBCB2 /* PublishTopicVC.m */,
+				18D1216724B84581008EBCB2 /* PublishTopicVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -676,6 +733,8 @@
 		18672B0024AC719900BF4B17 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				18D1215D24B840E3008EBCB2 /* TopicSortModel.h */,
+				18D1215E24B840E3008EBCB2 /* TopicSortModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -741,6 +800,20 @@
 				185A547224B40B6C0020410D /* MyCodeView.h */,
 				185A547324B40B6C0020410D /* MyCodeView.m */,
 				185A547524B40B790020410D /* MyCodeView.xib */,
+				18D1214624B8196C008EBCB2 /* MyFollowVC.h */,
+				18D1214724B8196C008EBCB2 /* MyFollowVC.m */,
+				18D1214824B8196C008EBCB2 /* MyFollowVC.xib */,
+				18D1215324B831FE008EBCB2 /* MyFansVC.h */,
+				18D1215424B831FE008EBCB2 /* MyFansVC.m */,
+				18D1215524B831FE008EBCB2 /* MyFansVC.xib */,
+				18D1216A24B84E35008EBCB2 /* SignInVC.h */,
+				18D1216B24B84E35008EBCB2 /* SignInVC.m */,
+				18D1216C24B84E35008EBCB2 /* SignInVC.xib */,
+				18D1217024B85DF5008EBCB2 /* DIYCalendarCell.h */,
+				18D1216F24B85DF5008EBCB2 /* DIYCalendarCell.m */,
+				18D1217524B8607B008EBCB2 /* CheckInSuccessView.h */,
+				18D1217624B8607B008EBCB2 /* CheckInSuccessView.m */,
+				18D1217724B8607B008EBCB2 /* CheckInSuccessView.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -757,6 +830,12 @@
 				186E615024ADAD3A00658E37 /* MineOutTableCell.h */,
 				186E615124ADAD3A00658E37 /* MineOutTableCell.m */,
 				186E615224ADAD3A00658E37 /* MineOutTableCell.xib */,
+				18D1214B24B81AE8008EBCB2 /* MyFollowTableCell.h */,
+				18D1214C24B81AE8008EBCB2 /* MyFollowTableCell.m */,
+				18D1214D24B81AE8008EBCB2 /* MyFollowTableCell.xib */,
+				18D1215824B833F4008EBCB2 /* MyFansTableCell.h */,
+				18D1215924B833F4008EBCB2 /* MyFansTableCell.m */,
+				18D1215A24B833F4008EBCB2 /* MyFansTableCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -768,6 +847,8 @@
 				186E615624ADB19000658E37 /* MineTitleModel.m */,
 				185A547724B445480020410D /* UserModel.h */,
 				185A547824B445480020410D /* UserModel.m */,
+				18D1215024B81BE3008EBCB2 /* MyFollowModel.h */,
+				18D1215124B81BE3008EBCB2 /* MyFollowModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -775,6 +856,8 @@
 		18A8A90524AF0F7F007D7AA9 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				18B64FBF24B6BCD200EC46E6 /* QuoteCalendarModel.h */,
+				18B64FC024B6BCD200EC46E6 /* QuoteCalendarModel.m */,
 				18A8A90624AF0FB7007D7AA9 /* CalendarVC.h */,
 				18A8A90724AF0FB7007D7AA9 /* CalendarVC.m */,
 				18A8A90824AF0FB7007D7AA9 /* CalendarVC.xib */,
@@ -799,6 +882,17 @@
 				18B4281A24B5AFB900769F0C /* DetailHeadTableCell.xib */,
 			);
 			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		18B64FC224B6E27100EC46E6 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				18B64FC324B6E29100EC46E6 /* TimeNewsModel.h */,
+				18B64FC424B6E29100EC46E6 /* TimeNewsModel.m */,
+				18B64FC624B6E71800EC46E6 /* BusinessNewsModel.h */,
+				18B64FC724B6E71800EC46E6 /* BusinessNewsModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		C0F5AB08285E99A6F78E17AA /* Frameworks */ = {
@@ -874,6 +968,7 @@
 				186E615424ADAD3A00658E37 /* MineOutTableCell.xib in Resources */,
 				1837C69124AB37AD00D27ACD /* QuotesCenterTableCell.xib in Resources */,
 				1837C66624AADE7500D27ACD /* QuotesVC.xib in Resources */,
+				18D1214F24B81AE8008EBCB2 /* MyFollowTableCell.xib in Resources */,
 				186E617024ADD8A900658E37 /* TimeNewsHeadView.xib in Resources */,
 				186E616124ADBC2F00658E37 /* TopicFootView.xib in Resources */,
 				186E614F24ADA8A000658E37 /* MineInfoTableCell.xib in Resources */,
@@ -887,11 +982,13 @@
 				1837C68224AB2D1E00D27ACD /* HomeTitleView.xib in Resources */,
 				186E615C24ADBBE800658E37 /* TopicHeadView.xib in Resources */,
 				18B4280D24B56CB900769F0C /* ForgetPwdVC.xib in Resources */,
+				18D1215724B831FE008EBCB2 /* MyFansVC.xib in Resources */,
 				186E614A24AD896A00658E37 /* MineItemTableCell.xib in Resources */,
 				1837C68C24AB2F7E00D27ACD /* HotNewsTableCell.xib in Resources */,
 				1837C66124AADE5700D27ACD /* HomeVC.xib in Resources */,
 				18A8A90424AF0174007D7AA9 /* AttentionCollectionCell.xib in Resources */,
 				184FB1CF24B3131F00FD1AE6 /* OtherLoginVC.xib in Resources */,
+				18D1216924B84581008EBCB2 /* PublishTopicVC.xib in Resources */,
 				18A8A8FF24AF0112007D7AA9 /* AttentionTableCell.xib in Resources */,
 				18A8A8F024AEC595007D7AA9 /* TimeNewsTopTableCell.xib in Resources */,
 				18672B1B24AC8B7200BF4B17 /* SearchHeadView.xib in Resources */,
@@ -901,15 +998,19 @@
 				18B4281524B5ABFA00769F0C /* DetailVC.xib in Resources */,
 				1837C67524AADEB200D27ACD /* MineVC.xib in Resources */,
 				18BC331A24B2EEE70093E013 /* RegisterVC.xib in Resources */,
+				18D1216E24B84E35008EBCB2 /* SignInVC.xib in Resources */,
 				18A8A8FA24AEE081007D7AA9 /* QuotesCollectionCell.xib in Resources */,
 				1837C5FA24AAD89400D27ACD /* Assets.xcassets in Resources */,
 				18672B0524AC71F100BF4B17 /* ShowNewsTableCell.xib in Resources */,
 				1837C68724AB2F2E00D27ACD /* HomeQuotesTableCell.xib in Resources */,
+				18D1214A24B8196C008EBCB2 /* MyFollowVC.xib in Resources */,
 				18672B0F24AC81A300BF4B17 /* TimeNewsVC.xib in Resources */,
 				18672B0A24AC819100BF4B17 /* BusinessNewsVC.xib in Resources */,
+				18D1217924B8607B008EBCB2 /* CheckInSuccessView.xib in Resources */,
 				186E616624ADC3DC00658E37 /* HotTopicTableCell.xib in Resources */,
 				18672AF324AC67CF00BF4B17 /* AttentionVC.xib in Resources */,
 				1837C5F824AAD89200D27ACD /* Main.storyboard in Resources */,
+				18D1215C24B833F4008EBCB2 /* MyFansTableCell.xib in Resources */,
 				185A547624B40B790020410D /* MyCodeView.xib in Resources */,
 				18672B1624AC891300BF4B17 /* BusinessNewsTableCell.xib in Resources */,
 				18A8A91424AF188A007D7AA9 /* CalendarTableViewCell.xib in Resources */,
@@ -967,6 +1068,7 @@
 			files = (
 				18672AF724AC682800BF4B17 /* PopularVC.m in Sources */,
 				1837C67824AADFEB00D27ACD /* BaseNavigationController.m in Sources */,
+				18D1216D24B84E35008EBCB2 /* SignInVC.m in Sources */,
 				18A8A8EF24AEC595007D7AA9 /* TimeNewsTopTableCell.m in Sources */,
 				18BC331924B2EEE70093E013 /* RegisterVC.m in Sources */,
 				186E615F24ADBC2400658E37 /* TopicFootView.m in Sources */,
@@ -984,8 +1086,10 @@
 				1837C64D24AADD2900D27ACD /* NSString+DealError.m in Sources */,
 				1837C66524AADE7500D27ACD /* QuotesVC.m in Sources */,
 				1837C65B24AADD2900D27ACD /* BaseTabBarController.m in Sources */,
+				18D1217124B85DF5008EBCB2 /* DIYCalendarCell.m in Sources */,
 				186E616E24ADD85B00658E37 /* TimeNewsHeadView.m in Sources */,
 				18B4281B24B5AFB900769F0C /* DetailHeadTableCell.m in Sources */,
+				18D1216824B84581008EBCB2 /* PublishTopicVC.m in Sources */,
 				185A547424B40B6C0020410D /* MyCodeView.m in Sources */,
 				1837C66A24AADE8B00D27ACD /* PublishVC.m in Sources */,
 				18A8A8FE24AF0112007D7AA9 /* AttentionTableCell.m in Sources */,
@@ -1002,8 +1106,12 @@
 				1837C64724AADD2900D27ACD /* TimerTool.m in Sources */,
 				186E616524ADC3DC00658E37 /* HotTopicTableCell.m in Sources */,
 				1837C60024AAD89400D27ACD /* main.m in Sources */,
+				18B64FC524B6E29100EC46E6 /* TimeNewsModel.m in Sources */,
 				1837C64E24AADD2900D27ACD /* EGHCodeTool.m in Sources */,
+				18D1214E24B81AE8008EBCB2 /* MyFollowTableCell.m in Sources */,
 				1837C65624AADD2900D27ACD /* ENDLCPNetWorkERROR.m in Sources */,
+				18D1214924B8196C008EBCB2 /* MyFollowVC.m in Sources */,
+				18B64FC824B6E71800EC46E6 /* BusinessNewsModel.m in Sources */,
 				18A8A90924AF0FB7007D7AA9 /* CalendarVC.m in Sources */,
 				1837C64A24AADD2900D27ACD /* StringAndLabelDealTool.m in Sources */,
 				18A8A8F924AEE081007D7AA9 /* QuotesCollectionCell.m in Sources */,
@@ -1016,6 +1124,7 @@
 				184FB1CE24B3131F00FD1AE6 /* OtherLoginVC.m in Sources */,
 				186E616924ADD00F00658E37 /* AttentionHeadView.m in Sources */,
 				184FB1D224B313D100FD1AE6 /* LoginVC.m in Sources */,
+				18D1215224B81BE3008EBCB2 /* MyFollowModel.m in Sources */,
 				1837C65124AADD2900D27ACD /* LCPReachability.m in Sources */,
 				18672B1924AC8B6400BF4B17 /* SearchHeadView.m in Sources */,
 				1837C64F24AADD2900D27ACD /* ENDLCPNetWorkGET.m in Sources */,
@@ -1024,19 +1133,24 @@
 				18672B0424AC71F100BF4B17 /* ShowNewsTableCell.m in Sources */,
 				18A8A8F424AEC86E007D7AA9 /* TimeNewsDetailTableCell.m in Sources */,
 				1837C68624AB2F2E00D27ACD /* HomeQuotesTableCell.m in Sources */,
+				18D1215624B831FE008EBCB2 /* MyFansVC.m in Sources */,
 				1837C64624AADD2900D27ACD /* EGHImagePickerVCManager.m in Sources */,
 				1837C66F24AADEA400D27ACD /* NewsVC.m in Sources */,
 				1837C65924AADD2900D27ACD /* UIImage+OriginalImage.m in Sources */,
 				18672B1524AC891300BF4B17 /* BusinessNewsTableCell.m in Sources */,
 				18672AEB24AC66B800BF4B17 /* ContentBaseViewController.m in Sources */,
 				186E614E24ADA8A000658E37 /* MineInfoTableCell.m in Sources */,
+				18D1215B24B833F4008EBCB2 /* MyFansTableCell.m in Sources */,
 				186E615724ADB19000658E37 /* MineTitleModel.m in Sources */,
 				1837C65824AADD2900D27ACD /* UIImage+Image.m in Sources */,
 				186E614924AD896A00658E37 /* MineItemTableCell.m in Sources */,
+				18D1217824B8607B008EBCB2 /* CheckInSuccessView.m in Sources */,
+				18D1215F24B840E3008EBCB2 /* TopicSortModel.m in Sources */,
 				18672B0E24AC81A300BF4B17 /* TimeNewsVC.m in Sources */,
 				1837C69024AB37AD00D27ACD /* QuotesCenterTableCell.m in Sources */,
 				1837C69824AB3B3700D27ACD /* QuotesHeadView.m in Sources */,
 				184FB1C924B3130C00FD1AE6 /* PwdLoginVC.m in Sources */,
+				18B64FC124B6BCD200EC46E6 /* QuoteCalendarModel.m in Sources */,
 				1837C65524AADD2900D27ACD /* ENDNetWorkPUT.m in Sources */,
 				1837C65A24AADD2900D27ACD /* BaseModel.m in Sources */,
 				1837C64924AADD2900D27ACD /* EGHViewsTool.m in Sources */,

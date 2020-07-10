@@ -8,6 +8,12 @@
 
 #import "HotTopicTableCell.h"
 
+@interface HotTopicTableCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *headImageview;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ohterLabel;
+
+@end
 @implementation HotTopicTableCell
 
 - (void)awakeFromNib {
@@ -15,10 +21,11 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setTopicModel:(TopicSortModel *)topicModel {
+    _topicModel = topicModel;
+    self.headImageview.image = [UIImage imageNamed:topicModel.head];
+    self.titleLabel.text = topicModel.title;
+    self.ohterLabel.text = topicModel.title2;
 }
 
 @end

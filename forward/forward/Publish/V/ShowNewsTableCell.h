@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeNewsModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ShowNewsTableCell : UITableViewCell
+
+@property (nonatomic, strong) HomeNewsModel *newsModel;
 
 @end
 

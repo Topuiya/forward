@@ -10,10 +10,12 @@
 #import "TimeNewsHeadView.h"
 #import "TimeNewsTopTableCell.h"
 #import "TimeNewsDetailTableCell.h"
+#import "TimeNewsModel.h"
 
 @interface TimeNewsVC () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, assign) double yCell;
+@property (nonatomic, strong) NSArray *timeNewsArray;
 @end
 
 @implementation TimeNewsVC
@@ -33,31 +35,60 @@ NSString *TimeNewsDetailID = @"TimeNewsDetailTableCell";
     return self.view;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self getTopics];
+}
+
+-(void)getTopics{
+    WEAKSELF
+    NSDate *todayDate = [NSDate date];
+    NSDictionary *dic = @{@"date":todayDate};
+    [ENDNetWorkManager getWithPathUrl:@"/admin/getFinanceTalk" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.timeNewsArray = [MTLJSONAdapter modelsOfClass:[TimeNewsModel class] fromJSONArray:result[@"data"] error:&error];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+    } failure:^(BOOL failuer, NSError *error) {
+        [Toast makeText:weakSelf.view Message:@"请求话题失败" afterHideTime:DELAYTiME];
+    }];
+}
+
 #pragma mark  - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (section == 0) {
+        return 1;
+    } else {
+        return _timeNewsArray.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    if (indexPath.section ==0 && indexPath.row == 0) {
         TimeNewsTopTableCell *cell = [tableView dequeueReusableCellWithIdentifier:TimeNewsTopID];
         return cell;
     } else {
         TimeNewsDetailTableCell *cell = [tableView dequeueReusableCellWithIdentifier:TimeNewsDetailID];
+        cell.timeNewsModel = self.timeNewsArray[indexPath.row];
         return cell;
     }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    TimeNewsHeadView *headView = [[TimeNewsHeadView alloc] init];
-    return headView;
+    if (section == 0) {
+        TimeNewsHeadView *headView = [[TimeNewsHeadView alloc] init];
+        return headView;
+    }
+    else
+        return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 45;
+    if (section == 0) {
+        return 45;
+    } else
+        return 0.01f;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.01f;

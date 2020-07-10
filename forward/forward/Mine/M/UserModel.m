@@ -21,6 +21,7 @@
         NSStringFromSelector(@selector(fansCount)):@"fansCount",
         NSStringFromSelector(@selector(signature)):@"signature",
         NSStringFromSelector(@selector(userId)):@"id",
+        NSStringFromSelector(@selector(projectKey)):@"projectKey",
     };
 }
 

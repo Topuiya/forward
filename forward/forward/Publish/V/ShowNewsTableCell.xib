@@ -189,6 +189,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentLabel" destination="epT-6V-jsq" id="hhm-ez-V6j"/>
+                <outlet property="headImgView" destination="mUb-FS-aDV" id="eCc-kV-tDh"/>
+                <outlet property="nameLabel" destination="kJP-2Y-UmJ" id="hTr-bZ-jFC"/>
+                <outlet property="picImgView" destination="tgJ-Gq-UQH" id="m3D-Gl-wW0"/>
+                <outlet property="timeLabel" destination="e82-XT-NMn" id="T06-7d-0Rm"/>
+            </connections>
             <point key="canvasLocation" x="43.478260869565219" y="72.991071428571431"/>
         </tableViewCell>
     </objects>

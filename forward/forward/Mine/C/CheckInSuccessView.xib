@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CheckInSuccessView">
+            <rect key="frame" x="0.0" y="0.0" width="249" height="254"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-3S-eK5" userLabel="SuccessView">
+                    <rect key="frame" x="0.0" y="0.0" width="249" height="254"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiandaokang" translatesAutoresizingMaskIntoConstraints="NO" id="gYK-rZ-ALl" userLabel="SuccessImgView">
+                            <rect key="frame" x="0.0" y="0.0" width="249" height="254"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzk-6E-TzV" userLabel="DateLabel">
+                            <rect key="frame" x="83.5" y="130" width="82" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.91921031480000004" green="0.30886310340000001" blue="0.31777304410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_qiandaochenggong" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-yd-Jma">
+                            <rect key="frame" x="68.5" y="10" width="112" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="112" id="1x5-fy-vmq"/>
+                                <constraint firstAttribute="height" constant="100" id="Dwc-5t-kns"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHy-6W-jDN">
+                            <rect key="frame" x="0.0" y="209" width="249" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="S2t-8K-xcH"/>
+                            </constraints>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜你获得5个金币" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua0-Bk-vKJ" userLabel="Label">
+                            <rect key="frame" x="63" y="169" width="123" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.15294379" green="0.152936399" blue="0.15294143560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gzk-6E-TzV" firstAttribute="top" secondItem="oHB-yd-Jma" secondAttribute="bottom" constant="20" id="A3R-Xz-fw7"/>
+                        <constraint firstItem="gzk-6E-TzV" firstAttribute="centerX" secondItem="fNx-3S-eK5" secondAttribute="centerX" id="Cjx-cQ-Iah"/>
+                        <constraint firstItem="Ua0-Bk-vKJ" firstAttribute="top" secondItem="gzk-6E-TzV" secondAttribute="bottom" constant="15" id="G06-0m-kkB"/>
+                        <constraint firstItem="oHB-yd-Jma" firstAttribute="centerX" secondItem="fNx-3S-eK5" secondAttribute="centerX" id="NA5-KG-l9Z"/>
+                        <constraint firstItem="oHB-yd-Jma" firstAttribute="top" secondItem="fNx-3S-eK5" secondAttribute="top" constant="10" id="NnP-Hg-rKO"/>
+                        <constraint firstAttribute="bottom" secondItem="lHy-6W-jDN" secondAttribute="bottom" id="QEd-7I-rBk"/>
+                        <constraint firstItem="lHy-6W-jDN" firstAttribute="centerX" secondItem="fNx-3S-eK5" secondAttribute="centerX" id="UYo-xZ-ilN"/>
+                        <constraint firstAttribute="trailing" secondItem="gYK-rZ-ALl" secondAttribute="trailing" id="W9h-tp-t4c"/>
+                        <constraint firstItem="Ua0-Bk-vKJ" firstAttribute="centerX" secondItem="fNx-3S-eK5" secondAttribute="centerX" id="eEd-nN-Cvq"/>
+                        <constraint firstItem="gYK-rZ-ALl" firstAttribute="top" secondItem="fNx-3S-eK5" secondAttribute="top" id="gzk-vr-cpg"/>
+                        <constraint firstAttribute="bottom" secondItem="gYK-rZ-ALl" secondAttribute="bottom" id="hHd-VL-Xmo"/>
+                        <constraint firstItem="gYK-rZ-ALl" firstAttribute="leading" secondItem="fNx-3S-eK5" secondAttribute="leading" id="onm-2m-Nyn"/>
+                        <constraint firstItem="lHy-6W-jDN" firstAttribute="leading" secondItem="fNx-3S-eK5" secondAttribute="leading" id="x3o-Qw-8aI"/>
+                        <constraint firstAttribute="trailing" secondItem="lHy-6W-jDN" secondAttribute="trailing" id="yOT-cM-QYl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fNx-3S-eK5" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Yp4-03-K6s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fNx-3S-eK5" secondAttribute="trailing" id="ZAs-DE-YJa"/>
+                <constraint firstItem="fNx-3S-eK5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jBM-js-L7x"/>
+                <constraint firstItem="fNx-3S-eK5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jOS-Y7-fWj"/>
+                <constraint firstItem="fNx-3S-eK5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="t9P-MB-Ihi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-68.840579710144937" y="40.848214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pic_qiandaochenggong" width="102.5" height="101"/>
+        <image name="qiandaokang" width="264" height="250"/>
+    </resources>
+</document>

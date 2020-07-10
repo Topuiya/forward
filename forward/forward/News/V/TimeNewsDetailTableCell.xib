@@ -93,6 +93,10 @@
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentLabel" destination="0rW-Qk-cxZ" id="PO3-Za-VbH"/>
+                <outlet property="timeLabel" destination="XeD-M9-za6" id="dz8-tg-88l"/>
+            </connections>
             <point key="canvasLocation" x="28.985507246376812" y="17.410714285714285"/>
         </tableViewCell>
     </objects>

@@ -10,10 +10,11 @@
 #import "ShowNewsTableCell.h"
 #import "AttentionHeadView.h"
 #import "AttentionTableCell.h"
+#import "HomeNewsModel.h"
 
 @interface AttentionVC () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) NSArray *newsArray;
 @end
 
 @implementation AttentionVC
@@ -29,6 +30,9 @@ NSString *AttentionTableID = @"AttentionTableCell";
 }
 - (UIView *)listView {
     return self.view;
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [self getTopics];
 }
 
 #pragma mark  - UITableViewDataSource
@@ -50,8 +54,21 @@ NSString *AttentionTableID = @"AttentionTableCell";
     }
     else {
         ShowNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionShowID forIndexPath:indexPath];
+        cell.newsModel = self.newsArray[indexPath.row];
         return cell;
     }
+}
+
+
+-(void)getTopics{
+    WEAKSELF
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 #pragma mark  - UITableViewDelegate
@@ -74,4 +91,5 @@ NSString *AttentionTableID = @"AttentionTableCell";
     else
         return UITableViewAutomaticDimension;
 }
+
 @end

@@ -15,6 +15,9 @@
 #import "RegisterVC.h"
 #import "LoginVC.h"
 #import "UserModel.h"
+#import "MyFollowVC.h"
+#import "MyFansVC.h"
+#import "SignInVC.h"
 
 @interface MineVC () <UITableViewDelegate,UITableViewDataSource>
 
@@ -29,6 +32,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *fansLabel;
 //签到按钮
 @property (weak, nonatomic) IBOutlet UIView *signinBtn;
+
+@property (strong, nonatomic) NSNumber *followCount;
+@property (strong, nonatomic) NSNumber *fansCount;
+
+//关注和粉丝view
+@property (weak, nonatomic) IBOutlet UIView *attentionView;
+@property (weak, nonatomic) IBOutlet UIView *fansView;
+//签到View
+@property (weak, nonatomic) IBOutlet UIView *signInView;
 
 @end
 
@@ -86,14 +98,46 @@ NSString *MineOutID = @"MineOutTableCell";
     [self loadTableView];
     
     [self addIconImageViewTouch];
+    
+    //关注和粉丝view添加点击事件
+    self.attentionView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *attentionTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedAttentionView)];
+    [self.attentionView addGestureRecognizer:attentionTap];
+    self.fansView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *fansTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedFansTapView)];
+    [self.fansView addGestureRecognizer:fansTap];
+    
+    self.signInView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *signTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedSignInView)];
+    [self.signInView addGestureRecognizer:signTap];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.tabBar.hidden = NO;
-    [self setTopViewData];
+    UserModel *user = [EGHCodeTool getOBJCWithSavekey:userModel];
+    //获取关注和粉丝总数
+    if (user.userId != nil) {
+        [self getFollowCount:user.userId];
+        [self getFansCount:user.userId];
+    }
+    
 }
 - (void)infoBtnClick {
     
+}
+- (void)selectedAttentionView {
+    MyFollowVC *vc = MyFollowVC.new;
+    vc.titleStr = @"我的关注";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)selectedFansTapView {
+    MyFansVC *vc = MyFansVC.new;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)selectedSignInView {
+    SignInVC *vc = SignInVC.new;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)setTopViewData {
@@ -105,6 +149,18 @@ NSString *MineOutID = @"MineOutTableCell";
         [self.iconImageView sd_setImageWithURL:picURL placeholderImage:[UIImage imageNamed:@"denglutouxiang"]];
         self.nickNameLabel.text = user.nickName;
         self.fansLabel.text = user.fansCount.description;
+        
+        if (self.followCount.description == nil) {
+            self.attentionLaebl.text = @"0";
+        } else {
+            self.attentionLaebl.text = self.followCount.description;
+        }
+        if (self.fansCount.description == nil) {
+            self.fansLabel.text = @"0";
+        } else {
+            self.fansLabel.text = self.fansCount.description;
+        }
+        
     }
     else {
         self.iconImageView.image = [UIImage imageNamed:@"denglutouxiang"];
@@ -154,7 +210,7 @@ NSString *MineOutID = @"MineOutTableCell";
     }
     else if (indexPath.section == 2) {
         MineOutTableCell *cell = [tableView dequeueReusableCellWithIdentifier:MineOutID forIndexPath:indexPath];
-        WEAKSELF
+//        WEAKSELF
         cell.didClickOutButtonBlock = ^{
             //退出登录
             //取出本地的数据
@@ -189,4 +245,31 @@ NSString *MineOutID = @"MineOutTableCell";
     return headView;
 }
 
+#pragma mark  - 关注
+/*获取用户关注/粉丝列表总数*/
+- (void)getFollowCount:(NSNumber *)userId {
+    WEAKSELF
+    //type: 1-用户关注总数 2-用户粉丝总数
+    NSDictionary *dic = @{@"userId":userId,
+                              @"type":@(1)};
+    [ENDNetWorkManager getWithPathUrl:@"/user/follow/getUserFollowCount" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        weakSelf.followCount = result[@"data"];
+        [weakSelf setTopViewData];
+    } failure:^(BOOL failuer, NSError *error) {
+        [Toast makeText:weakSelf.view Message:@"获取关注总数失败" afterHideTime:DELAYTiME];
+    }];
+}
+//获取粉丝列表总数
+- (void)getFansCount:(NSNumber *)userId {
+    WEAKSELF
+    //type: 1-用户关注总数 2-用户粉丝总数
+    NSDictionary *dic = @{@"userId":userId,
+                              @"type":@(2)};
+    [ENDNetWorkManager getWithPathUrl:@"/user/follow/getUserFollowCount" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        weakSelf.fansCount = result[@"data"];
+        [weakSelf setTopViewData];
+    } failure:^(BOOL failuer, NSError *error) {
+        [Toast makeText:weakSelf.view Message:@"获取粉丝总数失败" afterHideTime:DELAYTiME];
+    }];
+}
 @end

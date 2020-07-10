@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *picImageView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *publishTime;
+@property (weak, nonatomic) IBOutlet UILabel *projectLabel;
 
 
 @end
@@ -41,6 +42,7 @@
     [formatter setDateFormat:@"aahh:mm"];
     NSString *dateString = [formatter stringFromDate:date];
     self.publishTime.text = dateString;
+    self.projectLabel.text = newsModel.user.projectKey;
 }
 
 @end

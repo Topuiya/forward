@@ -15,13 +15,20 @@
 @end
 
 @implementation DetailVC
-
+NSString *DetailHeadCellID = @"DetailHeadTableCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"详情页";
-    self.hbd_barHidden = YES;
+    self.hbd_barTintColor = UIColor.whiteColor;
+    //隐藏导航栏下面的阴影
+    self.hbd_barShadowHidden = YES;
+    self.hbd_tintColor = UIColor.blackColor;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DetailHeadTableCell class]) bundle:nil] forCellReuseIdentifier:DetailHeadCellID];
+    
+    NSLog(@"----昵称:%@",_newsModel.user.nickName);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -33,7 +40,12 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailHeadTableCell *cell = [tableView dequeueReusableCellWithIdentifier:DetailHeadCellID];
+    cell.newsModel = _newsModel;
+    return cell;
 }
 
 

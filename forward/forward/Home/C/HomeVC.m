@@ -14,13 +14,14 @@
 #import "CalendarVC.h"
 #import "HomeNewsModel.h"
 #import "DetailVC.h"
+#import "QuoteCalendarModel.h"
 
 @interface HomeVC () <UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTop;
 @property (nonatomic, strong) NSArray *newsArray;
-
+@property (nonatomic, strong) NSArray *calendarArray;
 @end
 
 @implementation HomeVC
@@ -52,11 +53,9 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     }
     self.tabBarController.tabBar.hidden = NO;
     
-    if (self.newsArray == nil) {
-        [self getTopics];
-    }
+    [self getTopics];
+    [self getCanlendar];
     
-//    NSLog(@"-----newsArray:%@",_newsArray);
 }
 - (void)viewWillDisappear:(BOOL)animated {
 //    self.hbd_barHidden = NO;
@@ -73,7 +72,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         return 0;
     }
     else if (section == 3)
-        return 10;
+        return self.newsArray.count;
     else
         return 1;
 }
@@ -144,10 +143,9 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 3) {
-//        HomeNewsModel *model = _newsArray[indexPath.row];
-//        DetailVC *detailVC = DetailVC.new;
-//        detailVC.model = dataModel;
-//        [self.navigationController pushViewController:detailVC animated:YES];
+        DetailVC *detailVC = DetailVC.new;
+        detailVC.newsModel = _newsArray[indexPath.row];
+        [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
 
@@ -157,9 +155,24 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        //刷新第3个section
         [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationFade];
     } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
+    }];
+}
+//请求日历数据
+- (void)getCanlendar {
+    WEAKSELF
+    NSDate *todayDate = [NSDate date];
+    NSDictionary *dic = @{@"date":todayDate};
+    [ENDNetWorkManager getWithPathUrl:@"/admin/getFinanceCalender" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.calendarArray = [MTLJSONAdapter modelsOfClass:[QuoteCalendarModel class] fromJSONArray:result[@"data"] error:&error];
+        
+    } failure:^(BOOL failuer, NSError *error) {
+        [Toast makeText:weakSelf.view Message:@"请求失败" afterHideTime:DELAYTiME];
     }];
 }
 
@@ -168,6 +181,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 //日历数据
 - (void)didSelectedCarlendarView {
     CalendarVC *vc = CalendarVC.new;
+    vc.dataArray = self.calendarArray;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

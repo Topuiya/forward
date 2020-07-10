@@ -157,12 +157,6 @@
     WEAKSELF
     NSDictionary *dic = @{@"phone":self.phoneTextF.text,@"password":self.pwdTextF.text,@"confirmPassword":self.confirmPwdTextF.text,@"code":self.getNumTextF.text,@"type":@(1),@"project":ProjectCategory};
     [ENDNetWorkManager postWithPathUrl:@"/system/register" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
-        NSError *error;
-        UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
-        //获取用户偏好
-        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        //记录userId
-        [userDefault setObject:user.userId forKey:@"userId"];
         [self.navigationController popToRootViewControllerAnimated:YES];
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);

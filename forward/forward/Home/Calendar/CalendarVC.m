@@ -43,6 +43,7 @@ NSString *CalendarTableID = @"CalendarTableViewCell";
 
 - (void)setCalendarStyle {
     self.calendar.delegate = self;
+    self.calendar.appearance.borderRadius = 0;
     self.calendar.backgroundColor = [UIColor colorWithHexString:@"#F1F1F1"];
     self.calendar.appearance.weekdayTextColor = [UIColor colorWithHexString:@"#5B5B5B"];
     self.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh_ch"];
@@ -60,10 +61,11 @@ NSString *CalendarTableID = @"CalendarTableViewCell";
 
 #pragma mark - UITableViewViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CalendarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CalendarTableID];
+    cell.calendarModel = self.dataArray[indexPath.row];
     return cell;
 }
 

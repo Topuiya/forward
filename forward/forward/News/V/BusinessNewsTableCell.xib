@@ -12,55 +12,59 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="KGk-i7-Jjw" customClass="BusinessNewsTableCell">
             <rect key="frame" x="0.0" y="0.0" width="525" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="525" height="122"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专业投资理财手机软件，专业投资理财手机软件提供行 情变化时推送...." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-XZ-Udf">
-                        <rect key="frame" x="16" y="22" width="354.5" height="38.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专业投资理财手机软件，专业投资理财手机软件提供行 情变化时推送...." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-XZ-Udf">
+                        <rect key="frame" x="16" y="20" width="493" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="41" id="ibj-jw-dbq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5分钟前 财经" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw2-4f-nOh">
-                        <rect key="frame" x="16" y="70.5" width="84" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美国" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw2-4f-nOh" userLabel="国家">
+                        <rect key="frame" x="434" y="70.5" width="29" height="29.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.60641843080000002" green="0.60639494660000004" blue="0.60641086099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_remenzixun2" translatesAutoresizingMaskIntoConstraints="NO" id="Rz5-tl-msV">
-                        <rect key="frame" x="386.5" y="16" width="122.5" height="77.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="122.5" id="Lte-Qy-Srg"/>
-                            <constraint firstAttribute="height" constant="77.5" id="l6u-jz-Jc3"/>
-                        </constraints>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvx-Kn-XHA">
-                        <rect key="frame" x="340.5" y="64.5" width="30" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5分钟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uM-9t-HDn" userLabel="时间">
+                        <rect key="frame" x="16" y="77" width="37.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="233">
-                            <color key="titleColor" red="0.60641843080000002" green="0.60639494660000004" blue="0.60641086099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </state>
-                    </button>
+                        <color key="textColor" red="0.60641843080000002" green="0.60639494660000004" blue="0.60641086099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="华盛顿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhK-dc-Yee" userLabel="地区">
+                        <rect key="frame" x="466" y="77" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.60641843080000002" green="0.60639494660000004" blue="0.60641086099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Uvx-Kn-XHA" firstAttribute="trailing" secondItem="qCP-XZ-Udf" secondAttribute="trailing" id="4PU-ub-qDK"/>
-                    <constraint firstItem="qCP-XZ-Udf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5G8-St-j9F"/>
-                    <constraint firstItem="Uvx-Kn-XHA" firstAttribute="bottom" secondItem="Rz5-tl-msV" secondAttribute="bottom" id="D7T-DF-gP7"/>
-                    <constraint firstAttribute="bottom" secondItem="Rz5-tl-msV" secondAttribute="bottom" constant="16" id="NK8-ko-Hlz"/>
-                    <constraint firstAttribute="trailing" secondItem="Rz5-tl-msV" secondAttribute="trailing" constant="16" id="V7q-Hd-sN1"/>
-                    <constraint firstItem="Xw2-4f-nOh" firstAttribute="leading" secondItem="qCP-XZ-Udf" secondAttribute="leading" id="WeA-Ks-rnI"/>
-                    <constraint firstItem="Rz5-tl-msV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="cx5-ta-4Ru"/>
-                    <constraint firstItem="Uvx-Kn-XHA" firstAttribute="centerY" secondItem="Xw2-4f-nOh" secondAttribute="centerY" id="deP-C9-Gmy"/>
-                    <constraint firstItem="qCP-XZ-Udf" firstAttribute="top" secondItem="Rz5-tl-msV" secondAttribute="top" constant="6" id="gMd-k2-JPv"/>
-                    <constraint firstItem="Rz5-tl-msV" firstAttribute="leading" secondItem="qCP-XZ-Udf" secondAttribute="trailing" constant="16" id="jLH-86-hOd"/>
+                    <constraint firstItem="yhK-dc-Yee" firstAttribute="centerY" secondItem="Xw2-4f-nOh" secondAttribute="centerY" id="ADR-xs-xMY"/>
+                    <constraint firstItem="0uM-9t-HDn" firstAttribute="leading" secondItem="qCP-XZ-Udf" secondAttribute="leading" id="EZd-6N-m8g"/>
+                    <constraint firstItem="yhK-dc-Yee" firstAttribute="trailing" secondItem="qCP-XZ-Udf" secondAttribute="trailing" id="MPm-NC-PEE"/>
+                    <constraint firstItem="qCP-XZ-Udf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ROk-EO-RUY"/>
+                    <constraint firstItem="yhK-dc-Yee" firstAttribute="leading" secondItem="Xw2-4f-nOh" secondAttribute="trailing" constant="3" id="h8x-4x-WZt"/>
+                    <constraint firstItem="qCP-XZ-Udf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hBQ-rW-0ZV"/>
+                    <constraint firstItem="0uM-9t-HDn" firstAttribute="centerY" secondItem="yhK-dc-Yee" secondAttribute="centerY" id="nmB-IM-qyv"/>
+                    <constraint firstAttribute="bottom" secondItem="Xw2-4f-nOh" secondAttribute="bottom" constant="22" id="pPE-AK-iWu"/>
+                    <constraint firstItem="Xw2-4f-nOh" firstAttribute="top" secondItem="qCP-XZ-Udf" secondAttribute="bottom" constant="9.5" id="rCz-KN-oxd"/>
+                    <constraint firstAttribute="trailing" secondItem="qCP-XZ-Udf" secondAttribute="trailing" constant="16" id="s0U-UZ-gR0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentLabel" destination="qCP-XZ-Udf" id="bew-P5-tyG"/>
+                <outlet property="countryLabel" destination="Xw2-4f-nOh" id="U5y-gB-BS0"/>
+                <outlet property="regionLabel" destination="yhK-dc-Yee" id="UJV-5r-VJt"/>
+                <outlet property="timeLabel" destination="0uM-9t-HDn" id="Zrg-TQ-nra"/>
+            </connections>
             <point key="canvasLocation" x="-16.666666666666668" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="pic_remenzixun2" width="111" height="78"/>
-    </resources>
 </document>

@@ -9,9 +9,8 @@
 #import "ContentBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class HomeNewsModel;
 @interface PopularVC : ContentBaseViewController <JXCategoryListContentViewDelegate>
-
 @end
 
 NS_ASSUME_NONNULL_END

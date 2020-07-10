@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="MyFansTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="423" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="423" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-VS-ZsR">
+                        <rect key="frame" x="20" y="10" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="3DH-Vr-gVJ"/>
+                            <constraint firstAttribute="height" constant="44" id="gpi-WU-M5R"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJc-9C-4f9">
+                        <rect key="frame" x="342" y="19" width="61" height="26"/>
+                        <state key="normal" title="+关注" backgroundImage="guangzhukuang">
+                            <color key="titleColor" red="0.91521066429999998" green="0.43139743800000002" blue="0.41062217950000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <state key="selected" title="已关注" backgroundImage="guanzhu-selected">
+                            <color key="titleColor" red="0.399584353" green="0.39956817030000003" blue="0.39957916739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lH8-9Z-Gt6">
+                        <rect key="frame" x="74" y="21.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HP8-VS-ZsR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Hq9-Mj-sEl"/>
+                    <constraint firstItem="HP8-VS-ZsR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JCZ-6K-Yhg"/>
+                    <constraint firstAttribute="trailing" secondItem="hJc-9C-4f9" secondAttribute="trailing" constant="20" id="XB1-up-tEZ"/>
+                    <constraint firstItem="lH8-9Z-Gt6" firstAttribute="leading" secondItem="HP8-VS-ZsR" secondAttribute="trailing" constant="10" id="YT4-FO-Oa1"/>
+                    <constraint firstItem="lH8-9Z-Gt6" firstAttribute="centerY" secondItem="HP8-VS-ZsR" secondAttribute="centerY" id="al6-QN-svC"/>
+                    <constraint firstItem="hJc-9C-4f9" firstAttribute="centerY" secondItem="HP8-VS-ZsR" secondAttribute="centerY" id="to1-QI-ir8"/>
+                    <constraint firstAttribute="bottom" secondItem="HP8-VS-ZsR" secondAttribute="bottom" constant="10" id="vVS-SI-kkX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="headImageView" destination="HP8-VS-ZsR" id="BYW-aJ-HPE"/>
+                <outlet property="nameLabel" destination="lH8-9Z-Gt6" id="7VX-Yl-JB0"/>
+                <outlet property="selectedBtn" destination="hJc-9C-4f9" id="gfd-FR-W0d"/>
+            </connections>
+            <point key="canvasLocation" x="57.24637681159421" y="146.65178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="guangzhukuang" width="61" height="26"/>
+        <image name="guanzhu-selected" width="61" height="26"/>
+    </resources>
+</document>

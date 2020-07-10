@@ -76,6 +76,7 @@
             <connections>
                 <outlet property="contentLabel" destination="XBU-GM-Cz5" id="Qa3-dg-PeK"/>
                 <outlet property="picImageView" destination="xjD-Lp-jdY" id="faK-Zz-gQm"/>
+                <outlet property="projectLabel" destination="sTr-Q3-gi9" id="Iyd-oN-RDL"/>
                 <outlet property="publishTime" destination="mC5-LC-OGD" id="NBI-tH-5Pg"/>
             </connections>
             <point key="canvasLocation" x="61.594202898550726" y="196.54017857142856"/>
