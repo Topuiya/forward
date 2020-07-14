@@ -21,10 +21,23 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-OY-O6z">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-Ro-1DU" userLabel="PublishButton">
+                    <rect key="frame" x="328" y="788" width="46" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="BBz-5d-nrm"/>
+                        <constraint firstAttribute="height" constant="44" id="TaQ-Ws-Ayc"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon_publish"/>
+                    <connections>
+                        <action selector="publishBtnClick:" destination="-1" eventType="touchUpInside" id="tjw-R0-Tbm"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="z6l-OY-O6z" secondAttribute="trailing" id="Gcl-9d-yH7"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="yRx-Ro-1DU" secondAttribute="bottom" constant="30" id="TZe-F2-nId"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yRx-Ro-1DU" secondAttribute="trailing" constant="40" id="VmT-UY-kv7"/>
                 <constraint firstItem="z6l-OY-O6z" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="YgV-uh-e75"/>
                 <constraint firstItem="z6l-OY-O6z" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="fw3-U5-8zC"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="z6l-OY-O6z" secondAttribute="bottom" id="nsk-QG-0pX"/>
@@ -33,4 +46,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_publish" width="44.5" height="44"/>
+    </resources>
 </document>

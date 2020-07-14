@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Alamofire (4.9.1)
   - AxcAE_TabBar (1.0.5)
   - BRPickerView (2.6.3):
     - BRPickerView/AddressPickerView (= 2.6.3)
@@ -42,10 +43,13 @@ PODS:
   - SDWebImage (5.8.1):
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
+  - SVProgressHUD (2.2.5)
+  - TZImagePickerController (3.3.2)
   - YPNavigationBarTransition (2.1.1)
 
 DEPENDENCIES:
   - AFNetworking (<= 3.2.1)
+  - Alamofire (~> 4.9.1)
   - AxcAE_TabBar
   - BRPickerView
   - FSCalendar
@@ -59,11 +63,14 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - SDWebImage (>= 5.0.0)
+  - SVProgressHUD
+  - TZImagePickerController
   - YPNavigationBarTransition (~> 2.0)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Alamofire
     - AxcAE_TabBar
     - BRPickerView
     - FSCalendar
@@ -77,10 +84,13 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - SDWebImage
+    - SVProgressHUD
+    - TZImagePickerController
     - YPNavigationBarTransition
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AxcAE_TabBar: 1d5bcf6c4921889dc38839b6ba2c584a9b55251a
   BRPickerView: 67ce855d07ff61771b586fea719053612bfeb1d6
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
@@ -94,8 +104,10 @@ SPEC CHECKSUMS:
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TZImagePickerController: 36ca728ec681228918aa82e993aaab1962281b72
   YPNavigationBarTransition: 7480d51fd36ae8bf0d5ad42d7ec393adfd37d486
 
-PODFILE CHECKSUM: 5422af24272013dabf7e013a4a012c93feb3ffdf
+PODFILE CHECKSUM: 3fb1c5cb91f62e0e48d84a1934f9d99b697fabb8
 
 COCOAPODS: 1.9.1

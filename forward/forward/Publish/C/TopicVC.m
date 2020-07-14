@@ -60,6 +60,10 @@ NSString *HotTopicID = @"HotTopicTableCell";
 - (UIView *)listView {
     return self.view;
 }
+- (IBAction)publishBtnClick:(id)sender {
+    PublishTopicVC *topicVC = PublishTopicVC.new;
+    [self.navigationController pushViewController:topicVC animated:YES];
+}
 
 #pragma mark  - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

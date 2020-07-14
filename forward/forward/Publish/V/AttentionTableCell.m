@@ -31,12 +31,12 @@ NSString *AttentionCollectionID = @"AttentionCollectionCell";
 }
 //每组个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 8;
+    return _modelArray.count;
 }
 //注册 Cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     AttentionCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:AttentionCollectionID forIndexPath:indexPath];
-    
+    cell.recommandModel = _modelArray[indexPath.row];
     return cell;
 }
 

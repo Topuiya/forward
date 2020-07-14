@@ -15,6 +15,11 @@
 #import "HomeNewsModel.h"
 #import "DetailVC.h"
 #import "QuoteCalendarModel.h"
+#import "SignInVC.h"
+#import "LoginVC.h"
+#import "CZ_NEWMarketVC.h"
+#import "BusinessNewsVC.h"
+#import "TimeNewsVC.h"
 
 @interface HomeVC () <UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate>
 
@@ -112,7 +117,9 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         }else {
             signImageView.frame = CGRectMake(SCREEN_WIDTH/2 -160 , -10, 320, 90);
         }
-            
+        headView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *signTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedHeadView)];
+        [headView addGestureRecognizer:signTap];
         [headView addSubview:signImageView];
         return headView;
     }
@@ -149,9 +156,22 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     }
 }
 
+- (void)selectedHeadView {
+    //判断用户是否登录
+    //取出本地的数据
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log  isEqual: @1]) {
+        SignInVC *vc = SignInVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        LoginVC *vc = LoginVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+}
+
 -(void)getTopics{
     WEAKSELF
-//    NSDictionary *dic = @{@"pageNumber":@10};
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
@@ -177,11 +197,28 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 }
 
 #pragma mark - HomeHeaderViewDelegate
-
+//行情中心
+- (void)didSelectedQuotesView {
+    CZ_NEWMarketVC *vc = CZ_NEWMarketVC.new;
+    vc.hbd_tintColor = [UIColor colorWithHexString:@"333333"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 //日历数据
 - (void)didSelectedCarlendarView {
     CalendarVC *vc = CalendarVC.new;
     vc.dataArray = self.calendarArray;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)didSelectedBusinessNewsView {
+    BusinessNewsVC *vc = BusinessNewsVC.new;
+    vc.title = @"行业风暴";
+    vc.hbd_tintColor = [UIColor colorWithHexString:@"333333"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)didSelectedTimeNewsView {
+    TimeNewsVC *vc = TimeNewsVC.new;
+    vc.title = @"7x24快讯";
+    vc.hbd_tintColor = [UIColor colorWithHexString:@"333333"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

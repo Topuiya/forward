@@ -38,7 +38,7 @@ NSString *PopShowNewsID = @"ShowNewsTableCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.newsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,17 +46,18 @@ NSString *PopShowNewsID = @"ShowNewsTableCell";
     cell.newsModel = self.newsArray[indexPath.row];
     return cell;
 }
-
+//MARK:API
 -(void)getTopics{
     WEAKSELF
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        [weakSelf.tableView reloadData];
+        NSLog(@"array:%@",weakSelf.newsArray);
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
     }];
 }
-
 
 @end

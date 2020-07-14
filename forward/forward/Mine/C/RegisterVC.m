@@ -80,7 +80,6 @@
     [self addCoverView];
     [self getPicCode];
 }
-
 //弹出窗口
 - (void)addCoverView
 {

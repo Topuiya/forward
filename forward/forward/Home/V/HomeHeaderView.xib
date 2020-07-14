@@ -266,10 +266,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="businessNewsView" destination="Mna-Ob-hmp" id="9o1-Nl-t0Y"/>
                 <outlet property="calendarView" destination="AOB-mc-yFV" id="tfJ-Qw-d0R"/>
                 <outlet property="pageControl" destination="piR-th-2fj" id="gF9-J3-L8N"/>
                 <outlet property="pagerView" destination="W2c-yr-Qm0" id="qae-0q-yud"/>
+                <outlet property="quotesView" destination="vFt-hh-TcH" id="ThI-7F-11H"/>
                 <outlet property="searchViewTop" destination="VPA-8p-ih8" id="tDw-eF-NiQ"/>
+                <outlet property="timeNewsView" destination="6O4-t5-efd" id="mDm-Wv-ejj"/>
             </connections>
             <point key="canvasLocation" x="-244.92753623188409" y="611.04910714285711"/>
         </view>

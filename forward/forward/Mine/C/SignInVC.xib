@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,27 +10,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInVC">
             <connections>
                 <outlet property="calendar" destination="qzK-Da-mNh" id="zcP-KN-PVO"/>
+                <outlet property="calendarHeight" destination="nqj-dA-O31" id="egU-mq-OaG"/>
                 <outlet property="detailLabel" destination="qtT-WZ-HAi" id="TQb-uu-4Nt"/>
                 <outlet property="line" destination="nC6-An-RJ6" id="YKP-BP-l4i"/>
                 <outlet property="signInView" destination="vCl-Xc-AND" id="hHL-rP-b9b"/>
                 <outlet property="titleLabel" destination="o4c-Db-swq" id="rRS-93-h4v"/>
-                <outlet property="titleY" destination="kRB-K5-UIW" id="lrB-pH-9Ed"/>
+                <outlet property="titleY" destination="6Yy-vZ-Of9" id="fqP-7H-oMk"/>
+                <outlet property="todayMoney" destination="bbF-uT-E7i" id="yFh-Tm-r1x"/>
+                <outlet property="totalMoney" destination="KkK-xt-0CL" id="f6k-d1-wWc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin_beijing" translatesAutoresizingMaskIntoConstraints="NO" id="gJt-dB-6ob">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="274"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="gJt-dB-6ob" secondAttribute="height" multiplier="375:248" id="3Ks-kV-sXV"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCl-Xc-AND" userLabel="signQuanView">
-                    <rect key="frame" x="152" y="44" width="110" height="110"/>
+                    <rect key="frame" x="132.5" y="0.0" width="110" height="110"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiandaoanniu" translatesAutoresizingMaskIntoConstraints="NO" id="wvN-4W-Uhq">
                             <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -72,25 +75,25 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydp-Zk-ih3">
-                    <rect key="frame" x="32" y="164" width="350" height="408.5"/>
+                    <rect key="frame" x="27.5" y="110" width="320" height="373.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_rili-1" translatesAutoresizingMaskIntoConstraints="NO" id="ecw-St-ZUJ">
-                            <rect key="frame" x="0.0" y="0.0" width="350" height="408.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="373.5"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日获得金币：0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-uT-E7i">
-                            <rect key="frame" x="20" y="40.5" width="132" height="21"/>
+                            <rect key="frame" x="20" y="36" width="132" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.34998029470000003" green="0.34996592999999998" blue="0.34997570509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总金币：5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkK-xt-0CL">
-                            <rect key="frame" x="250.5" y="40.5" width="79.5" height="21"/>
+                            <rect key="frame" x="220.5" y="36" width="79.5" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.34901960784313724" green="0.34996592999999998" blue="0.34997570509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzK-Da-mNh" customClass="FSCalendar">
-                            <rect key="frame" x="10" y="106.5" width="330" height="282"/>
+                            <rect key="frame" x="10" y="102" width="300" height="251.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
@@ -98,12 +101,14 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="YYYY年MM月"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                    <color key="value" red="0.94312435390000005" green="0.72433269020000002" blue="0.44020634889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                     <color key="value" red="0.94312435390000005" green="0.72433269020000002" blue="0.44020634889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
@@ -117,11 +122,38 @@
                         <constraint firstItem="KkK-xt-0CL" firstAttribute="centerY" secondItem="bbF-uT-E7i" secondAttribute="centerY" id="eve-nG-dhx"/>
                         <constraint firstItem="bbF-uT-E7i" firstAttribute="leading" secondItem="Ydp-Zk-ih3" secondAttribute="leading" constant="20" id="fFj-vg-2x2"/>
                         <constraint firstItem="bbF-uT-E7i" firstAttribute="centerY" secondItem="Ydp-Zk-ih3" secondAttribute="centerY" multiplier="0.25" id="hPI-Zc-Zfr"/>
-                        <constraint firstAttribute="width" constant="350" id="nqj-dA-O31"/>
+                        <constraint firstAttribute="width" constant="320" id="nqj-dA-O31"/>
                         <constraint firstItem="qzK-Da-mNh" firstAttribute="leading" secondItem="Ydp-Zk-ih3" secondAttribute="leading" constant="10" id="q6G-Ir-HOp"/>
                         <constraint firstAttribute="trailing" secondItem="ecw-St-ZUJ" secondAttribute="trailing" id="uhv-hz-mIu"/>
                         <constraint firstItem="ecw-St-ZUJ" firstAttribute="top" secondItem="Ydp-Zk-ih3" secondAttribute="top" id="vEb-nJ-Qez"/>
                         <constraint firstAttribute="trailing" secondItem="KkK-xt-0CL" secondAttribute="trailing" constant="20" id="ycG-nR-Nis"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPn-Ak-tsR">
+                    <rect key="frame" x="0.0" y="483.5" width="375" height="183.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INs-ep-Nt1">
+                            <rect key="frame" x="30" y="111" width="315" height="62.5"/>
+                            <string key="text"> 1.以30天为一个签到周期，若中途断签后重新签到，则开始新的周期
+2.每个签到周期获得的金币数会有不同
+3.每日金币奖品数量有限，先到先得，领完即止</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.399584353" green="0.39956817030000003" blue="0.39957916739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdK-dB-idL">
+                            <rect key="frame" x="159" y="84" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="DdK-dB-idL" firstAttribute="centerX" secondItem="xPn-Ak-tsR" secondAttribute="centerX" id="BUf-Aa-bPq"/>
+                        <constraint firstItem="INs-ep-Nt1" firstAttribute="leading" secondItem="xPn-Ak-tsR" secondAttribute="leading" constant="30" id="fgY-nm-kat"/>
+                        <constraint firstAttribute="trailing" secondItem="INs-ep-Nt1" secondAttribute="trailing" constant="30" id="mPo-k4-wpL"/>
+                        <constraint firstItem="INs-ep-Nt1" firstAttribute="top" secondItem="DdK-dB-idL" secondAttribute="bottom" constant="10" id="rGf-d1-43K"/>
+                        <constraint firstAttribute="bottom" secondItem="INs-ep-Nt1" secondAttribute="bottom" constant="10" id="vTv-hQ-Rdo"/>
                     </constraints>
                 </view>
             </subviews>
@@ -129,14 +161,18 @@
             <constraints>
                 <constraint firstItem="vCl-Xc-AND" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ECw-fs-rbv"/>
                 <constraint firstItem="gJt-dB-6ob" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fwz-QH-JtT"/>
+                <constraint firstItem="xPn-Ak-tsR" firstAttribute="top" secondItem="Ydp-Zk-ih3" secondAttribute="bottom" id="GYa-xK-UmQ"/>
                 <constraint firstItem="Ydp-Zk-ih3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NqF-oq-R6b"/>
                 <constraint firstItem="vCl-Xc-AND" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pir-ai-gLy"/>
+                <constraint firstItem="xPn-Ak-tsR" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Quk-9e-YZq"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xPn-Ak-tsR" secondAttribute="trailing" id="SSc-Up-FoS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="xPn-Ak-tsR" secondAttribute="bottom" id="Z1h-Uq-1Ju"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="gJt-dB-6ob" secondAttribute="trailing" id="dvq-gr-P8a"/>
                 <constraint firstItem="gJt-dB-6ob" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="n7I-nd-Nmc"/>
-                <constraint firstItem="Ydp-Zk-ih3" firstAttribute="top" secondItem="vCl-Xc-AND" secondAttribute="bottom" constant="10" id="quL-GA-2DR"/>
+                <constraint firstItem="Ydp-Zk-ih3" firstAttribute="top" secondItem="vCl-Xc-AND" secondAttribute="bottom" id="quL-GA-2DR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="134.78260869565219" y="124.55357142857142"/>
+            <point key="canvasLocation" x="133.59999999999999" y="123.68815592203899"/>
         </view>
     </objects>
     <resources>

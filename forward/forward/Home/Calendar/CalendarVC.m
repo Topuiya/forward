@@ -12,6 +12,7 @@
 #import "UIImage+OriginalImage.h"
 #import <FSCalendar.h>
 #import "UIImage+Image.h"
+#import "SignInVC.h"
 
 @interface CalendarVC () <UITableViewDelegate,UITableViewDataSource,FSCalendarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,7 +27,7 @@ NSString *CalendarTableID = @"CalendarTableViewCell";
     [super viewDidLoad];
     self.hbd_barTintColor = UIColor.whiteColor;
     //隐藏导航栏下面的阴影
-    self.hbd_barShadowHidden = YES;
+//    self.hbd_barShadowHidden = YES;
     self.hbd_tintColor = UIColor.blackColor;
     self.title = @"日历数据";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"icon_rili"] style:UIBarButtonItemStyleDone target:self action:@selector(calendarBtnClick)];
@@ -56,7 +57,8 @@ NSString *CalendarTableID = @"CalendarTableViewCell";
 }
 
 - (void)calendarBtnClick {
-    
+    SignInVC *vc = SignInVC.new;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITableViewViewDataSource

@@ -127,17 +127,35 @@ NSString *MineOutID = @"MineOutTableCell";
     
 }
 - (void)selectedAttentionView {
-    MyFollowVC *vc = MyFollowVC.new;
-    vc.titleStr = @"我的关注";
-    [self.navigationController pushViewController:vc animated:YES];
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log  isEqual: @1]) {
+        MyFollowVC *vc = MyFollowVC.new;
+        vc.titleStr = @"我的关注";
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        LoginVC *vc = LoginVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 - (void)selectedFansTapView {
-    MyFansVC *vc = MyFansVC.new;
-    [self.navigationController pushViewController:vc animated:YES];
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log  isEqual: @1]) {
+        MyFansVC *vc = MyFansVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        LoginVC *vc = LoginVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 - (void)selectedSignInView {
-    SignInVC *vc = SignInVC.new;
-    [self.navigationController pushViewController:vc animated:YES];
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log  isEqual: @1]) {
+        SignInVC *vc = SignInVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        LoginVC *vc = LoginVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)setTopViewData {

@@ -20,7 +20,10 @@
 @property (weak, nonatomic) IBOutlet FSPagerView *pagerView;
 @property (weak, nonatomic) IBOutlet FSPageControl *pageControl;
 /*四个分类View*/
+@property (weak, nonatomic) IBOutlet UIView *quotesView;
 @property (weak, nonatomic) IBOutlet UIView *calendarView;
+@property (weak, nonatomic) IBOutlet UIView *businessNewsView;
+@property (weak, nonatomic) IBOutlet UIView *timeNewsView;
 
 @end
 
@@ -70,15 +73,41 @@ NSString *HomeBannerCellID = @"BannerCell";
 
 //添加View手势
 - (void)addViewTapGesture {
+    //行情中心
+    self.quotesView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *quotesViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedQuotesView)];
+    [self.quotesView addGestureRecognizer:quotesViewTap];
     //日历数据
     self.calendarView.userInteractionEnabled = YES;
     UITapGestureRecognizer *calendarViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedCarlendarView)];
     [self.calendarView addGestureRecognizer:calendarViewTap];
+    //行情风暴
+    self.businessNewsView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *businessNewsViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedBusinessNewsView)];
+    [self.businessNewsView addGestureRecognizer:businessNewsViewTap];
+    //7*24快讯
+    self.timeNewsView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *timeNewsViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedTimeNewsView)];
+    [self.timeNewsView addGestureRecognizer:timeNewsViewTap];
 }
-
+- (void)didSelectedQuotesView {
+    if ([self.delegate respondsToSelector:@selector(didSelectedQuotesView)]) {
+        [self.delegate didSelectedQuotesView];
+    }
+}
 - (void)didSelectedCarlendarView {
     if ([self.delegate respondsToSelector:@selector(didSelectedCarlendarView)]) {
         [self.delegate didSelectedCarlendarView];
+    }
+}
+- (void)didSelectedBusinessNewsView {
+    if ([self.delegate respondsToSelector:@selector(didSelectedBusinessNewsView)]) {
+        [self.delegate didSelectedBusinessNewsView];
+    }
+}
+- (void)didSelectedTimeNewsView {
+    if ([self.delegate respondsToSelector:@selector(didSelectedTimeNewsView)]) {
+        [self.delegate didSelectedTimeNewsView];
     }
 }
 

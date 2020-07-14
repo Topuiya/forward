@@ -13,6 +13,7 @@
 #import "PublishVC.h"
 #import "NewsVC.h"
 #import "MineVC.h"
+#import "CZ_NEWMarketVC.h"
 
 #import "BaseTabBarController.h"
 #import <IQKeyboardManager.h>
@@ -30,7 +31,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //
     HBDNavigationController *homeNav = [[HBDNavigationController alloc] initWithRootViewController:[HomeVC new]];
-    HBDNavigationController *quotesNav = [[HBDNavigationController alloc] initWithRootViewController:[QuotesVC new]];
+    HBDNavigationController *quotesNav = [[HBDNavigationController alloc] initWithRootViewController:[CZ_NEWMarketVC new]];
     HBDNavigationController *publishNav = [[HBDNavigationController alloc] initWithRootViewController:[PublishVC new]];
     HBDNavigationController *newsNav = [[HBDNavigationController alloc] initWithRootViewController:[NewsVC new]];
     HBDNavigationController *mineNav = [[HBDNavigationController alloc] initWithRootViewController:[MineVC new]];

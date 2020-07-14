@@ -14,7 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol HomeHeaderViewDelegate <NSObject>
 
+- (void)didSelectedQuotesView;
 - (void)didSelectedCarlendarView;
+- (void)didSelectedBusinessNewsView;
+- (void)didSelectedTimeNewsView;
 
 @end
 

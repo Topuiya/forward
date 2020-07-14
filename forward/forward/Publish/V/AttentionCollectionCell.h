@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UserModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AttentionCollectionCell : UICollectionViewCell
-
+@property (nonatomic, strong) UserModel *recommandModel;
 @end
 
 NS_ASSUME_NONNULL_END

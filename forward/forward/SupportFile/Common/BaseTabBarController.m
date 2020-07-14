@@ -17,6 +17,7 @@
 #import "PublishVC.h"
 #import "NewsVC.h"
 #import "MineVC.h"
+#import "CZ_NEWMarketVC.h"
 
 @interface BaseTabBarController ()<AxcAE_TabBarDelegate>
 
@@ -42,7 +43,7 @@
     // 创建选项卡的数据
     NSArray <NSDictionary *>*VCArray =
     @[@{@"vc":[HomeVC new],@"normalImg":@"icon_shouye",@"selectImg":@"icon_shouye-xuanzhong",@"itemTitle":@"首页"},
-      @{@"vc":[QuotesVC new],@"normalImg":@"icon_hangqing",@"selectImg":@"icon_hangqing-xuanzhong",@"itemTitle":@"行情"},
+      @{@"vc":[CZ_NEWMarketVC new],@"normalImg":@"icon_hangqing",@"selectImg":@"icon_hangqing-xuanzhong",@"itemTitle":@"行情"},
       @{@"vc":[PublishVC new],@"normalImg":@"icon_fabu",@"selectImg":@"icon_fabu-xuanzhong",@"itemTitle":@"发布"},
       @{@"vc":[NewsVC new],@"normalImg":@"icon_zixun",@"selectImg":@"icon_zixun-xuanzhong",@"itemTitle":@"资讯"},
       @{@"vc":[MineVC new],@"normalImg":@"icon_wode",@"selectImg":@"icon_wode-xuanzhong",@"itemTitle":@"我的"}];

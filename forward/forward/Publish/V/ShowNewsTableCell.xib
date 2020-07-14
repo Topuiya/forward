@@ -50,9 +50,12 @@
                         <state key="normal" title="+关注" backgroundImage="guangzhukuang">
                             <color key="titleColor" red="0.91521066429999998" green="0.43139743800000002" blue="0.41062217950000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
-                        <state key="selected" title="已关注" image="guanzhu-selected">
-                            <color key="titleColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="selected" title="已关注" backgroundImage="guanzhu-selected">
+                            <color key="titleColor" red="0.3583383262" green="0.35832369330000002" blue="0.3583336473" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
+                        <connections>
+                            <action selector="attentionBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ucy-2T-WPS"/>
+                        </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_tuijian1" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-Gq-UQH">
                         <rect key="frame" x="14" y="136.5" width="408" height="195.5"/>
@@ -190,6 +193,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="attentionBtn" destination="AEK-1k-k3D" id="yjj-aE-HJ3"/>
                 <outlet property="contentLabel" destination="epT-6V-jsq" id="hhm-ez-V6j"/>
                 <outlet property="headImgView" destination="mUb-FS-aDV" id="eCc-kV-tDh"/>
                 <outlet property="nameLabel" destination="kJP-2Y-UmJ" id="hTr-bZ-jFC"/>

@@ -11,9 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SignInVC : UIViewController
-@property (strong , nonatomic) NSArray *checkInList;
-@property (strong , nonatomic) NSMutableArray <NSDate *> *datesArray;
-@property (nonatomic, assign) BOOL hasCheckedIn;
+
 @end
 
 NS_ASSUME_NONNULL_END

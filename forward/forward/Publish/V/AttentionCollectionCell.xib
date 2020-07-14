@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBu-Fd-Q7C" userLabel="bgView">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manguo" translatesAutoresizingMaskIntoConstraints="NO" id="5FK-td-ClR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manguo" translatesAutoresizingMaskIntoConstraints="NO" id="5FK-td-ClR">
                                 <rect key="frame" x="35" y="20" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0sj-cV-7yv"/>
@@ -43,28 +43,32 @@
                                 <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jZ-eO-F4B">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jZ-eO-F4B">
                                 <rect key="frame" x="30" y="126" width="60" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="EOp-1S-bE0"/>
                                     <constraint firstAttribute="height" constant="25" id="Fvk-VZ-GoD"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="+关注" backgroundImage="guangzhukuang">
                                     <color key="titleColor" red="0.91521066429999998" green="0.43139743800000002" blue="0.41062217950000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <state key="selected" title="已关注" backgroundImage="guanzhu-selected">
                                     <color key="titleColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="attentionBtnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Cox-Xg-UQB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="F9S-FK-PuZ" firstAttribute="top" secondItem="Dr2-qJ-Mg7" secondAttribute="bottom" constant="8" id="FqS-dT-j9c"/>
                             <constraint firstItem="2jZ-eO-F4B" firstAttribute="centerX" secondItem="5FK-td-ClR" secondAttribute="centerX" id="HLh-Tk-F22"/>
-                            <constraint firstItem="2jZ-eO-F4B" firstAttribute="top" secondItem="F9S-FK-PuZ" secondAttribute="bottom" constant="8.5" id="HSe-Xw-Kxq"/>
                             <constraint firstItem="Dr2-qJ-Mg7" firstAttribute="top" secondItem="5FK-td-ClR" secondAttribute="bottom" constant="10" id="M2b-NA-gbU"/>
                             <constraint firstItem="F9S-FK-PuZ" firstAttribute="leading" secondItem="bBu-Fd-Q7C" secondAttribute="leading" constant="10" id="c0h-V7-qg1"/>
                             <constraint firstAttribute="trailing" secondItem="F9S-FK-PuZ" secondAttribute="trailing" constant="10" id="dht-5B-VZ4"/>
+                            <constraint firstAttribute="bottom" secondItem="2jZ-eO-F4B" secondAttribute="bottom" constant="9" id="pvg-Zw-Y6F"/>
                             <constraint firstAttribute="trailing" secondItem="Dr2-qJ-Mg7" secondAttribute="trailing" constant="10" id="rph-iq-Ac6"/>
                             <constraint firstItem="5FK-td-ClR" firstAttribute="top" secondItem="bBu-Fd-Q7C" secondAttribute="top" constant="20" id="u28-KV-Aar"/>
                             <constraint firstItem="Dr2-qJ-Mg7" firstAttribute="leading" secondItem="bBu-Fd-Q7C" secondAttribute="leading" constant="10" id="vE4-hI-3UL"/>
@@ -90,7 +94,11 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="225" height="232"/>
             <connections>
+                <outlet property="attentionBtn" destination="2jZ-eO-F4B" id="Sye-j4-Vh5"/>
                 <outlet property="bgView" destination="bBu-Fd-Q7C" id="ZsT-3G-faL"/>
+                <outlet property="headImageView" destination="5FK-td-ClR" id="qDi-Jz-s3p"/>
+                <outlet property="nameLabel" destination="Dr2-qJ-Mg7" id="LRb-m5-hIk"/>
+                <outlet property="signatureLabel" destination="F9S-FK-PuZ" id="Q8Q-e4-IJ6"/>
             </connections>
             <point key="canvasLocation" x="4.3478260869565224" y="214.28571428571428"/>
         </collectionViewCell>
