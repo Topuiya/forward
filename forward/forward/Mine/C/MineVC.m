@@ -18,6 +18,8 @@
 #import "MyFollowVC.h"
 #import "MyFansVC.h"
 #import "SignInVC.h"
+#import "FeedbackVC.h"
+#import "MyInfoVC.h"
 
 @interface MineVC () <UITableViewDelegate,UITableViewDataSource>
 
@@ -116,6 +118,7 @@ NSString *MineOutID = @"MineOutTableCell";
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.tabBar.hidden = NO;
     UserModel *user = [EGHCodeTool getOBJCWithSavekey:userModel];
+    [self uploginData:user.phone password:user.pwd];
     //获取关注和粉丝总数
     if (user.userId != nil) {
         [self getFollowCount:user.userId];
@@ -185,6 +188,7 @@ NSString *MineOutID = @"MineOutTableCell";
         self.nickNameLabel.text = @"注册/登录";
         self.historyLabel.text = @"0";
         self.fansLabel.text = @"0";
+        self.attentionLaebl.text = @"0";
     }
 }
 
@@ -228,14 +232,14 @@ NSString *MineOutID = @"MineOutTableCell";
     }
     else if (indexPath.section == 2) {
         MineOutTableCell *cell = [tableView dequeueReusableCellWithIdentifier:MineOutID forIndexPath:indexPath];
-//        WEAKSELF
+        WEAKSELF
         cell.didClickOutButtonBlock = ^{
             //退出登录
             //取出本地的数据
             NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
             log = @0;
             [EGHCodeTool archiveOJBC:log saveKey:isLog];
-            [self setTopViewData];
+            [weakSelf setTopViewData];
         };
         return cell;
     }
@@ -261,6 +265,38 @@ NSString *MineOutID = @"MineOutTableCell";
     UIView *headView = [[UIView alloc] init];
     headView.backgroundColor = [UIColor colorWithHexString:@"#F3F2F4"];
     return headView;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        MyInfoVC *vc = MyInfoVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        FeedbackVC *vc = FeedbackVC.new;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+//使用密码登录
+- (void)uploginData:(NSString *)phone password:(NSString *)pwd
+{
+    WEAKSELF
+    NSDictionary *dic = @{@"phone":phone,
+                          @"password":pwd,
+                          @"type":@(1),
+                          @"project":ProjectCategory};
+    [ENDNetWorkManager getWithPathUrl:@"/system/login" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        //登录之后归档数据
+        [EGHCodeTool archiveOJBC:user saveKey:userModel];
+        NSNumber *islog = @1;
+        [EGHCodeTool archiveOJBC:islog saveKey:isLog];
+        [weakSelf setTopViewData];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"登录失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 #pragma mark  - 关注

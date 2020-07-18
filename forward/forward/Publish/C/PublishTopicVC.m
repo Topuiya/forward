@@ -11,6 +11,7 @@
 #import "UITextView+WZB.h"
 #import "UserModel.h"
 #import <MBProgressHUD.h>
+#import <SVProgressHUD.h>
 
 @interface PublishTopicVC () <UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,TZImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;

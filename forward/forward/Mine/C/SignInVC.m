@@ -26,7 +26,6 @@
 
 @property (nonatomic, strong)NSNumber *userId;
 @property (strong, nonatomic) NSArray *signedArray;
-@property (nonatomic, assign) bool hasSign;
 //最外层圆形的签到view
 @property (weak, nonatomic) IBOutlet UIView *signInView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeight;
@@ -57,14 +56,6 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     //取出本地的数据
     UserModel *user = [EGHCodeTool getOBJCWithSavekey:userModel];
     self.userId = user.userId;
-    
-    if (_hasSign == YES) {
-        self.signInView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *signTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedSignInView)];
-        [self.signInView addGestureRecognizer:signTap];
-    } else if (_hasSign == NO) {
-        [self setSignViewState];
-    }
 
 }
 
@@ -91,7 +82,6 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
         self.calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
         //月份模式时，只显示当前月份
         self.calendar.placeholderType = FSCalendarPlaceholderTypeNone;
-//        [self.calendar registerClass:[DIYCalendarCell class] forCellReuseIdentifier:DIYCalendarCellID];
 }
 
 // MARK:点击签到
@@ -110,8 +100,8 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     //改变签到View的状态
     [self setSignViewState];
 }
+//改变签到View的状态
 - (void)setSignViewState {
-    if (_hasSign == NO) {
         self.todayMoney.text = @"今天获得金币: 0";
         self.totalMoney.text = [NSString stringWithFormat:@"总金币: %lu",_signedArray.count * 5];
         
@@ -127,7 +117,6 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
         } else {
             self.detailLabel.text = [NSString stringWithFormat:@"连续%@天",_dataModel.continueTimes];
         }
-    }
 }
 
 // MARK:coverView
@@ -179,11 +168,14 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     NSDictionary *dic = @{@"userId":self.userId};
     [ENDNetWorkManager getWithPathUrl:@"/user/sign/hasSign" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         //返回一个bool
-        NSNumber *hasSign = result[@"data"];
-        if ([hasSign isEqual:@(NO)]) {
-            self.hasSign = NO;
+        NSNumber *sign = result[@"data"];
+        if ([sign isEqual:@(NO)]) {
+            //no说明没签到
+            self.signInView.userInteractionEnabled = YES;
+            UITapGestureRecognizer *signTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedSignInView)];
+            [self.signInView addGestureRecognizer:signTap];
         } else {
-            self.hasSign = YES;
+            [self setSignViewState];
         }
     } failure:^(BOOL failuer, NSError *error) {
         [Toast makeText:weakSelf.view Message:@"获取今日签到失败" afterHideTime:DELAYTiME];

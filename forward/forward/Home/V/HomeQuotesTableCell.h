@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeQuotesTableCell : UITableViewCell
-
+@property (nonatomic, strong)NSArray *quotesArray;
 @end
 
 NS_ASSUME_NONNULL_END

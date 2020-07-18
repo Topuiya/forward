@@ -8,10 +8,11 @@
 
 #import "AttentionTableCell.h"
 #import "AttentionCollectionCell.h"
+#import "UserModel.h"
 
 @interface AttentionTableCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic, strong) NSArray *recommendArray;
 @end
 
 @implementation AttentionTableCell
@@ -23,20 +24,40 @@ NSString *AttentionCollectionID = @"AttentionCollectionCell";
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([AttentionCollectionCell class]) bundle:nil] forCellWithReuseIdentifier:AttentionCollectionID];
 }
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log isEqualToNumber:@1]) {
+        [self getRecommendUsers];
+    }
+}
+//获取推荐关注列表
+-(void)getRecommendUsers{
+    WEAKSELF
+    //推荐用户清单接口
+    UserModel *user = [EGHCodeTool getOBJCWithSavekey:userModel];
+    NSDictionary *dic = @{@"userId":user.userId};
+    [ENDNetWorkManager getWithPathUrl:@"/user/follow/getRecommandUserList" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        //将拿到的结果传递给数组
+        weakSelf.recommendArray = [MTLJSONAdapter modelsOfClass:[UserModel class] fromJSONArray:result[@"data"] error:&error];
+        [weakSelf.collectionView reloadData];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:self.contentView Message:@"请求推荐关注失败" afterHideTime:DELAYTiME];
+    }];
+}
 
 #pragma mark - <UICollectionViewDataSource>
-//组数
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
+
 //每组个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _modelArray.count;
+    return self.recommendArray.count;
 }
 //注册 Cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     AttentionCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:AttentionCollectionID forIndexPath:indexPath];
-    cell.recommandModel = _modelArray[indexPath.row];
+    cell.recommandModel = self.recommendArray[indexPath.row];
     return cell;
 }
 

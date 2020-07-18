@@ -33,7 +33,16 @@
 }
 //点击按钮->取消关注
 - (void)didClickSelectedBtn {
-    
+    //取出本地的数据
+    NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
+    if ([log  isEqual: @1]) {
+        if (self.isFollow == NO) {
+            [self didFollow:_fansModel.userId];
+        }
+        else if (self.isFollow == YES){
+            [self removeFollow:_fansModel.userId];
+        }
+    }
 }
 
 //取消关注

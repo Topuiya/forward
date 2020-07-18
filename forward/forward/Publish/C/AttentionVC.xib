@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -18,20 +18,36 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QN3-5A-tUq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="QN3-5A-tUq">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr3-FA-Zjm" userLabel="PublishButton">
+                    <rect key="frame" x="328" y="788" width="46" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="2Nb-5V-ax3"/>
+                        <constraint firstAttribute="height" constant="44" id="OCo-0a-Hj5"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon_publish"/>
+                    <connections>
+                        <action selector="publishBtnClick:" destination="-1" eventType="touchUpInside" id="fbM-ov-6cM"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="QN3-5A-tUq" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="AdZ-aJ-mzX"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="vr3-FA-Zjm" secondAttribute="trailing" constant="40" id="Gx7-0P-3Tx"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="QN3-5A-tUq" secondAttribute="bottom" id="Lf6-sU-QFR"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="QN3-5A-tUq" secondAttribute="trailing" id="RAT-08-JCx"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="vr3-FA-Zjm" secondAttribute="bottom" constant="30" id="umg-3q-NVX"/>
                 <constraint firstItem="QN3-5A-tUq" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="wdD-Ah-fwW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="132" y="126"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_publish" width="44.5" height="44"/>
+    </resources>
 </document>

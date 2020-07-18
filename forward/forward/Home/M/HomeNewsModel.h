@@ -16,6 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *content;
 @property (nonatomic, assign)double publishTime;
 @property (nonatomic, copy)NSString *picture;
+@property(nonatomic, strong) NSNumber *talkId;
+//浏览总数
+@property(nonatomic, strong) NSNumber *browserCount;
+//点赞数
+@property(nonatomic, strong) NSNumber *zanCount;
+//评论数
+@property(nonatomic, strong) NSNumber *commentCount;
+//转发总数
+@property(nonatomic, strong) NSNumber *forwardCount;
 
 @property (nonatomic, strong)UserModel *user;
 

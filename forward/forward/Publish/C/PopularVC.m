@@ -9,6 +9,9 @@
 #import "PopularVC.h"
 #import "ShowNewsTableCell.h"
 #import "HomeNewsModel.h"
+#import "DetailVC.h"
+#import <SVProgressHUD.h>
+#import "PublishTopicVC.h"
 
 @interface PopularVC () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,6 +34,10 @@ NSString *PopShowNewsID = @"ShowNewsTableCell";
 - (void)viewWillAppear:(BOOL)animated {
     [self getTopics];
 }
+- (IBAction)publishBtnClick:(id)sender {
+    PublishTopicVC *topicVC = PublishTopicVC.new;
+    [self.navigationController pushViewController:topicVC animated:YES];
+}
 
 #pragma mark  - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -46,16 +53,22 @@ NSString *PopShowNewsID = @"ShowNewsTableCell";
     cell.newsModel = self.newsArray[indexPath.row];
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailVC *vc = DetailVC.new;
+    vc.newsModel = self.newsArray[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 //MARK:API
 -(void)getTopics{
+    [SVProgressHUD show];
     WEAKSELF
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
         [weakSelf.tableView reloadData];
-        NSLog(@"array:%@",weakSelf.newsArray);
+        [SVProgressHUD dismiss];
     } failure:^(BOOL failuer, NSError *error) {
-        NSLog(@"%@",error.description);
+        [SVProgressHUD dismiss];
         [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
     }];
 }

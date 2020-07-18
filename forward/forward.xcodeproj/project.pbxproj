@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CB2D724C18AD900522120 /* DetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CB2D524C18AD900522120 /* DetailTableCell.m */; };
+		180CB2D824C18AD900522120 /* DetailTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CB2D624C18AD900522120 /* DetailTableCell.xib */; };
+		180CB2DB24C19AA000522120 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CB2DA24C19AA000522120 /* CommentModel.m */; };
+		180CB2DE24C19C2700522120 /* RecommandTalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CB2DD24C19C2700522120 /* RecommandTalkModel.m */; };
 		1837050E24AC205B00A8278D /* HomeBannerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837050D24AC205B00A8278D /* HomeBannerDataModel.m */; };
 		1837C5EF24AAD89200D27ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837C5EE24AAD89200D27ACD /* AppDelegate.m */; };
 		1837C5F824AAD89200D27ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1837C5F624AAD89200D27ACD /* Main.storyboard */; };
@@ -102,6 +106,10 @@
 		186E616B24ADD01E00658E37 /* AttentionHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E616A24ADD01E00658E37 /* AttentionHeadView.xib */; };
 		186E616E24ADD85B00658E37 /* TimeNewsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E616D24ADD85B00658E37 /* TimeNewsHeadView.m */; };
 		186E617024ADD8A900658E37 /* TimeNewsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E616F24ADD8A900658E37 /* TimeNewsHeadView.xib */; };
+		1899CA0624BE911300AE3880 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899CA0424BE911300AE3880 /* FeedbackVC.m */; };
+		1899CA0724BE911300AE3880 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1899CA0524BE911300AE3880 /* FeedbackVC.xib */; };
+		1899CA0B24BED16200AE3880 /* MyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899CA0924BED16200AE3880 /* MyInfoVC.m */; };
+		1899CA0C24BED16200AE3880 /* MyInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1899CA0A24BED16200AE3880 /* MyInfoVC.xib */; };
 		18A8A8EF24AEC595007D7AA9 /* TimeNewsTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A8ED24AEC595007D7AA9 /* TimeNewsTopTableCell.m */; };
 		18A8A8F024AEC595007D7AA9 /* TimeNewsTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8A8EE24AEC595007D7AA9 /* TimeNewsTopTableCell.xib */; };
 		18A8A8F424AEC86E007D7AA9 /* TimeNewsDetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A8F224AEC86E007D7AA9 /* TimeNewsDetailTableCell.m */; };
@@ -177,6 +185,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180CB2D424C18AD900522120 /* DetailTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailTableCell.h; sourceTree = "<group>"; };
+		180CB2D524C18AD900522120 /* DetailTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailTableCell.m; sourceTree = "<group>"; };
+		180CB2D624C18AD900522120 /* DetailTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableCell.xib; sourceTree = "<group>"; };
+		180CB2D924C19AA000522120 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		180CB2DA24C19AA000522120 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		180CB2DC24C19C2700522120 /* RecommandTalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommandTalkModel.h; sourceTree = "<group>"; };
+		180CB2DD24C19C2700522120 /* RecommandTalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommandTalkModel.m; sourceTree = "<group>"; };
 		1837050C24AC205B00A8278D /* HomeBannerDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBannerDataModel.h; sourceTree = "<group>"; };
 		1837050D24AC205B00A8278D /* HomeBannerDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBannerDataModel.m; sourceTree = "<group>"; };
 		1837C5EA24AAD89200D27ACD /* forward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forward.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,6 +356,12 @@
 		186E616C24ADD85B00658E37 /* TimeNewsHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeNewsHeadView.h; sourceTree = "<group>"; };
 		186E616D24ADD85B00658E37 /* TimeNewsHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNewsHeadView.m; sourceTree = "<group>"; };
 		186E616F24ADD8A900658E37 /* TimeNewsHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNewsHeadView.xib; sourceTree = "<group>"; };
+		1899CA0324BE911300AE3880 /* FeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
+		1899CA0424BE911300AE3880 /* FeedbackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
+		1899CA0524BE911300AE3880 /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
+		1899CA0824BED16200AE3880 /* MyInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInfoVC.h; sourceTree = "<group>"; };
+		1899CA0924BED16200AE3880 /* MyInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInfoVC.m; sourceTree = "<group>"; };
+		1899CA0A24BED16200AE3880 /* MyInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoVC.xib; sourceTree = "<group>"; };
 		18A8A8EC24AEC595007D7AA9 /* TimeNewsTopTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeNewsTopTableCell.h; sourceTree = "<group>"; };
 		18A8A8ED24AEC595007D7AA9 /* TimeNewsTopTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNewsTopTableCell.m; sourceTree = "<group>"; };
 		18A8A8EE24AEC595007D7AA9 /* TimeNewsTopTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNewsTopTableCell.xib; sourceTree = "<group>"; };
@@ -898,6 +919,12 @@
 				18E9EBD924BC2B9200ED2214 /* SignInView.h */,
 				18E9EBDA24BC2B9200ED2214 /* SignInView.m */,
 				18D1217724B8607B008EBCB2 /* SignInView.xib */,
+				1899CA0324BE911300AE3880 /* FeedbackVC.h */,
+				1899CA0424BE911300AE3880 /* FeedbackVC.m */,
+				1899CA0524BE911300AE3880 /* FeedbackVC.xib */,
+				1899CA0824BED16200AE3880 /* MyInfoVC.h */,
+				1899CA0924BED16200AE3880 /* MyInfoVC.m */,
+				1899CA0A24BED16200AE3880 /* MyInfoVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -963,12 +990,19 @@
 		18B4281624B5AC0300769F0C /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
+				180CB2D924C19AA000522120 /* CommentModel.h */,
+				180CB2DA24C19AA000522120 /* CommentModel.m */,
+				180CB2DC24C19C2700522120 /* RecommandTalkModel.h */,
+				180CB2DD24C19C2700522120 /* RecommandTalkModel.m */,
 				18B4281124B5ABFA00769F0C /* DetailVC.h */,
 				18B4281224B5ABFA00769F0C /* DetailVC.m */,
 				18B4281324B5ABFA00769F0C /* DetailVC.xib */,
 				18B4281824B5AFB900769F0C /* DetailHeadTableCell.h */,
 				18B4281924B5AFB900769F0C /* DetailHeadTableCell.m */,
 				18B4281A24B5AFB900769F0C /* DetailHeadTableCell.xib */,
+				180CB2D424C18AD900522120 /* DetailTableCell.h */,
+				180CB2D524C18AD900522120 /* DetailTableCell.m */,
+				180CB2D624C18AD900522120 /* DetailTableCell.xib */,
 			);
 			path = DetailVC;
 			sourceTree = "<group>";
@@ -1130,9 +1164,11 @@
 				186E616124ADBC2F00658E37 /* TopicFootView.xib in Resources */,
 				186E614F24ADA8A000658E37 /* MineInfoTableCell.xib in Resources */,
 				186E616B24ADD01E00658E37 /* AttentionHeadView.xib in Resources */,
+				1899CA0724BE911300AE3880 /* FeedbackVC.xib in Resources */,
 				1837C67D24AB0AE200D27ACD /* HomeHeaderView.xib in Resources */,
 				18672AFD24AC683F00BF4B17 /* TopicVC.xib in Resources */,
 				18A8A90A24AF0FB7007D7AA9 /* CalendarVC.xib in Resources */,
+				180CB2D824C18AD900522120 /* DetailTableCell.xib in Resources */,
 				18B4281C24B5AFB900769F0C /* DetailHeadTableCell.xib in Resources */,
 				1837C5FD24AAD89400D27ACD /* LaunchScreen.storyboard in Resources */,
 				1837C69A24AB3B4500D27ACD /* QuotesHeadView.xib in Resources */,
@@ -1154,6 +1190,7 @@
 				1837C67024AADEA400D27ACD /* NewsVC.xib in Resources */,
 				18672AF824AC682800BF4B17 /* PopularVC.xib in Resources */,
 				18B4281524B5ABFA00769F0C /* DetailVC.xib in Resources */,
+				1899CA0C24BED16200AE3880 /* MyInfoVC.xib in Resources */,
 				1837C67524AADEB200D27ACD /* MineVC.xib in Resources */,
 				18BC331A24B2EEE70093E013 /* RegisterVC.xib in Resources */,
 				18D1216E24B84E35008EBCB2 /* SignInVC.xib in Resources */,
@@ -1244,6 +1281,7 @@
 				18672B0924AC819100BF4B17 /* BusinessNewsVC.m in Sources */,
 				1837C67424AADEB200D27ACD /* MineVC.m in Sources */,
 				18FDC1A524BD7F920051FB3D /* ZCBaseViewController.m in Sources */,
+				180CB2DE24C19C2700522120 /* RecommandTalkModel.m in Sources */,
 				18672AF224AC67CF00BF4B17 /* AttentionVC.m in Sources */,
 				18FDC19C24BD7F920051FB3D /* ZCMakeTableViewCell.m in Sources */,
 				18A8A91324AF188A007D7AA9 /* CalendarTableViewCell.m in Sources */,
@@ -1267,6 +1305,7 @@
 				1837C5EF24AAD89200D27ACD /* AppDelegate.m in Sources */,
 				1837C65C24AADD2900D27ACD /* TestTabBar.m in Sources */,
 				18B4280C24B56CB900769F0C /* ForgetPwdVC.m in Sources */,
+				1899CA0624BE911300AE3880 /* FeedbackVC.m in Sources */,
 				18E9EBD824BC035900ED2214 /* SignModel.m in Sources */,
 				1837C64824AADD2900D27ACD /* ENDGradientLabel.m in Sources */,
 				185A547924B445480020410D /* UserModel.m in Sources */,
@@ -1277,6 +1316,7 @@
 				1837C60024AAD89400D27ACD /* main.m in Sources */,
 				18B64FC524B6E29100EC46E6 /* TimeNewsModel.m in Sources */,
 				1837C64E24AADD2900D27ACD /* EGHCodeTool.m in Sources */,
+				1899CA0B24BED16200AE3880 /* MyInfoVC.m in Sources */,
 				18D1214E24B81AE8008EBCB2 /* MyFollowTableCell.m in Sources */,
 				18FDC19624BD7F920051FB3D /* NetWork.m in Sources */,
 				18FDC19324BD7F920051FB3D /* BaseViewController.m in Sources */,
@@ -1325,6 +1365,7 @@
 				18D1215B24B833F4008EBCB2 /* MyFansTableCell.m in Sources */,
 				186E615724ADB19000658E37 /* MineTitleModel.m in Sources */,
 				1837C65824AADD2900D27ACD /* UIImage+Image.m in Sources */,
+				180CB2D724C18AD900522120 /* DetailTableCell.m in Sources */,
 				18FDC1A624BD7F920051FB3D /* MVPKlineView.m in Sources */,
 				186E614924AD896A00658E37 /* MineItemTableCell.m in Sources */,
 				18D1215F24B840E3008EBCB2 /* TopicSortModel.m in Sources */,
@@ -1332,6 +1373,7 @@
 				1837C69024AB37AD00D27ACD /* QuotesCenterTableCell.m in Sources */,
 				1837C69824AB3B3700D27ACD /* QuotesHeadView.m in Sources */,
 				184FB1C924B3130C00FD1AE6 /* PwdLoginVC.m in Sources */,
+				180CB2DB24C19AA000522120 /* CommentModel.m in Sources */,
 				18B64FC124B6BCD200EC46E6 /* QuoteCalendarModel.m in Sources */,
 				1837C65524AADD2900D27ACD /* ENDNetWorkPUT.m in Sources */,
 				1837C65A24AADD2900D27ACD /* BaseModel.m in Sources */,

@@ -20,13 +20,19 @@
 #import "CZ_NEWMarketVC.h"
 #import "BusinessNewsVC.h"
 #import "TimeNewsVC.h"
+#import <SVProgressHUD.h>
+#import "NetWork.h"
+#import <MJRefresh.h>
 
 @interface HomeVC () <UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTop;
 @property (nonatomic, strong) NSArray *newsArray;
+@property (nonatomic, strong) NSMutableArray *newsMutableArray;
 @property (nonatomic, strong) NSArray *calendarArray;
+@property (nonatomic, strong)NSArray *quotesArray;
+@property (nonatomic, assign)NSInteger pageNumber;
 @end
 
 @implementation HomeVC
@@ -41,6 +47,10 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeQuotesTableCell class]) bundle:nil] forCellReuseIdentifier:QuotesTableCellID];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HotNewsTableCell class]) bundle:nil] forCellReuseIdentifier:HotNewsTableCellID];
+    [self setMJRefresh];
+    [self getMJRefresh];
+    _pageNumber = 1;
+    self.newsMutableArray = [NSMutableArray array];
     
 }
 
@@ -57,16 +67,27 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         self.tableViewTop.constant = -20;
     }
     self.tabBarController.tabBar.hidden = NO;
-    
+    [SVProgressHUD show];
     [self getTopics];
     [self getCanlendar];
-    
+    [self regetData:@"http://data.api51.cn/apis/integration/rank/?market_type=cryptocurrency&limit=13&order_by=desc&fields=prod_name%2Cprod_code%2Clast_px%2Cpx_change%2Cpx_change_rate%2Chigh_px%2Clow_px%2Cupdate_time&token=3f39051e89e1cea0a84da126601763d8"];
 }
-- (void)viewWillDisappear:(BOOL)animated {
-//    self.hbd_barHidden = NO;
-//    self.tabBarController.tabBar.hidden = YES;
+#pragma mark -下拉加载
+-(void)getMJRefresh{
+    //下拉加载
+    WEAKSELF
+    weakSelf.pageNumber ++;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getTopics];
+    }];
 }
-
+-(void)setMJRefresh{
+    WEAKSELF
+    weakSelf.pageNumber ++;
+    weakSelf.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf getTopics];
+    }];
+}
 #pragma mark - UITableViewViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
@@ -85,6 +106,7 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
         HomeQuotesTableCell *cell = [tableView dequeueReusableCellWithIdentifier:QuotesTableCellID];
+        cell.quotesArray = _quotesArray;
         return cell;
     }
     else {
@@ -172,13 +194,29 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 
 -(void)getTopics{
     WEAKSELF
-    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
+    NSDictionary *dict = @{@"pageNumber":@(_pageNumber)};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
         NSError *error;
+        [SVProgressHUD dismiss];
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        [weakSelf.newsMutableArray addObjectsFromArray:weakSelf.newsArray];
+        weakSelf.newsArray = weakSelf.newsMutableArray;
         //刷新第3个section
         [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationFade];
+        BOOL hasMore = result[@"data"][@"hasMore"];
+        if (hasMore) {
+            [weakSelf.tableView.mj_footer endRefreshing];
+            [weakSelf.tableView.mj_header endRefreshing];
+        }
+        else{
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
+        [SVProgressHUD dismiss];
+        weakSelf.pageNumber --;
+        [weakSelf.tableView.mj_footer endRefreshing];
+        [weakSelf.tableView.mj_header endRefreshing];
         [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
     }];
 }
@@ -195,12 +233,32 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
         [Toast makeText:weakSelf.view Message:@"请求失败" afterHideTime:DELAYTiME];
     }];
 }
+//数字货币
+-(void)regetData:(NSString *)URLStr{
+    WEAKSELF
+    //数字货币=@"http://data.api51.cn/apis/integration/rank/?market_type=cryptocurrency&limit=13&order_by=desc&fields=prod_name%2Cprod_code%2Clast_px%2Cpx_change%2Cpx_change_rate%2Chigh_px%2Clow_px%2Cupdate_time&token=3f39051e89e1cea0a84da126601763d8"
+    
+    [NetWork requestGet:URLStr Success:^(NSDictionary * _Nonnull dic) {
+        
+        NSDictionary *dataD = [dic objectForKey:@"data"];
+        
+        weakSelf.quotesArray = [NSArray arrayWithArray:(NSArray *)dataD[@"candle"]];
+        
+        if (weakSelf.quotesArray.count == 0) {
+            [Toast makeText:self.view Message:@"请求失败，请刷新重试" afterHideTime:DELAYTiME];
+            return;
+        }
+        [weakSelf.tableView reloadData];
+    } ERROR:^(NSError * _Nonnull error) {
+    }];
+}
 
 #pragma mark - HomeHeaderViewDelegate
 //行情中心
 - (void)didSelectedQuotesView {
     CZ_NEWMarketVC *vc = CZ_NEWMarketVC.new;
     vc.hbd_tintColor = [UIColor colorWithHexString:@"333333"];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 //日历数据
@@ -212,12 +270,14 @@ NSString *HotNewsTableCellID = @"HotNewsTableCell";
 - (void)didSelectedBusinessNewsView {
     BusinessNewsVC *vc = BusinessNewsVC.new;
     vc.title = @"行业风暴";
+    vc.hidesBottomBarWhenPushed = YES;
     vc.hbd_tintColor = [UIColor colorWithHexString:@"333333"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didSelectedTimeNewsView {
     TimeNewsVC *vc = TimeNewsVC.new;
     vc.title = @"7x24快讯";
+    vc.hidesBottomBarWhenPushed = YES;
     vc.hbd_tintColor = [UIColor colorWithHexString:@"333333"];
     [self.navigationController pushViewController:vc animated:YES];
 }

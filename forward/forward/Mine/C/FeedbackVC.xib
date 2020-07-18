@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackVC">
+            <connections>
+                <outlet property="bgView" destination="lY8-Ib-F7c" id="Eex-eo-A3I"/>
+                <outlet property="feedTextF" destination="rP3-6y-jNt" id="xYW-PF-mZV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题和意见" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-TO-6mM">
+                    <rect key="frame" x="30" y="64" width="76.5" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb8-Cw-3yQ">
+                    <rect key="frame" x="71.5" y="762" width="271" height="40"/>
+                    <state key="normal" title="提交" backgroundImage="lijizhuce">
+                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </state>
+                    <connections>
+                        <action selector="selectedBtnClick:" destination="-1" eventType="touchUpInside" id="8b4-ov-ixi"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lY8-Ib-F7c">
+                    <rect key="frame" x="25" y="132" width="364" height="200"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="把你遇见的问题或者更好的建议写在这里" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP3-6y-jNt">
+                            <rect key="frame" x="5" y="5" width="354" height="195"/>
+                            <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="rP3-6y-jNt" secondAttribute="bottom" id="X1r-Ji-u1c"/>
+                        <constraint firstItem="rP3-6y-jNt" firstAttribute="leading" secondItem="lY8-Ib-F7c" secondAttribute="leading" constant="5" id="bhf-9f-i2R"/>
+                        <constraint firstAttribute="trailing" secondItem="rP3-6y-jNt" secondAttribute="trailing" constant="5" id="eEN-eb-Z94"/>
+                        <constraint firstAttribute="height" constant="200" id="iO4-88-PrC"/>
+                        <constraint firstItem="rP3-6y-jNt" firstAttribute="top" secondItem="lY8-Ib-F7c" secondAttribute="top" constant="5" id="wXZ-K6-oNX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="3Wa-TO-6mM" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="9UO-CW-49T"/>
+                <constraint firstItem="bb8-Cw-3yQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FRD-H5-kaj"/>
+                <constraint firstItem="lY8-Ib-F7c" firstAttribute="top" secondItem="3Wa-TO-6mM" secondAttribute="bottom" constant="50" id="Md4-Bw-Pjb"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="bb8-Cw-3yQ" secondAttribute="bottom" constant="60" id="UUL-tm-z9Q"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="lY8-Ib-F7c" secondAttribute="trailing" constant="25" id="deL-NX-1qK"/>
+                <constraint firstItem="3Wa-TO-6mM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="kQ7-6O-G26"/>
+                <constraint firstItem="lY8-Ib-F7c" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="qGN-t0-hyy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="133" y="141"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lijizhuce" width="270.5" height="40"/>
+    </resources>
+</document>

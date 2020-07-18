@@ -9,23 +9,17 @@
 #import "HotNewsTableCell.h"
 
 @interface HotNewsTableCell ()
-
-//@"content",
-//NSStringFromSelector(@selector(publishTime)):@"publishTime",
-//NSStringFromSelector(@selector(picture)):@"picture",
 @property (weak, nonatomic) IBOutlet UIImageView *picImageView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *publishTime;
 @property (weak, nonatomic) IBOutlet UILabel *projectLabel;
-
-
 @end
 
 @implementation HotNewsTableCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setNewsModel:(HomeNewsModel *)newsModel {

@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *picImgView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *attentionBtn;
+@property (weak, nonatomic) IBOutlet UILabel *seeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *talkLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeLabel;
+
 
 @property (nonatomic, strong) NSNumber *userId;
 @property (nonatomic, strong) NSNumber *log;
@@ -42,12 +46,16 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"hh:mm"];
     NSString *dateString = [formatter stringFromDate:date];
-    self.timeLabel.text = dateString;\
+    self.timeLabel.text = dateString;
     //头像
     NSURL *headURL = [NSURL URLWithString:newsModel.user.head];
     [self.headImgView sd_setImageWithURL:headURL placeholderImage:[UIImage imageNamed:@"denglutouxiang"]];
     //昵称
     self.nameLabel.text = newsModel.user.nickName;
+    
+    self.seeLabel.text = newsModel.browserCount.description;
+    self.talkLabel.text = newsModel.commentCount.description;
+    self.likeLabel.text = newsModel.zanCount.description;
     
     UserModel *user = [EGHCodeTool getOBJCWithSavekey:userModel];
     NSNumber *hasLog = [EGHCodeTool getOBJCWithSavekey:isLog];

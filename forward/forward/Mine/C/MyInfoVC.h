@@ -1,16 +1,16 @@
 //
-//  AttentionTableCell.h
+//  MyInfoVC.h
 //  forward
 //
-//  Created by apple on 2020/7/3.
+//  Created by apple on 2020/7/15.
 //  Copyright © 2020 zzh. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "UserModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AttentionTableCell : UITableViewCell
+@interface MyInfoVC : UIViewController
 
 @end
 

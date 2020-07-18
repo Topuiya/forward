@@ -34,7 +34,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine-beijing" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-qB-fxR">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglutouxiang" translatesAutoresizingMaskIntoConstraints="NO" id="ePp-qo-OUm">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglutouxiang" translatesAutoresizingMaskIntoConstraints="NO" id="ePp-qo-OUm">
                             <rect key="frame" x="25.5" y="90" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="EuN-RP-fJt"/>

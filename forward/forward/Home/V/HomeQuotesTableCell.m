@@ -8,11 +8,13 @@
 
 #import "HomeQuotesTableCell.h"
 #import "QuotesCollectionCell.h"
+#import "NetWork.h"
 
 @interface HomeQuotesTableCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation HomeQuotesTableCell
@@ -23,6 +25,11 @@ NSString *QuotesCollectionID = @"QuotesCollectionCell";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([QuotesCollectionCell class]) bundle:nil] forCellWithReuseIdentifier:QuotesCollectionID];
+    
+}
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self.collectionView reloadData];
 }
 
 #pragma mark - <UICollectionViewDataSource>
@@ -32,19 +39,19 @@ NSString *QuotesCollectionID = @"QuotesCollectionCell";
 }
 //每组个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 6;
+    return _quotesArray.count;
 }
 //注册 Cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     QuotesCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:QuotesCollectionID forIndexPath:indexPath];
-    
+    cell.dataArray = _quotesArray[indexPath.row];
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 //设置大小尺寸
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(100, 100);
+    return CGSizeMake(120, 100);
 }
 //设置每一组的上下左右间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {

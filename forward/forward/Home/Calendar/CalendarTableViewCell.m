@@ -26,6 +26,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     // 发布按钮设置
     self.showBtn.layer.borderColor = [[UIColor colorWithHexString:@"#666666"] CGColor];
 }

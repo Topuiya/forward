@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QuotesCollectionCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *upLabel;
+@property (weak, nonatomic) IBOutlet UILabel *changeLabel;
+
+@property (nonatomic, strong)NSArray *dataArray;
 @end
 
 NS_ASSUME_NONNULL_END

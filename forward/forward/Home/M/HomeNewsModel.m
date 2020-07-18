@@ -15,6 +15,11 @@
         NSStringFromSelector(@selector(content)):@"content",
         NSStringFromSelector(@selector(publishTime)):@"publishTime",
         NSStringFromSelector(@selector(picture)):@"picture",
+        NSStringFromSelector(@selector(talkId)):@"id",
+        NSStringFromSelector(@selector(browserCount)):@"browserCount",
+        NSStringFromSelector(@selector(zanCount)):@"zanCount",
+        NSStringFromSelector(@selector(commentCount)):@"commentCount",
+        NSStringFromSelector(@selector(forwardCount)):@"forwardCount",
         NSStringFromSelector(@selector(user)):@"user",
     };
 }

@@ -82,7 +82,6 @@
             weakSelf.hasFollow = YES;
         }
         weakSelf.attentionBtn.selected = weakSelf.hasFollow;
-        
     } failure:^(BOOL failuer, NSError *error) {
         
     }];

@@ -97,6 +97,10 @@ static NSString *cellid = @"cellID";
            
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-kSafeBottomHeight);
         }else{
+            if(kIsIPhoneX_Series)
+            {
+                make.bottom.mas_equalTo(self.view.mas_bottom).offset(-44);
+            }
             make.bottom.mas_equalTo(self.view.mas_bottom).offset(-10);
         }
     }];
@@ -162,6 +166,7 @@ static NSString *cellid = @"cellID";
     [SVProgressHUD show];
     
     WEAKSELF
+    // //数字货币=@"http://data.api51.cn/apis/integration/rank/?market_type=cryptocurrency&limit=13&order_by=desc&fields=prod_name%2Cprod_code%2Clast_px%2Cpx_change%2Cpx_change_rate%2Chigh_px%2Clow_px%2Cupdate_time&token=3f39051e89e1cea0a84da126601763d8"
     
     [NetWork requestGet:URLStr Success:^(NSDictionary * _Nonnull dic) {
         STRONGSELF

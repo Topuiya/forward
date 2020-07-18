@@ -47,7 +47,7 @@
     [IQKeyboardManager sharedManager];
     //点击背景收回键盘
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-    
+    [IQKeyboardManager sharedManager].toolbarManageBehaviour = YES;
     return YES;
 }
 

@@ -7,17 +7,18 @@
 //
 
 #import "AttentionVC.h"
-//#import "ShowNewsTableCell.h"
 #import "AttentionHeadView.h"
 #import "AttentionTableCell.h"
 #import "HomeNewsModel.h"
 #import "AttentionNewsTableCell.h"
+#import "DetailVC.h"
+#import <SVProgressHUD.h>
+#import "PublishTopicVC.h"
 
 @interface AttentionVC () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *newsArray;
-//推荐关注数组
-@property (nonatomic, strong) NSArray *recommendArray;
+
 @property (nonatomic, strong) NSNumber *userId;
 @property (nonatomic, strong) NSNumber *log;
 @end
@@ -37,16 +38,17 @@ NSString *AttentionTableID = @"AttentionTableCell";
     self.userId = user.userId;
     NSNumber *log = [EGHCodeTool getOBJCWithSavekey:isLog];
     self.log = log;
-    if ([_log  isEqual: @1]) {
-        [self getRecommendUsers];
-    }
-    
 }
 - (UIView *)listView {
     return self.view;
 }
 - (void)viewWillAppear:(BOOL)animated {
+    
     [self getTopics];
+}
+- (IBAction)publishBtnClick:(id)sender {
+    PublishTopicVC *topicVC = PublishTopicVC.new;
+    [self.navigationController pushViewController:topicVC animated:YES];
 }
 
 #pragma mark  - UITableViewDataSource
@@ -60,54 +62,42 @@ NSString *AttentionTableID = @"AttentionTableCell";
     } else {
         return _newsArray.count;
     }
-        
-//        return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         AttentionTableCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionTableID forIndexPath:indexPath];
-        cell.modelArray = _recommendArray;
         return cell;
     }
     else {
         AttentionNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionShowID forIndexPath:indexPath];
         cell.attentionModel = self.newsArray[indexPath.row];
-//        UITableViewCell *cell = UITableViewCell.new;
         return cell;
     }
     return nil;
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        DetailVC *vc = DetailVC.new;
+        vc.newsModel = self.newsArray[indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 
 //MARK:API
 -(void)getTopics{
+    [SVProgressHUD show];
     WEAKSELF
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[HomeNewsModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
         //刷新
-//        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
         [weakSelf.tableView reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(BOOL failuer, NSError *error) {
-        NSLog(@"%@",error.description);
+        [SVProgressHUD dismiss];
         [Toast makeText:weakSelf.view Message:@"请求热门资讯失败" afterHideTime:DELAYTiME];
-    }];
-}
-//获取推荐关注列表
--(void)getRecommendUsers{
-    WEAKSELF
-    //推荐用户清单接口
-    NSDictionary *dic = @{@"userId":self.userId};
-    [ENDNetWorkManager getWithPathUrl:@"/user/follow/getRecommandUserList" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
-        NSError *error;
-        //将拿到的结果传递给数组
-        weakSelf.recommendArray = [MTLJSONAdapter modelsOfClass:[UserModel class] fromJSONArray:result[@"data"] error:&error];
-        //刷新第一个section
-        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-    } failure:^(BOOL failuer, NSError *error) {
-        NSLog(@"%@",error.description);
-        [Toast makeText:self.view Message:@"请求推荐关注失败" afterHideTime:DELAYTiME];
     }];
 }
 
@@ -123,14 +113,7 @@ NSString *AttentionTableID = @"AttentionTableCell";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 50;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return 180;
-    }
-    else
-        return UITableViewAutomaticDimension;
+    
 }
 
 @end
